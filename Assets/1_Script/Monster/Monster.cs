@@ -28,6 +28,8 @@ public abstract class Monster : MonoBehaviour
     private void Update()
     {
         MonsterMove();
+        MonsterSkils();
+        Check();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -42,7 +44,16 @@ public abstract class Monster : MonoBehaviour
 
         }
     }
-
+    private void Check()
+    {
+        if(player.transform.position.x > transform.position.x)
+        {
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }else if(player.transform.position.x < transform.position.x)
+        {
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+        }
+    }
     private IEnumerator RendererON(Renderer ren)
     {
         if (ren != null)

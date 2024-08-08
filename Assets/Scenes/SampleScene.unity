@@ -28623,6 +28623,7 @@ GameObject:
   - component: {fileID: 987009791}
   - component: {fileID: 987009790}
   - component: {fileID: 987009794}
+  - component: {fileID: 987009795}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -28777,8 +28778,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07fad9d0ce6405b4ebab3e2c68ec7827, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damage: 0
   speed: 14
   jumpPower: 15
+  currentHp: 0
+  maxHp: 0
+  currentMp: 0
+  maxMp: 0
+  currentLevel: 0
+  maxLevel: 0
+  currentEx: 0
+  nextEx: 
   facingRight: 1
   ground:
     serializedVersion: 2
@@ -28786,6 +28796,29 @@ MonoBehaviour:
   wall:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &987009795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 987009789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3258cf45966389449a56fa31f29f7df6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  speed: 14
+  jumpPower: 15
+  currentHp: 0
+  maxHp: 0
+  currentMp: 0
+  maxMp: 0
+  currentLevel: 0
+  maxLevel: 25
+  currentEx: 0
+  nextEx: 
 --- !u!1 &1574629364
 GameObject:
   m_ObjectHideFlags: 0
@@ -28861,6 +28894,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8fce80cab6a3e4ea81f04317e5a725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerStatus: {fileID: 0}
   player: {fileID: 987009789}
   bulletMagic: {fileID: 1899908862967208834, guid: be4a52daa116f1446844bea0b3e86936, type: 3}
 --- !u!4 &1720130424

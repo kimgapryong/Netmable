@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlayer : MonoBehaviour
+public class MovePlayer : PlayerStatus
 {
-    public float speed;
-    public float jumpPower;
 
-    private float downPower = 7f;
+    private float downPower = 6f;
     private float horizontal;
 
     private float wallJumpCooldown = 0.2f; // 벽 점프 쿨다운 시간
@@ -68,15 +66,21 @@ public class MovePlayer : MonoBehaviour
         {
             if (isGround)
             {
+             
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
             }
             else if (doubleJump)
             {
                 doubleJump = false;
+               
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
             }
         }
-
+        if (rigid.velocity.y > 0 && !Input.GetButton("Jump"))
+        {
+            rigid.gravityScale = 2f;
+        }
+       
         if (rigid.velocity.y < 0)
         {
             rigid.velocity -= gravityVec * downPower * Time.deltaTime;

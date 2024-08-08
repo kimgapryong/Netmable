@@ -6,6 +6,8 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
 
+
+    public PlayerStatus playerStatus;
     public GameObject player;
     private MovePlayer movePlayer;
     public BulletMagic bulletMagic;
@@ -28,6 +30,7 @@ public class PlayerManager : MonoBehaviour
         {
             Debug.Log(bulletMagic);
         }
+        playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
     }
 
     // Update is called once per frame

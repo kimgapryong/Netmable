@@ -16,7 +16,7 @@ public class PlayerManager : MonoBehaviour
         if(Instance == null)
         {
             Instance = this;
-            //DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -31,9 +31,9 @@ public class PlayerManager : MonoBehaviour
             Debug.Log(bulletMagic);
         }
         playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
-    }
 
-    // Update is called once per frame
+        StartCoroutine(PlayerHpPlus());
+    }
     void Update()
     {
         if (movePlayer.facingRight)
@@ -44,5 +44,36 @@ public class PlayerManager : MonoBehaviour
         {
             bulletMagic.bulletVec = Vector2.down;
         }
+    }
+
+    private IEnumerator PlayerHpPlus()
+    {
+        while (true)
+        {
+            if(playerStatus.currentHp <= playerStatus.maxHp)
+            {
+                playerStatus.currentHp++;
+                yield return new WaitForSeconds(1f);
+            }
+        }
+    }
+
+    public void PlayerTakeDamage(int damage)
+    {
+        if(playerStatus.currentHp > 0)
+        {
+            playerStatus.currentHp -= damage;
+            StartCoroutine(palyerDamage());
+        }
+        
+    }
+    
+    private IEnumerator palyerDamage()
+    {
+        Renderer ren = player.GetComponent<Renderer>();
+
+        ren.enabled = false;
+        yield return new WaitForSeconds(0.3f);
+        ren.enabled = true;
     }
 }

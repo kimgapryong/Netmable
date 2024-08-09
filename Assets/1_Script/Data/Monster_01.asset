@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterName: Monster01
   health: 100
-  damage: 10
+  damage: 11
   speed: 6
   isAttack: 0

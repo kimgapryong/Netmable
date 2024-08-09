@@ -6,7 +6,7 @@ public class BulletMagic : MonoBehaviour
 {
     public int damage = 20;
     private GameObject player;
-    public float bulletSpeed = 10;
+    public float bulletSpeed = 17;
     public Vector2 bulletVec;
 
     private void Start()

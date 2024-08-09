@@ -6,10 +6,12 @@ using UnityEngine;
 public abstract class Monster : MonoBehaviour
 {
     public GameObject player;
+    public GameObject paticle;
+
     public string monsterName;
     public int health;
     public float speed;
-    public float damage;
+    public int damage;
     public bool isAttack;
 
     private bool attackTime;
@@ -39,7 +41,7 @@ public abstract class Monster : MonoBehaviour
             attackTime = false;
             Renderer ren = gameObject.GetComponent<Renderer>();
             StartCoroutine(RendererON(ren));
-            TakeDamage(PlayerManager.Instance.bulletMagic.damage);
+            TakeDamage(PlayerManager.Instance.playerStatus.damage);
             Destroy(collision.gameObject);
 
         }
@@ -71,10 +73,12 @@ public abstract class Monster : MonoBehaviour
     {
         
         health -= attack;
+        GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
         if (health <= 0)
         {
             Die();
         }
+        Destroy(clone, 0.4f);
     }
     protected virtual void Die()
     {

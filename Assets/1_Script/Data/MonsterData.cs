@@ -7,7 +7,7 @@ public class MonsterData : ScriptableObject
 {
     public string monsterName;
     public int health;
-    public float damage;
+    public int damage;
     public float speed;
     public bool isAttack = false;
 }

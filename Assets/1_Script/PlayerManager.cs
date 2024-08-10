@@ -57,12 +57,12 @@ public class PlayerManager : MonoBehaviour
     {
         while (true)
         {
-            if(playerStatus.currentHp <= playerStatus.maxHp)
+            if(playerStatus.currentHp < playerStatus.maxHp)
             {
                 playerStatus.currentHp++;
                 yield return new WaitForSeconds(1f);
             }
-            if(playerStatus.currentMp <= playerStatus.maxMp)
+            if(playerStatus.currentMp < playerStatus.maxMp)
             {
                 playerStatus.currentMp++;
                 yield return new WaitForSeconds(1.2f);

@@ -7,8 +7,12 @@ public abstract class Monster : MonoBehaviour
 {
     public GameObject player;
     public GameObject paticle;
+    public MonsterData monsterData;
 
+    public Sprite monsterSprite;
     public string monsterName;
+
+    public int MaxHp;
     public int health;
     public float speed;
     public int damage;
@@ -20,7 +24,11 @@ public abstract class Monster : MonoBehaviour
 
     public void ResetData(MonsterData monsterData)
     {
+        
         player = GameObject.Find("Player");
+        this.monsterData = monsterData;
+        MaxHp = monsterData.health;
+        monsterSprite = monsterData.monsterSprite;
         monsterName = monsterData.monsterName;
         health = monsterData.health;
         speed = monsterData.speed;
@@ -34,13 +42,18 @@ public abstract class Monster : MonoBehaviour
         Check();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Bullet"))
         {
             attackTime = false;
             Renderer ren = gameObject.GetComponent<Renderer>();
             StartCoroutine(RendererON(ren));
+
+            UiManager.Instance.mSlider.transform.parent.gameObject.SetActive(true);
+            StartCoroutine(UiManager.Instance.UpdateMonsterUi(monsterData,MaxHp, () => health));
+
+
             TakeDamage(PlayerManager.Instance.playerStatus.damage);
             Destroy(collision.gameObject);
 
@@ -81,14 +94,14 @@ public abstract class Monster : MonoBehaviour
         GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
         if (health <= 0)
         {
-            //ItemManager.Instance.RandomItem(gameObject.transform.position);
+            ItemManager.Instance.RandomItem(gameObject.transform.position);
             Die();
         }
         Destroy(clone, 0.4f);
     }
     protected virtual void Die()
     {
-        Debug.Log("Á×À½");
+        UiManager.Instance.mSlider.transform.parent.gameObject.SetActive(false);
         Destroy(gameObject);
     }
 

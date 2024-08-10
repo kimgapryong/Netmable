@@ -21,14 +21,7 @@ public class BulletMagic : MonoBehaviour
 
     private void BulletDelete()
     {
-        if (player != null)
-        {
-            if (player.transform.position.x + 20 < transform.position.x || player.transform.position.x - 20 > transform.position.x)
-            {
-                Destroy(gameObject);
-            }
-        }
-        
-        
+   
+       Destroy(gameObject, 1.4f);
     }
 }

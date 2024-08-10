@@ -9,7 +9,7 @@ public class ItemManager : MonoBehaviour
 
 
     public List<GameObject> items;
-    public float dropChance = 0.8f;
+    public float dropChance = 0.9f;
 
 
     private void Awake()
@@ -43,7 +43,7 @@ public class ItemManager : MonoBehaviour
     public void RandomItem(Vector3 dropPosition)
     {
 
-        if (Random.value <= dropChance)
+        if (Random.value >= dropChance)
         {
             int randomIndex = Random.Range(0, items.Count);
             GameObject itemToDrop = items[randomIndex];

@@ -30,6 +30,13 @@ public class UiManager : MonoBehaviour
 
     public int nextSkil = 5;
 
+    //∏ÛΩ∫≈Õ UI
+
+    public Slider mSlider;
+    public Image mImage;
+    public Text mhpTxt;
+    public Text mNameTxt;
+
     private void Awake()
     {
         if (Instance == null)
@@ -47,7 +54,19 @@ public class UiManager : MonoBehaviour
         UpdatePlayerstatus();
     }
 
+    public IEnumerator UpdateMonsterUi(MonsterData monsterData, int maxHp, Func<int> getHealth)
+    {
+        mSlider.maxValue = maxHp;
+        mNameTxt.text = monsterData.monsterName;
 
+        while (true)
+        {
+            int currentHealth = getHealth();
+            mSlider.value = currentHealth;
+            mhpTxt.text = $"{currentHealth} / {maxHp}";
+            yield return null;
+        }
+    }
     public void UpdatePlayerstatus()
     {
         hp.text = $"{status.currentHp}  / {status.maxHp}";

@@ -34,6 +34,7 @@ public class InventoryManager : MonoBehaviour
     {
         if(itemSlots.ContainsKey(item.itemName))
         {
+            item.count++;
             itemSlots[item.itemName].GetComponentInChildren<Text>().text = $"{item.count}";
         }
         else

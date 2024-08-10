@@ -36,6 +36,7 @@ public class Monster01 : Monster
         }
     }
 
+
     protected override void MonsterSkils()
     {
         if(player != null)

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -11,6 +13,9 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
     private MovePlayer movePlayer;
     public BulletMagic bulletMagic;
+
+
+
     private void Awake()
     {
         if(Instance == null)
@@ -44,6 +49,8 @@ public class PlayerManager : MonoBehaviour
         {
             bulletMagic.bulletVec = Vector2.down;
         }
+        
+        PlayerDie();
     }
 
     private IEnumerator PlayerHpPlus()
@@ -55,6 +62,12 @@ public class PlayerManager : MonoBehaviour
                 playerStatus.currentHp++;
                 yield return new WaitForSeconds(1f);
             }
+            if(playerStatus.currentMp <= playerStatus.maxMp)
+            {
+                playerStatus.currentMp++;
+                yield return new WaitForSeconds(1.2f);
+            }
+            yield return null;
         }
     }
 
@@ -64,6 +77,7 @@ public class PlayerManager : MonoBehaviour
         {
             playerStatus.currentHp -= damage;
             StartCoroutine(palyerDamage());
+
         }
         
     }
@@ -75,5 +89,18 @@ public class PlayerManager : MonoBehaviour
         ren.enabled = false;
         yield return new WaitForSeconds(0.3f);
         ren.enabled = true;
+    }
+
+    //죽음
+    private void PlayerDie()
+    {
+        if(playerStatus.currentHp <= 0)
+        {
+            //에니메이션
+            Destroy(Instance);
+            Destroy(GameManager.Instance);
+            Destroy(UiManager.Instance);
+            Destroy(player);
+        }
     }
 }

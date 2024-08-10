@@ -22,7 +22,7 @@ public class MonsterManager : MonoBehaviour
     {
         foreach (Monster monster in monsters)
         {
-            if (monster != null)
+            if (monster != null && player != null)
             {
                 if (Vector2.Distance(player.position, monster.gameObject.transform.position) < 35f)
                 {

@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class MovePlayer : PlayerStatus
 {
-
     private float downPower = 6f;
     private float horizontal;
 
-    private float wallJumpCooldown = 0.2f; // 벽 점프 쿨다운 시간
+    private float wallJumpCooldown = 0.4f; // 벽 점프 쿨다운 시간
     private float lastWallJumpTime;
 
     private bool isGround;
@@ -29,6 +28,8 @@ public class MovePlayer : PlayerStatus
 
     private Vector2 gravityVec;
 
+    private float originalGravityScale; // 원래 중력 값 저장
+
     private void Start()
     {
         checkGround = transform.Find("CheckGround");
@@ -36,6 +37,7 @@ public class MovePlayer : PlayerStatus
 
         rigid = GetComponent<Rigidbody2D>();
         gravityVec = new Vector2(0, -Physics2D.gravity.y);
+        originalGravityScale = rigid.gravityScale; // 시작할 때 중력 값을 저장
     }
 
     private void Update()
@@ -54,50 +56,48 @@ public class MovePlayer : PlayerStatus
         if (!wallSliding)
         {
             float targetSpeed = horizontal * speed;
-            rigid.velocity = new Vector2(Mathf.Lerp(rigid.velocity.x, targetSpeed, 0.6f), rigid.velocity.y);
+            rigid.velocity = new Vector2(Mathf.Lerp(rigid.velocity.x, targetSpeed, 0.1f), rigid.velocity.y);
             Flip(horizontal);
         }
     }
 
     private void PlayerJump()
     {
-        // 그냥 점프 + 더블 점프
         if (Input.GetButtonDown("Jump"))
         {
             if (isGround)
             {
-             
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
             }
             else if (doubleJump)
             {
                 doubleJump = false;
-               
                 rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
             }
         }
+
         if (rigid.velocity.y > 0 && !Input.GetButton("Jump"))
         {
-            rigid.gravityScale = 2f;
+            rigid.gravityScale = originalGravityScale * 1.5f; // 상승 속도를 더 빠르게
         }
-       
-        if (rigid.velocity.y < 0)
+        else if (rigid.velocity.y < 0)
         {
+            rigid.gravityScale = originalGravityScale * 2f; // 하강 속도를 더 빠르게
             rigid.velocity -= gravityVec * downPower * Time.deltaTime;
         }
+        else
+        {
+            rigid.gravityScale = originalGravityScale; // 원래 중력으로 복구
+        }
 
-        // 벽 점프
         if (Input.GetButtonDown("Jump") && isWall && wallSliding && !isGround && Time.time > lastWallJumpTime + wallJumpCooldown)
         {
             wallJump = true;
-            lastWallJumpTime = Time.time; // 벽 점프 시간을 갱신
+            lastWallJumpTime = Time.time;
 
-            // 벽 점프 방향 갱신
             wallJumped = facingRight;
 
-            // 벽 점프 속도 설정
             rigid.velocity = new Vector2(speed * -horizontal, jumpPower);
-
             Invoke("WallJumpCheck", wallJumpCooldown);
         }
     }

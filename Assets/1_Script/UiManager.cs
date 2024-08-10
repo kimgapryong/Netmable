@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,28 +6,58 @@ using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
+
+    public static UiManager Instance { get; private set; }
+
     public PlayerStatus status;
 
     public Text hp;
     public Text mp;
+    public Text ex;
 
     public Slider hpSlider;
     public Slider mpSlider;
-    public Slider exSlider;
+
 
     public Image[] no;
     public Image[] skil;
 
+
+    public Button inventoryButton;
+    public Button xButton;
+
+    public GameObject inventory;
+
     public int nextSkil = 5;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void Update()
+    {
+        UpdatePlayerstatus();
+    }
 
 
     public void UpdatePlayerstatus()
     {
         hp.text = $"{status.currentHp}  / {status.maxHp}";
         mp.text = $"{status.currentMp}  / {status.maxMp}";
+        ex.text = $"LEVEL: {status.currentLevel}";
 
-        
-        if(status.currentLevel >= nextSkil)
+        hpSlider.value = (float)status.currentHp / status.maxHp;
+        mpSlider.value = (float)status.currentMp / status.maxMp;
+
+        if (status.currentLevel >= nextSkil)
         {
             for(int i = 0; i < skil.Length; i++)
             {

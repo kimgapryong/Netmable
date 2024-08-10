@@ -11,7 +11,7 @@ public class PlayerStatus : MonoBehaviour
 
     public int currentHp, maxHp, currentMp, maxMp;
 
-    public int currentLevel, maxLevel;
+    public int currentLevel = 1, maxLevel = 25;
 
     public int currentEx;
     public int[] nextEx;
@@ -21,7 +21,7 @@ public class PlayerStatus : MonoBehaviour
         nextEx = new int[maxLevel];
         nextEx[0] = 100;
 
-        for(int i = 1; i <= maxLevel; i++)
+        for(int i = 1; i < maxLevel; i++)
         {
             nextEx[i] = Mathf.RoundToInt(nextEx[i - 1] * 1.1f);
         }
@@ -30,15 +30,16 @@ public class PlayerStatus : MonoBehaviour
     private void AddLevel(int ex)
     {
         currentEx += ex;
-        if(currentEx >= nextEx[currentLevel] && currentLevel < maxLevel)
+        while (currentEx >= nextEx[currentLevel] && currentLevel < maxLevel)
         {
             LevelUp();
         }
-        if(currentLevel >= maxLevel)
+        if (currentLevel >= maxLevel)
         {
-            currentEx = 0;
+            currentEx = nextEx[maxLevel];  // 최종 레벨에서 경험치가 누적되지 않도록 설정
         }
     }
+
 
     private void LevelUp()
     {

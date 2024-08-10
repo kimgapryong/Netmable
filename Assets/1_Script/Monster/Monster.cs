@@ -48,13 +48,18 @@ public abstract class Monster : MonoBehaviour
     }
     private void Check()
     {
-        if(player.transform.position.x > transform.position.x)
+        if(player != null)
         {
-            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
-        }else if(player.transform.position.x < transform.position.x)
-        {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            if (player.transform.position.x > transform.position.x)
+            {
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
+            else if (player.transform.position.x < transform.position.x)
+            {
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+            }
         }
+        
     }
     private IEnumerator RendererON(Renderer ren)
     {
@@ -76,6 +81,7 @@ public abstract class Monster : MonoBehaviour
         GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
         if (health <= 0)
         {
+            //ItemManager.Instance.RandomItem(gameObject.transform.position);
             Die();
         }
         Destroy(clone, 0.4f);

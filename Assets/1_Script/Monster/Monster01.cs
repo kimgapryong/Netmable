@@ -30,7 +30,7 @@ public class Monster01 : Monster
     protected override void MonsterMove()
     {
         isGround = Physics2D.OverlapCapsule(monsterGround.position, new Vector2(4f, 1f), CapsuleDirection2D.Horizontal, 0, ground);
-        if (isAttack && isGround)
+        if (isAttack && isGround && player != null)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
@@ -38,11 +38,15 @@ public class Monster01 : Monster
 
     protected override void MonsterSkils()
     {
-        if(Vector2.Distance(player.transform.position, transform.position) < 14 && dash)
+        if(player != null)
         {
-            
-            StartCoroutine(Dash());
+            if (Vector2.Distance(player.transform.position, transform.position) < 14 && dash)
+            {
+
+                StartCoroutine(Dash());
+            }
         }
+        
     }
     private IEnumerator Dash()
     {

@@ -1,26 +1,19 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
-
     public static InventoryManager Instance { get; private set; }
 
-    public GameObject slotPregab;
+    public GameObject slotPrefab;
     public Transform invenPanel;
-    public GameObject selectedItem; // 현재 선택된 아이템
-
-
-
-    private Dictionary<string, GameObject> itemSlots = new Dictionary<string, GameObject>();
+    public GameObject selectedItem;
+    private Dictionary<string, ItemData> itemSlots = new Dictionary<string, ItemData>();
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
@@ -30,79 +23,85 @@ public class InventoryManager : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    public void AddItem(Item item)
+
+    public void AddItem(ItemData itemData)
     {
-        if(itemSlots.ContainsKey(item.itemName))
+        if (itemSlots.ContainsKey(itemData.itemName))
         {
-            item.count++;
-            itemSlots[item.itemName].GetComponentInChildren<Text>().text = $"{item.count}";
+            itemSlots[itemData.itemName].IncreaseCount(); // count 증가
+            UpdateInventoryUI(itemSlots[itemData.itemName]);
         }
         else
         {
-            GameObject newSlot = Instantiate(slotPregab, invenPanel);
+            itemSlots[itemData.itemName] = itemData;
+
+            GameObject newSlot = Instantiate(slotPrefab, invenPanel);
             Image itemImage = newSlot.GetComponentInChildren<Image>();
-            newSlot.GetComponentInChildren<Image>().sprite = item.itemIcon; 
-            newSlot.GetComponentInChildren<Text>().text = $"{item.count}";
+            itemImage.sprite = itemData.itemIcon;
 
-            itemSlots[item.itemName] = newSlot;
-
-            EventTrigger trigger = itemImage.gameObject.AddComponent<EventTrigger>();
-            EventTrigger.Entry entry = new EventTrigger.Entry();
-            entry.eventID = EventTriggerType.PointerClick;
-            entry.callback.AddListener((data) => { OnItemClick(item, newSlot); });
-            trigger.triggers.Add(entry);
+            itemData.IncreaseCount();
+            newSlot.GetComponentInChildren<Text>().text = $"{itemData.GetCount()}";  // 실시간으로 count 값 참조
+            newSlot.name = itemData.itemName;
 
             GameObject useButton = newSlot.transform.Find("UseButton").gameObject;
             GameObject cancelButton = newSlot.transform.Find("NotButton").gameObject;
 
-            useButton.SetActive(false); 
-            cancelButton.SetActive(false); 
+            useButton.SetActive(false);
+            cancelButton.SetActive(false);
 
-          
-            useButton.GetComponent<Button>().onClick.AddListener(() => UseSelectedItem(item, useButton, cancelButton));
-
+            useButton.GetComponent<Button>().onClick.AddListener(() => UseSelectedItem(itemData, useButton, cancelButton));
             cancelButton.GetComponent<Button>().onClick.AddListener(() => CancelItemSelection(useButton, cancelButton));
+
+            Button itemButton = newSlot.transform.Find("ItemButton").GetComponent<Button>();
+            itemButton.onClick.AddListener(() => OnItemClick(itemData, newSlot));
         }
     }
 
-    private void OnItemClick(Item item, GameObject slot)
+    private void OnItemClick(ItemData itemData, GameObject slot)
     {
-       
         GameObject useButton = slot.transform.Find("UseButton").gameObject;
         GameObject cancelButton = slot.transform.Find("NotButton").gameObject;
-       
+
         selectedItem = slot;
         useButton.SetActive(true);
         cancelButton.SetActive(true);
     }
 
-    private void UseSelectedItem(Item item, GameObject useButton, GameObject cancelButton)
+    private void UseSelectedItem(ItemData itemData, GameObject useButton, GameObject cancelButton)
     {
-        if (item != null)
+        if (itemData != null)
         {
-            item.UseItem(); // 아이템 사용
-            UpdateInventoryUI(item); // UI 업데이트
-            useButton.SetActive(false); // 사용 후 버튼 비활성화
-            cancelButton.SetActive(false); 
+            itemData.UseItem();
+            UpdateInventoryUI(itemData);
+            useButton.SetActive(false);
+            cancelButton.SetActive(false);
         }
     }
 
     private void CancelItemSelection(GameObject useButton, GameObject cancelButton)
     {
-        useButton.SetActive(false); 
+        useButton.SetActive(false);
         cancelButton.SetActive(false);
     }
-    private void UpdateInventoryUI(Item item)
+
+    private void UpdateInventoryUI(ItemData itemData)
     {
-        
-        if (item.count <= 0)
+        if (itemData.GetCount() <= 0)
         {
-            Destroy(selectedItem); 
-            itemSlots.Remove(item.itemName); 
+            GameObject slotToRemove = invenPanel.Find(itemData.itemName)?.gameObject;
+            if (slotToRemove != null)
+            {
+                Destroy(slotToRemove);
+                itemSlots.Remove(itemData.itemName);
+            }
         }
         else
         {
-            selectedItem.GetComponentInChildren<Text>().text = $"{item.count}";
+            GameObject slotToUpdate = invenPanel.Find(itemData.itemName)?.gameObject;
+            if (slotToUpdate != null)
+            {
+                slotToUpdate.GetComponentInChildren<Text>().text = $"{itemData.GetCount()}";  // 실시간으로 count 값 업데이트
+            }
         }
     }
 }

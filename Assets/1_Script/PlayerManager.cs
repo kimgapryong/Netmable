@@ -96,11 +96,15 @@ public class PlayerManager : MonoBehaviour
     {
         if(playerStatus.currentHp <= 0)
         {
+            
+            playerStatus.currentHp = 0;
+            UiManager.Instance.hp.text = $"{playerStatus.currentHp}  / {playerStatus.maxHp}";
+            UiManager.Instance.hpSlider.value = 0;
             //에니메이션
             Destroy(Instance);
             Destroy(GameManager.Instance);
             Destroy(UiManager.Instance);
-            Destroy(player);
+            Destroy(player, 0.3f);
         }
     }
 }

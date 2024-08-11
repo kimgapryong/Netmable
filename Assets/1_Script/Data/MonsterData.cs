@@ -7,6 +7,8 @@ public class MonsterData : ScriptableObject
 {
     public Sprite monsterSprite;
     public string monsterName;
+
+    public int Exp;
     public int health;
     public int damage;
     public float speed;

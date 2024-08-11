@@ -32,18 +32,22 @@ public class ActionCamera : MonoBehaviour
     }
     private void LateUpdate()
     {
-        Vector3 targetPosition = player.position + offset;
-
-        Vector3 lookAheadPos = Vector3.zero;
-        if (Input.GetAxis("Horizontal") != 0)
+        if(player != null)
         {
-            lookAheadPos = new Vector3(lookAheadDistanceX * Mathf.Sign(Input.GetAxis("Horizontal")), 0, 0);
+            Vector3 targetPosition = player.position + offset;
+
+            Vector3 lookAheadPos = Vector3.zero;
+            if (Input.GetAxis("Horizontal") != 0)
+            {
+                lookAheadPos = new Vector3(lookAheadDistanceX * Mathf.Sign(Input.GetAxis("Horizontal")), 0, 0);
+            }
+
+            targetPosition += lookAheadPos;
+
+            Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothSpeed);
+            transform.position = smoothedPosition;
         }
-
-        targetPosition += lookAheadPos;
-
-        Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothSpeed);
-        transform.position = smoothedPosition;
+       
     }
 
     //Èçµé¸² ¼³Á¤

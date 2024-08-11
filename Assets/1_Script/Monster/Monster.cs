@@ -12,6 +12,7 @@ public abstract class Monster : MonoBehaviour
     public Sprite monsterSprite;
     public string monsterName;
 
+    public int Exp;
     public int MaxHp;
     public int health;
     public float speed;
@@ -20,13 +21,12 @@ public abstract class Monster : MonoBehaviour
 
     private bool attackTime;
 
-
-
     public void ResetData(MonsterData monsterData)
     {
         
         player = GameObject.Find("Player");
         this.monsterData = monsterData;
+        Exp = monsterData.Exp;
         MaxHp = monsterData.health;
         monsterSprite = monsterData.monsterSprite;
         monsterName = monsterData.monsterName;
@@ -50,8 +50,10 @@ public abstract class Monster : MonoBehaviour
             Renderer ren = gameObject.GetComponent<Renderer>();
             StartCoroutine(RendererON(ren));
 
+
+
             UiManager.Instance.mSlider.transform.parent.gameObject.SetActive(true);
-            StartCoroutine(UiManager.Instance.UpdateMonsterUi(monsterData,MaxHp, () => health));
+            UiManager.Instance.StartMonsterUiCoroutine(monsterData, MaxHp, () => health);
 
 
             TakeDamage(PlayerManager.Instance.playerStatus.damage);
@@ -89,19 +91,35 @@ public abstract class Monster : MonoBehaviour
     }
     public void TakeDamage(int attack)
     {
+
+        if (paticle != null)
+        {
+            GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
+            Destroy(clone, 0.4f);
+        }
         
         health -= attack;
-        GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
+        
         if (health <= 0)
         {
-            ItemManager.Instance.RandomItem(gameObject.transform.position);
+            
             Die();
         }
-        Destroy(clone, 0.4f);
     }
     protected virtual void Die()
     {
-        UiManager.Instance.mSlider.transform.parent.gameObject.SetActive(false);
+        //PlayerManager.Instance.playerStatus.AddLevel(Exp);
+        if (ItemManager.Instance != null)
+        {
+            ItemManager.Instance.RandomItem(gameObject.transform.position);
+        }
+
+        // UiManager가 유효한지 확인
+        if (UiManager.Instance != null && UiManager.Instance.mSlider != null)
+        {
+            UiManager.Instance.mSlider.transform.parent.gameObject.SetActive(false);
+        }
+
         Destroy(gameObject);
     }
 

@@ -27,7 +27,7 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
-    private void AddLevel(int ex)
+    public void AddLevel(int ex)
     {
         currentEx += ex;
         while (currentEx >= nextEx[currentLevel] && currentLevel < maxLevel)

@@ -18,7 +18,7 @@ public class Monster01 : Monster
     private bool isDash;
     private float dashPower = 10f;
     private float dashTime = 0.4f;
-    private float dashCoolTime = 2f;
+    private float dashCoolTime = 5f;
 
     private void Start()
     {
@@ -51,15 +51,25 @@ public class Monster01 : Monster
     }
     private IEnumerator Dash()
     {
+        if(trail == null) { yield break; }
+
         dash = false;
         isGround = false;
         isDash = true;
         float orign = rigid.gravityScale;
         rigid.gravityScale = 0;
         rigid.velocity = new Vector2(transform.localScale.x * dashPower, 0f);
-        trail.emitting = true;
+        if(trail != null)
+        {
+            trail.emitting = true;
+        }
+       
         yield return new WaitForSeconds(dashTime);
-        trail.emitting = false;
+        
+        if(trail != null)
+        {
+            trail.emitting = false;
+        }
         rigid.velocity = Vector2.zero;
         rigid.gravityScale = orign;
         isDash = false;

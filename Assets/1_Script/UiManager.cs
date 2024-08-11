@@ -37,6 +37,7 @@ public class UiManager : MonoBehaviour
     public Text mhpTxt;
     public Text mNameTxt;
 
+    private Coroutine updateMonsterUi;
     private void Awake()
     {
         if (Instance == null)
@@ -52,6 +53,14 @@ public class UiManager : MonoBehaviour
     private void Update()
     {
         UpdatePlayerstatus();
+    }
+    public void StartMonsterUiCoroutine(MonsterData monsterData, int maxHp, Func<int> getHealth)
+    {
+        if (updateMonsterUi != null)
+        {
+            StopCoroutine(updateMonsterUi);
+        }
+        updateMonsterUi = StartCoroutine(UpdateMonsterUi(monsterData, maxHp, getHealth));
     }
 
     public IEnumerator UpdateMonsterUi(MonsterData monsterData, int maxHp, Func<int> getHealth)
@@ -75,6 +84,13 @@ public class UiManager : MonoBehaviour
 
         hpSlider.value = (float)status.currentHp / status.maxHp;
         mpSlider.value = (float)status.currentMp / status.maxMp;
+
+        if (status.currentHp <= 0)
+        {
+            status.currentHp = 0;
+            hp.text = $"{status.currentHp}  / {status.maxHp}";
+            hpSlider.value = 0;
+        }
 
         if (status.currentLevel >= nextSkil)
         {

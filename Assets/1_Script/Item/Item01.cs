@@ -8,6 +8,7 @@ public class Item01 : Item
     public int itemNum = 5;
     public override void UseItem()
     {
+        Debug.Log("tkdyd");
         if(count >= itemNum)
         {
             PlayerManager.Instance.playerStatus.damage += 5;

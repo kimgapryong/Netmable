@@ -18,6 +18,7 @@ public abstract class Monster : MonoBehaviour
     public float speed;
     public int damage;
     public bool isAttack;
+    public bool isOk = true;
 
     private bool attackTime;
 
@@ -37,9 +38,13 @@ public abstract class Monster : MonoBehaviour
     }
     private void Update()
     {
-        MonsterMove();
-        MonsterSkils();
-        Check();
+        if (isOk)
+        {
+            MonsterMove();
+            MonsterSkils();
+            Check();
+        }
+        
     }
 
     public virtual void OnTriggerEnter2D(Collider2D collision)
@@ -95,7 +100,7 @@ public abstract class Monster : MonoBehaviour
         if (paticle != null)
         {
             GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
-            Destroy(clone, 0.4f);
+            Destroy(clone, 0.3f);
         }
         
         health -= attack;
@@ -108,7 +113,8 @@ public abstract class Monster : MonoBehaviour
     }
     protected virtual void Die()
     {
-        //PlayerManager.Instance.playerStatus.AddLevel(Exp);
+        isOk = false;
+        PlayerManager.Instance.playerStatus.AddLevel(Exp);
         if (ItemManager.Instance != null)
         {
             ItemManager.Instance.RandomItem(gameObject.transform.position);
@@ -120,7 +126,7 @@ public abstract class Monster : MonoBehaviour
             UiManager.Instance.mSlider.transform.parent.gameObject.SetActive(false);
         }
 
-        Destroy(gameObject);
+        Destroy(gameObject, 0.1f);
     }
 
     protected abstract void MonsterMove();

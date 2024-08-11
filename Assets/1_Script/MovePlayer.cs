@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovePlayer : PlayerStatus
+public class MovePlayer : MonoBehaviour
 {
     private float downPower = 6f;
     private float horizontal;
@@ -55,7 +55,7 @@ public class MovePlayer : PlayerStatus
 
         if (!wallSliding)
         {
-            float targetSpeed = horizontal * speed;
+            float targetSpeed = horizontal * PlayerManager.Instance.playerStatus.speed;
             rigid.velocity = new Vector2(Mathf.Lerp(rigid.velocity.x, targetSpeed, 0.1f), rigid.velocity.y);
             Flip(horizontal);
         }
@@ -67,12 +67,12 @@ public class MovePlayer : PlayerStatus
         {
             if (isGround)
             {
-                rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
+                rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
             }
             else if (doubleJump)
             {
                 doubleJump = false;
-                rigid.velocity = new Vector2(rigid.velocity.x, jumpPower);
+                rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
             }
         }
 
@@ -97,7 +97,7 @@ public class MovePlayer : PlayerStatus
 
             wallJumped = facingRight;
 
-            rigid.velocity = new Vector2(speed * -horizontal, jumpPower);
+            rigid.velocity = new Vector2(PlayerManager.Instance.playerStatus.speed * -horizontal, PlayerManager.Instance.playerStatus.jumpPower);
             Invoke("WallJumpCheck", wallJumpCooldown);
         }
     }
@@ -106,7 +106,7 @@ public class MovePlayer : PlayerStatus
     {
         if (wallSliding && !wallJump)
         {
-            rigid.velocity = new Vector2(rigid.velocity.x, Mathf.Clamp(rigid.velocity.y, -jumpPower * 0.5f, float.MaxValue));
+            rigid.velocity = new Vector2(rigid.velocity.x, Mathf.Clamp(rigid.velocity.y, -PlayerManager.Instance.playerStatus.jumpPower * 0.5f, float.MaxValue));
         }
     }
 

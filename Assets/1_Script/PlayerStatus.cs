@@ -11,7 +11,7 @@ public class PlayerStatus : MonoBehaviour
 
     public int currentHp, maxHp, currentMp, maxMp;
 
-    public int currentLevel = 1, maxLevel = 25;
+    public int currentLevel = 0, maxLevel = 25;
 
     public int currentEx;
     public int[] nextEx;
@@ -21,35 +21,56 @@ public class PlayerStatus : MonoBehaviour
         nextEx = new int[maxLevel];
         nextEx[0] = 100;
 
-        for(int i = 1; i < maxLevel; i++)
+        for (int i = 1; i < maxLevel; i++)
         {
             nextEx[i] = Mathf.RoundToInt(nextEx[i - 1] * 1.1f);
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            AddLevel(10);
         }
     }
 
     public void AddLevel(int ex)
     {
         currentEx += ex;
-        while (currentEx >= nextEx[currentLevel] && currentLevel < maxLevel)
+
+        while (currentLevel < maxLevel && currentEx >= nextEx[currentLevel])
         {
             LevelUp();
         }
-        if (currentLevel >= maxLevel)
+
+        if (currentLevel >= maxLevel - 1)
         {
-            currentEx = nextEx[maxLevel];  // 최종 레벨에서 경험치가 누적되지 않도록 설정
+            currentEx = nextEx[maxLevel - 1];  // maxLevel - 1로 수정하여 최대 레벨에서 고정
+            currentLevel = maxLevel - 1;  // 레벨을 최대 레벨로 고정
+        }
+    }
+
+    private void LevelUp()
+    {
+        if (currentLevel < maxLevel - 1) // maxLevel - 1로 수정하여 최대 레벨 이상으로 증가하지 않도록
+        {
+            currentLevel++;
+            currentEx -= nextEx[currentLevel - 1];
+
+            maxHp += 100;
+            currentHp = maxHp;
+
+            maxMp += 20;
+            currentMp = maxMp;
+
+            speed += 0.5f;
+        }
+        else
+        {
+            currentLevel = maxLevel - 1;  // maxLevel - 1로 고정
+            currentEx = nextEx[maxLevel - 1]; // 경험치를 최대 레벨에서 더 이상 증가하지 않도록
         }
     }
 
 
-    private void LevelUp()
-    {
-        currentLevel++;
-        currentEx -= nextEx[currentLevel];
-
-        maxHp += 100;
-        currentHp = maxHp;
-
-        maxMp += 20;
-        currentMp = maxMp;
-    }
 }

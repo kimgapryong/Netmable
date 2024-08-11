@@ -29,7 +29,7 @@ public abstract class Item : MonoBehaviour
 
     public ItemData GetItemData()
     {
-        ItemData itemData = new ItemData(() => count, IncrementCount)
+        ItemData itemData = new ItemData(itemName, itemIcon, () => count, IncrementCount, UseItem)
         {
             UseAction = UseItem
         };
@@ -49,16 +49,19 @@ public abstract class Item : MonoBehaviour
 [Serializable]
 public class ItemData
 {
-
+    public string itemName;
+    public Sprite itemIcon;
     public Func<int> count;
     public Action IncrementCount;
     public Action UseAction;
 
-    public ItemData(Func<int> itemCount, Action incrementCount)
+    public ItemData(string name, Sprite sprite,Func<int> itemCount, Action incrementCount, Action UseItem)
     {
-
+        itemName = name;
+        itemIcon = sprite;
         count = itemCount;
         IncrementCount = incrementCount;
+        UseAction = UseItem;
     }
 
     public void UseItem()

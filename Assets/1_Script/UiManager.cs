@@ -67,7 +67,7 @@ public class UiManager : MonoBehaviour
     {
         mSlider.maxValue = maxHp;
         mNameTxt.text = monsterData.monsterName;
-
+        mImage.sprite = monsterData.monsterSprite;
         while (true)
         {
             int currentHealth = getHealth();

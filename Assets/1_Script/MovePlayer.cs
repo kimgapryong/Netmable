@@ -14,7 +14,7 @@ public class MovePlayer : MonoBehaviour
     private float wallJumpCooldown = 0.4f; // 벽 점프 쿨다운 시간
     private float lastWallJumpTime;
 
-
+    private bool isEnemy = false;
     private bool isGround;
     private bool isWall;
     private bool wallJump;
@@ -80,12 +80,20 @@ public class MovePlayer : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            isEnemy = true;
+        }
+    }
     private void PlayerJump()
     {
         if (Input.GetButtonDown("Jump"))
         {
-            if (isGround)
+            if (isGround || isEnemy)
             {
+                isEnemy = false;
                 rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
                 animator.SetBool("isJump", true) ;
                 animator.SetBool("isGround", false);

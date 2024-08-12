@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30f3e038f2da0404db04065ff370bc4d, type: 3}
   m_Name: Monster_01
   m_EditorClassIdentifier: 
-  monsterSprite: {fileID: 0}
+  monsterSprite: {fileID: -8821613572991470103, guid: b2372a58c32eaaa449a2d04315feab98, type: 3}
   monsterName: Monster01
   Exp: 35
   health: 100

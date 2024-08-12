@@ -1,37 +1,34 @@
 fileFormatVersion: 2
-guid: 8279d62f7af831b43a48ba59cafbdba3
+guid: 5566cbc3667e3c848844a0f078634213
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9054312889506394470
-    second: KakaoTalk_20240812_113839582_0
+      213: -2704345705771833831
+    second: KakaoTalk_20240812_164548543_0
   - first:
-      213: 7266785835732101927
-    second: KakaoTalk_20240812_113839582_1
+      213: -8051286235527217286
+    second: KakaoTalk_20240812_164548543_1
   - first:
-      213: -8757858888913995643
-    second: KakaoTalk_20240812_113839582_2
+      213: -2297190645607866688
+    second: KakaoTalk_20240812_164548543_2
   - first:
-      213: -2934722596019984368
-    second: KakaoTalk_20240812_113839582_3
+      213: 444116119734860245
+    second: KakaoTalk_20240812_164548543_3
   - first:
-      213: -4699953401130840958
-    second: KakaoTalk_20240812_113839582_4
+      213: -1068049718493782117
+    second: KakaoTalk_20240812_164548543_4
   - first:
-      213: -5005413210432414487
-    second: KakaoTalk_20240812_113839582_5
+      213: 7062861354208684233
+    second: KakaoTalk_20240812_164548543_5
   - first:
-      213: 829110553953379954
-    second: KakaoTalk_20240812_113839582_6
+      213: 4071030331534671625
+    second: KakaoTalk_20240812_164548543_6
   - first:
-      213: 6603232895432375035
-    second: KakaoTalk_20240812_113839582_7
+      213: -2957289376632805259
+    second: KakaoTalk_20240812_164548543_7
   - first:
-      213: 6928549997431847846
-    second: KakaoTalk_20240812_113839582_8
-  - first:
-      213: 3005385939403365664
-    second: KakaoTalk_20240812_113839582_9
+      213: -1361913021035492433
+    second: KakaoTalk_20240812_164548543_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -153,13 +150,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_0
+      name: KakaoTalk_20240812_164548543_0
       rect:
         serializedVersion: 2
-        x: 22
-        y: 2
-        width: 78
-        height: 102
+        x: 12
+        y: 0
+        width: 102
+        height: 99
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,124 +164,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 661f448e99167ad70800000000000000
-      internalID: 9054312889506394470
+      spriteID: 916ed99a8eb387ad0800000000000000
+      internalID: -2704345705771833831
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_1
+      name: KakaoTalk_20240812_164548543_1
       rect:
         serializedVersion: 2
-        x: 151
-        y: 1
-        width: 78
-        height: 103
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 72be6ad673fc8d460800000000000000
-      internalID: 7266785835732101927
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_2
-      rect:
-        serializedVersion: 2
-        x: 291
-        y: 3
-        width: 63
-        height: 83
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 588b84dddb5d57680800000000000000
-      internalID: -8757858888913995643
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_3
-      rect:
-        serializedVersion: 2
-        x: 417
-        y: 3
-        width: 69
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 018aae50955c547d0800000000000000
-      internalID: -2934722596019984368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_4
-      rect:
-        serializedVersion: 2
-        x: 527
-        y: 4
-        width: 78
-        height: 106
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 28c05b8784966ceb0800000000000000
-      internalID: -4699953401130840958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_5
-      rect:
-        serializedVersion: 2
-        x: 643
-        y: 55
-        width: 88
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9ecd0267433398ab0800000000000000
-      internalID: -5005413210432414487
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_6
-      rect:
-        serializedVersion: 2
-        x: 771
-        y: 66
-        width: 88
+        x: 142
+        y: 0
+        width: 100
         height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -293,19 +185,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2762befe7a7918b00800000000000000
-      internalID: 829110553953379954
+      spriteID: a7f786a83d5144090800000000000000
+      internalID: -8051286235527217286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_7
+      name: KakaoTalk_20240812_164548543_2
       rect:
         serializedVersion: 2
-        x: 899
-        y: 66
-        width: 88
+        x: 270
+        y: 0
+        width: 104
         height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -314,20 +206,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bfabb6d355563ab50800000000000000
-      internalID: 6603232895432375035
+      spriteID: 0ce5133674dbe10e0800000000000000
+      internalID: -2297190645607866688
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_8
+      name: KakaoTalk_20240812_164548543_3
       rect:
         serializedVersion: 2
-        x: 1033
-        y: 77
-        width: 76
-        height: 97
+        x: 397
+        y: 0
+        width: 101
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -335,20 +227,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6ab757d7387272060800000000000000
-      internalID: 6928549997431847846
+      spriteID: 5d932d30241d92600800000000000000
+      internalID: 444116119734860245
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: KakaoTalk_20240812_113839582_9
+      name: KakaoTalk_20240812_164548543_4
       rect:
         serializedVersion: 2
-        x: 1158
-        y: 74
-        width: 82
-        height: 97
+        x: 520
+        y: 0
+        width: 107
+        height: 119
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -356,8 +248,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 02d5713b69645b920800000000000000
-      internalID: 3005385939403365664
+      spriteID: b9fd8b690768d21f0800000000000000
+      internalID: -1068049718493782117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KakaoTalk_20240812_164548543_5
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 0
+        width: 104
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c861732bf2540260800000000000000
+      internalID: 7062861354208684233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KakaoTalk_20240812_164548543_6
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 0
+        width: 106
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90ff6fc64843f7830800000000000000
+      internalID: 4071030331534671625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KakaoTalk_20240812_164548543_7
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 0
+        width: 109
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 578e3c7faf895f6d0800000000000000
+      internalID: -2957289376632805259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: KakaoTalk_20240812_164548543_8
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 0
+        width: 109
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fab4336b253891de0800000000000000
+      internalID: -1361913021035492433
       vertices: []
       indices: 
       edges: []
@@ -373,16 +349,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      KakaoTalk_20240812_113839582_0: 9054312889506394470
-      KakaoTalk_20240812_113839582_1: 7266785835732101927
-      KakaoTalk_20240812_113839582_2: -8757858888913995643
-      KakaoTalk_20240812_113839582_3: -2934722596019984368
-      KakaoTalk_20240812_113839582_4: -4699953401130840958
-      KakaoTalk_20240812_113839582_5: -5005413210432414487
-      KakaoTalk_20240812_113839582_6: 829110553953379954
-      KakaoTalk_20240812_113839582_7: 6603232895432375035
-      KakaoTalk_20240812_113839582_8: 6928549997431847846
-      KakaoTalk_20240812_113839582_9: 3005385939403365664
+      KakaoTalk_20240812_164548543_0: -2704345705771833831
+      KakaoTalk_20240812_164548543_1: -8051286235527217286
+      KakaoTalk_20240812_164548543_2: -2297190645607866688
+      KakaoTalk_20240812_164548543_3: 444116119734860245
+      KakaoTalk_20240812_164548543_4: -1068049718493782117
+      KakaoTalk_20240812_164548543_5: 7062861354208684233
+      KakaoTalk_20240812_164548543_6: 4071030331534671625
+      KakaoTalk_20240812_164548543_7: -2957289376632805259
+      KakaoTalk_20240812_164548543_8: -1361913021035492433
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
+    public Animator animator;
+
+
     private float downPower = 6f;
     private float horizontal;
 
     private float wallJumpCooldown = 0.4f; // 벽 점프 쿨다운 시간
     private float lastWallJumpTime;
+
 
     private bool isGround;
     private bool isWall;
@@ -32,6 +37,7 @@ public class MovePlayer : MonoBehaviour
 
     private void Start()
     {
+        animator = GetComponent<Animator>();
         checkGround = transform.Find("CheckGround");
         checkWall = transform.Find("CheckWall");
 
@@ -48,6 +54,7 @@ public class MovePlayer : MonoBehaviour
         PlayerJump();
         SlidingWall();
     }
+    
 
     private void PlayerMove()
     {
@@ -58,6 +65,18 @@ public class MovePlayer : MonoBehaviour
             float targetSpeed = horizontal * PlayerManager.Instance.playerStatus.speed;
             rigid.velocity = new Vector2(Mathf.Lerp(rigid.velocity.x, targetSpeed, 0.1f), rigid.velocity.y);
             Flip(horizontal);
+            
+
+            if (Mathf.Abs(horizontal) > 0)
+            {
+                animator.SetBool("isRunning", true);
+                animator.SetBool("isIdle", false);
+            }
+            else if(horizontal == 0) 
+            {
+                animator.SetBool("isRunning", false);
+                animator.SetBool("isIdle", true);
+            }
         }
     }
 
@@ -68,11 +87,15 @@ public class MovePlayer : MonoBehaviour
             if (isGround)
             {
                 rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
+                animator.SetBool("isJump", true) ;
+                animator.SetBool("isGround", false);
             }
             else if (doubleJump)
             {
                 doubleJump = false;
                 rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
+                animator.SetBool("isJump", false);
+                animator.SetBool("isDouble", true ) ;
             }
         }
 
@@ -82,6 +105,7 @@ public class MovePlayer : MonoBehaviour
         }
         else if (rigid.velocity.y < 0)
         {
+            
             rigid.gravityScale = originalGravityScale * 2f; // 하강 속도를 더 빠르게
             rigid.velocity -= gravityVec * downPower * Time.deltaTime;
         }
@@ -96,9 +120,11 @@ public class MovePlayer : MonoBehaviour
             lastWallJumpTime = Time.time;
 
             wallJumped = facingRight;
-
+            
             rigid.velocity = new Vector2(PlayerManager.Instance.playerStatus.speed * -horizontal, PlayerManager.Instance.playerStatus.jumpPower);
             Invoke("WallJumpCheck", wallJumpCooldown);
+
+            
         }
     }
 
@@ -106,6 +132,7 @@ public class MovePlayer : MonoBehaviour
     {
         if (wallSliding && !wallJump)
         {
+            animator.SetBool("isWallSliding", true);
             rigid.velocity = new Vector2(rigid.velocity.x, Mathf.Clamp(rigid.velocity.y, -PlayerManager.Instance.playerStatus.jumpPower * 0.5f, float.MaxValue));
         }
     }
@@ -117,16 +144,29 @@ public class MovePlayer : MonoBehaviour
 
         if (isGround)
         {
+            animator.SetBool("isGround", true);
+            
             doubleJump = true;
             wallJump = false;
+        }
+        else
+        {
+            animator.SetBool("isGround", false);
+        }
+
+        if(isGround && rigid.velocity.y == 0){
+            animator.SetBool("isJump", false);
+            animator.SetBool("isDouble", false);
         }
 
         if (isWall && !isGround && !wallJump)
         {
+            animator.SetBool("isJump", true);
             wallSliding = true;
         }
         else if (!isWall || isGround)
         {
+            animator.SetBool("isWallSliding", false);
             wallSliding = false;
         }
     }

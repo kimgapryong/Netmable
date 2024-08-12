@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
+
+    public event Action OnLevelUp;
+    public int nextSkil = 5;
+    
     public int damage;
     public float speed;
     public float jumpPower;
@@ -57,12 +61,15 @@ public class PlayerStatus : MonoBehaviour
             currentLevel++;
             currentEx -= nextEx[currentLevel - 1];
 
-            maxHp += 100;
+            OnLevelUp?.Invoke();
+
+            maxHp += 30;
             currentHp = maxHp;
 
             maxMp += 20;
             currentMp = maxMp;
 
+            damage += 5;
             speed += 0.5f;
         }
         else
@@ -70,6 +77,7 @@ public class PlayerStatus : MonoBehaviour
             currentLevel = maxLevel - 1;  // maxLevel - 1로 고정
             currentEx = nextEx[maxLevel - 1]; // 경험치를 최대 레벨에서 더 이상 증가하지 않도록
         }
+
     }
 
 

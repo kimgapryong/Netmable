@@ -7,7 +7,7 @@ public class BulletMagic : MonoBehaviour
     public int damage = 20;
     private GameObject player;
     public float bulletSpeed = 17;
-    public Vector2 bulletVec;
+    
 
     private void Start()
     {
@@ -15,7 +15,7 @@ public class BulletMagic : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(bulletVec * bulletSpeed * Time.deltaTime);
+        transform.Translate(PlayerManager.Instance.bulletVec * bulletSpeed * Time.deltaTime);
         BulletDelete();
     }
 

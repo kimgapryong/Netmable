@@ -13,7 +13,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject player;
     private MovePlayer movePlayer;
     public BulletMagic bulletMagic;
-
+    public Vector2 bulletVec;
 
 
     private void Awake()
@@ -43,11 +43,11 @@ public class PlayerManager : MonoBehaviour
     {
         if (movePlayer.facingRight)
         {
-            bulletMagic.bulletVec = Vector2.up;
+            bulletVec = Vector2.right;
         }
         else
         {
-            bulletMagic.bulletVec = Vector2.down;
+            bulletVec = Vector2.left;
         }
         
         PlayerDie();

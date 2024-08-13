@@ -12,10 +12,8 @@ public class FireBoolSkil : Skil
     private void Start()
     {
         ResetSkil(data);
-      
-        StartCoroutine(waitSkil());
     }
-    private IEnumerator waitSkil()
+    public IEnumerator waitSkil()
     {
         while(status == null)
         {
@@ -26,7 +24,6 @@ public class FireBoolSkil : Skil
 
     private void Update()
     {
-        Debug.Log(status);
         SkilSpeed();
     }
 

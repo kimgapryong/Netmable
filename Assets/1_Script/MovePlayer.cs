@@ -104,6 +104,7 @@ public class MovePlayer : MonoBehaviour
                 rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
                 animator.SetBool("isJump", false);
                 animator.SetBool("isDouble", true ) ;
+       
             }
         }
 
@@ -165,6 +166,7 @@ public class MovePlayer : MonoBehaviour
         if(isGround && rigid.velocity.y == 0){
             animator.SetBool("isJump", false);
             animator.SetBool("isDouble", false);
+
         }
 
         if (isWall && !isGround && !wallJump)

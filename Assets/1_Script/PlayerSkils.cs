@@ -17,6 +17,9 @@ public class PlayerSkils : MonoBehaviour
     //스킬 키코드
     private KeyCode fireKey;
 
+    //스킬 넣어주는 액션
+    public FireBoolSkil fireBool;
+
 
     private void Update()
     {
@@ -25,6 +28,7 @@ public class PlayerSkils : MonoBehaviour
     private void Start()
     {
         movePlayer = GameObject.Find("Player").GetComponent<MovePlayer>();
+        StartCoroutine(fireBool.waitSkil()); //파이버블 Action
     }
      public void FireCheck(KeyCode key,GameObject fire)
     {

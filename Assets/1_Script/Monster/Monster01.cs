@@ -43,7 +43,7 @@ public class Monster01 : Monster
     }
     protected override void MonsterMove()
     {
-        Debug.Log("1");
+
         isGround = Physics2D.OverlapCapsule(monsterGround.position, new Vector2(4f, 1f), CapsuleDirection2D.Horizontal, 0, ground);
         if (isAttack && isGround && player != null)
         {
@@ -53,8 +53,8 @@ public class Monster01 : Monster
 
     private void ScaleCheck()
     {
-        Debug.Log("2");
-        if(Vector2.Distance(transform.position, player.transform.position) <= 0.2f)
+   
+        if (Vector2.Distance(transform.position, player.transform.position) <= 5f)
         {
             animator.SetBool("isAttack", true);
         }

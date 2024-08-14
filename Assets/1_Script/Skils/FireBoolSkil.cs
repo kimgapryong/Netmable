@@ -12,6 +12,7 @@ public class FireBoolSkil : Skil
     private void Start()
     {
         ResetSkil(data);
+        StartCoroutine(waitSkil());
     }
     public IEnumerator waitSkil()
     {
@@ -51,7 +52,7 @@ public class FireBoolSkil : Skil
         if (collision.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Monster>().normalAttack = false;
-            collision.gameObject.GetComponent<Monster>().TakeDamage(damage);
+            collision.gameObject.GetComponent<Monster>().TakeDamage(status.damage + damage);
             GameObject clone = Instantiate(firePaticle, collision.transform.position, Quaternion.identity);
             Destroy(gameObject);
             Destroy(clone, 0.3f);
@@ -61,3 +62,7 @@ public class FireBoolSkil : Skil
         }
     }
 }
+
+
+
+

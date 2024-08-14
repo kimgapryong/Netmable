@@ -65,7 +65,6 @@ public class Monster01 : Monster
     }
     protected override void MonsterSkils()
     {
-        Debug.Log("3");
         if (player != null)
         {
             if (Vector2.Distance(player.transform.position, transform.position) < 14 && dash)

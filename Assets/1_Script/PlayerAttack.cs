@@ -31,15 +31,20 @@ public class PlayerAttack : MonoBehaviour
     //    lastAttackTime = Time.time;
     //}
 
+    private MovePlayer mover;
     public Collider2D attackCollider; 
     public float attackRate = 2f; 
     private float nextAttackTime = 0f;
 
+    //∏ÛΩ∫≈Õ
+    private Animator animator;
+    private GameObject monster;
     //public Animator animator; 
     private PlayerStatus playerStatus; 
     private bool canAttack = true;
     void Start()
     {
+        mover = GetComponent<MovePlayer>();
         attackCollider.enabled = false; 
         playerStatus = GetComponent<PlayerStatus>(); 
     }
@@ -68,6 +73,11 @@ public class PlayerAttack : MonoBehaviour
         attackCollider.enabled = false; 
         yield return new WaitForSeconds(1f / attackRate); 
 
+        if(monster != null)
+        {
+            animator.enabled = true;
+        }
+        
         canAttack = true; 
     }
 
@@ -76,8 +86,23 @@ public class PlayerAttack : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-        
+            monster = collision.gameObject;
             collision.GetComponent<Monster>().TakeDamage(playerStatus.damage);
+            animator = collision.GetComponent<Animator>();
+            if (monster != null)
+            {
+                animator.enabled = false;
+            }
+            Rigidbody2D rigid = collision.GetComponent<Rigidbody2D>();
+            if (mover.facingRight)
+            {
+                rigid.velocity = new Vector2(10f, 0);
+            }
+            else
+            {
+                rigid.velocity = new Vector2(10f, 0);
+            }
+            
         }
     }
 }

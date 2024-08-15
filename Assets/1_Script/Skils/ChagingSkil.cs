@@ -32,7 +32,11 @@ public class ChagingSkil : Skil
     }
     private void Update()
     {
-        chaDam = playerSkils.GetChaDamage();
+        if (playerSkils != null)
+        {
+            chaDam = playerSkils.GetChaDamage();
+        }
+        
         SkilSpeed();
         if(target != null && clone != null)
         {
@@ -60,7 +64,7 @@ public class ChagingSkil : Skil
         {
          
             collision.gameObject.GetComponent<Monster>().normalAttack = false;
-            collision.gameObject.GetComponent<Monster>().TakeDamage(status.damage + damage + chaDam);
+            collision.gameObject.GetComponent<Monster>().TakeDamage(status.damage / 2 + damage + chaDam);
             target = collision.transform;
             clone = Instantiate(ChagingPaticle, target.position, Quaternion.identity);
            

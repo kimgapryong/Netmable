@@ -35,11 +35,13 @@ public class Monster01 : Monster
     }
     protected override void Update()
     {
-        base.Update();
+        if(animator.enabled == true)
+        {
+            base.Update();
 
-        ScaleCheck();
+            ScaleCheck();
+        }
        
-        
     }
     protected override void MonsterMove()
     {
@@ -53,15 +55,18 @@ public class Monster01 : Monster
 
     private void ScaleCheck()
     {
-   
-        if (Vector2.Distance(transform.position, player.transform.position) <= 5f)
+        if(player != null)
         {
-            animator.SetBool("isAttack", true);
+            if (Vector2.Distance(transform.position, player.transform.position) <= 5f)
+            {
+                animator.SetBool("isAttack", true);
+            }
+            else
+            {
+                animator.SetBool("isAttack", false);
+            }
         }
-        else
-        {
-            animator.SetBool("isAttack", false);
-        }
+       
     }
     protected override void MonsterSkils()
     {

@@ -11,7 +11,7 @@ public class MovePlayer : MonoBehaviour
     private float downPower = 6f;
     private float horizontal;
 
-    private float wallJumpCooldown = 0.4f; // 벽 점프 쿨다운 시간
+    private float wallJumpCooldown = 0.6f; // 벽 점프 쿨다운 시간
     private float lastWallJumpTime;
 
     private bool isEnemy = false;

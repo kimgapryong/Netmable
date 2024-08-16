@@ -38,9 +38,11 @@ public class Monster02_skilObj : MonoBehaviour
             if (isCool)
             {
                 isCool = false;
-
-                isLeftAttack = player.transform.position.x < monster.position.x;
-
+                if(player != null)
+                {
+                    isLeftAttack = player.transform.position.x < monster.position.x;
+                }
+               
                 if (isLeftAttack)
                 {
                     isCheck = true;

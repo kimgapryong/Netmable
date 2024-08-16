@@ -43,7 +43,7 @@ public class Monster02 : Monster
         {
             if (Vector2.Distance(transform.position, player.transform.position) <= 21 && coolTime)
             {
-                coolTime = false;
+                
                 if (objW == null)
                 {
                     objW = Instantiate(obj, attackPos);
@@ -53,23 +53,9 @@ public class Monster02 : Monster
                     objW.GetComponent<Monster02_skilObj>().damage = damage;
                 }
                 
-                StartCoroutine(skillCool(objW));
+             
             }
         }
     }
 
-    private IEnumerator skillCool(GameObject clone)
-    {
-        
-        while(true)
-        {
-            if(clone == null)
-            {
-                yield return new WaitForSeconds(3);
-                coolTime = true;
-                yield break;
-            }
-            yield return null;
-        }
-    }
 }

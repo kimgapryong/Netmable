@@ -87,6 +87,7 @@ public class MovePlayer : MonoBehaviour
             isEnemy = true;
         }
     }
+
     private void PlayerJump()
     {
         if (Input.GetButtonDown("Jump"))

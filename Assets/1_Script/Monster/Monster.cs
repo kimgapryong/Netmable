@@ -67,11 +67,11 @@ public abstract class Monster : MonoBehaviour
         {
             if (player.transform.position.x < transform.position.x)
             {
-                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+               transform.rotation = Quaternion.Euler(0,0,0);
             }
             else if (player.transform.position.x > transform.position.x)
             {
-                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                transform.rotation = Quaternion.Euler(0, 180, 0);
             }
         }
         

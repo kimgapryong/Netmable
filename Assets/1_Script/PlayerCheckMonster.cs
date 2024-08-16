@@ -7,6 +7,12 @@ using UnityEngine;
 public class PlayerCheckMonster : MonoBehaviour
 {
     private bool isAttack = true;
+    private MovePlayer move;
+
+    private void Start()
+    {
+        move = GetComponent<MovePlayer>();  
+    }
 
     //적 관련 체크
     private void OnCollisionEnter2D(Collision2D collision)
@@ -15,7 +21,26 @@ public class PlayerCheckMonster : MonoBehaviour
         {
             isAttack = false;
             GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Monster>().damage);
+            move.enabled = false;   
             StartCoroutine(WaitSecond());
+        }
+        else if (collision.gameObject.tag == "Tongue")
+        {
+            isAttack = false;
+            GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Monster02_skilObj>().damage);
+            StartCoroutine(WaitSecond());
+        }
+
+        //아이템
+        if (collision.gameObject.CompareTag("Item"))
+        {
+            Item item = collision.gameObject.GetComponent<Item>();
+            if (item != null)
+            {
+                ItemData itemData = item.GetItemData();
+                InventoryManager.Instance.AddItem(itemData);
+                Destroy(collision.gameObject); // 아이템 오브젝트 삭제
+            }
         }
     }
     private void OnCollisionStay2D(Collision2D collision)
@@ -30,24 +55,14 @@ public class PlayerCheckMonster : MonoBehaviour
 
     private IEnumerator WaitSecond()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(0.5f);
+        move.enabled = true;
+        yield return new WaitForSeconds(0.7f);
         isAttack = true;
     }
 
 
-    //아이템 관련 체크
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Item"))
-        {
-            Item item = collision.GetComponent<Item>();
-            if (item != null)
-            {
-                ItemData itemData = item.GetItemData();
-                InventoryManager.Instance.AddItem(itemData);
-                Destroy(collision.gameObject); // 아이템 오브젝트 삭제
-            }
-        }
-    }
+
+   
 }
 

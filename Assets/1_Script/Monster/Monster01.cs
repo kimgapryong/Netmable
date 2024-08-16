@@ -29,6 +29,7 @@ public class Monster01 : Monster
         monsterGround = transform.Find("GroundCheck");
         rigid = GetComponent<Rigidbody2D>();
         trail = GetComponent<TrailRenderer>();
+        trail.emitting = false;
         animator = GetComponent<Animator>();
 
         

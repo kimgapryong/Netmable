@@ -8,6 +8,7 @@ TagManager:
   - Bullet
   - Item
   - Skil
+  - ' Tongue'
   layers:
   - Default
   - TransparentFX

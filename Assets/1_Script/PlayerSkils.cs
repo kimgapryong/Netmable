@@ -123,6 +123,7 @@ public class PlayerSkils : MonoBehaviour
                 else if (chargingTime >= 8f)
                 {
                     Destroy(currentSkillObject);
+                    StartCoroutine(ChaCoolTime());
                     yield break;
                 }
 

@@ -32,10 +32,12 @@ public class PlayerAttack : MonoBehaviour
     //}
 
     private MovePlayer mover;
-    public Collider2D attackCollider; 
+    public Collider2D attackCollider;
+    private PlayerCheckMonster monsterCheck;
+
     public float attackRate = 2f; 
     private float nextAttackTime = 0f;
-
+    
     //몬스터
     private Animator animator;
     private GameObject monster;
@@ -47,6 +49,7 @@ public class PlayerAttack : MonoBehaviour
         mover = GetComponent<MovePlayer>();
         attackCollider.enabled = false; 
         playerStatus = GetComponent<PlayerStatus>(); 
+        monsterCheck = GetComponent<PlayerCheckMonster>();  
     }
 
     void Update()
@@ -63,6 +66,7 @@ public class PlayerAttack : MonoBehaviour
    
         canAttack = false;
         attackCollider.enabled = true; 
+        monsterCheck.enabled = false;
         //animator.SetTrigger("Attack"); // 공격 애니메이션 실행
 
         // 쿨타임 설정
@@ -71,9 +75,10 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(0.1f); 
 
         attackCollider.enabled = false; 
+        monsterCheck.enabled = true;
         yield return new WaitForSeconds(1f / attackRate); 
 
-        if(monster != null)
+        if(monster != null && animator != null)
         {
             animator.enabled = true;
         }
@@ -89,18 +94,18 @@ public class PlayerAttack : MonoBehaviour
             monster = collision.gameObject;
             collision.GetComponent<Monster>().TakeDamage(playerStatus.damage);
             animator = collision.GetComponent<Animator>();
-            if (monster != null)
+            if (monster != null && animator != null)
             {
                 animator.enabled = false;
             }
             Rigidbody2D rigid = collision.GetComponent<Rigidbody2D>();
             if (mover.facingRight)
             {
-                rigid.velocity = new Vector2(10f, 0);
+                rigid.velocity = new Vector2(5f, 0);
             }
             else
             {
-                rigid.velocity = new Vector2(10f, 0);
+                rigid.velocity = new Vector2(-5f, 0);
             }
             
         }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class MonsterManager : MonoBehaviour
 {
     private Transform player;
-    List<Monster> monsters = new List<Monster>();
+    public List<Monster> monsters = new List<Monster>();
 
     private void Start()
     {

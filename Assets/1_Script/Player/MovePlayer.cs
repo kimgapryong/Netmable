@@ -8,7 +8,7 @@ public class MovePlayer : MonoBehaviour
     public Animator animator;
 
 
-    private float downPower = 6f;
+    private float downPower = 2f;
     private float horizontal;
 
     private float wallJumpCooldown = 0.6f; // 벽 점프 쿨다운 시간

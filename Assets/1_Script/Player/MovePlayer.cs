@@ -53,12 +53,14 @@ public class MovePlayer : MonoBehaviour
         PlayerMove();
         PlayerJump();
         SlidingWall();
+        Debug.Log(horizontal);
     }
     
 
     private void PlayerMove()
     {
         horizontal = Input.GetAxis("Horizontal");
+        
 
         if (!wallSliding)
         {

@@ -49,14 +49,15 @@ public class Supporter : MonoBehaviour
                 isRight = true;
                 Vector3 targetPosition = player.position + offset;
                 transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
-                transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                transform.localScale = new Vector3(1, 1, 1);
+
             }
             else
             {
                 isRight = false;
                 Vector3 targetPosition = player.position + offsets;
                 transform.position = Vector3.Lerp(transform.position, targetPosition, speed * Time.deltaTime);
-                transform.rotation = Quaternion.Euler(180f,0f, 0f);
+                transform.localScale = new Vector3(-1, 1, 1);
             }
             
         }

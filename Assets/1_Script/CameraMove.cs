@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class ActionCamera : MonoBehaviour
+public class CameraMove : MonoBehaviour
 {
     public Transform player;  
     public float smoothSpeed = 0.125f;
@@ -17,6 +17,9 @@ public class ActionCamera : MonoBehaviour
 
     private Camera cam;
 
+
+    private Vector3 initialPosition;
+
     private void Start()
     {
         cam = GetComponent<Camera>();
@@ -29,6 +32,8 @@ public class ActionCamera : MonoBehaviour
        
         cam.orthographicSize -= scrollData * zoomSpeed;
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
+
+        initialPosition = player.transform.position;
     }
     private void LateUpdate()
     {
@@ -51,24 +56,62 @@ public class ActionCamera : MonoBehaviour
     }
 
     //Èçµé¸² ¼³Á¤
-    public IEnumerator Shake(float duration, float magnitude)
+    public IEnumerator Shake(float shakeD, float shakeM, float damping )
     {
-        Vector3 originalPos = transform.localPosition;
-
         float elapsed = 0.0f;
 
-        while (elapsed < duration)
+        while (elapsed < shakeD)
         {
-            float x = Random.Range(-1f, 1f) * magnitude;
-            float y = Random.Range(-1f, 1f) * magnitude;
+            float x = Random.Range(-1f, 1f) * shakeM;
+            float y = Random.Range(-1f, 1f) * shakeM;
 
-            transform.localPosition = new Vector3(x, y, originalPos.z);
+            transform.localPosition = new Vector3(initialPosition.x + x, initialPosition.y + y, -10);
 
             elapsed += Time.deltaTime;
 
             yield return null;
+
+            shakeM *= damping;
         }
 
-        transform.localPosition = originalPos;
+        transform.localPosition = new Vector3(initialPosition.x , initialPosition.y , -10); ;
+    }
+
+    public IEnumerator CamMover(bool right)
+    {
+        Vector3 camPos = cam.transform.position;
+        if(right)
+        {
+            while(camPos.x < camPos.x - 3)
+            {
+                cam.transform.position += new Vector3(-0.2f, 0);
+                yield return null;  
+            }
+        }
+        else
+        {
+            while (camPos.x > camPos.x + 3)
+            {
+                cam.transform.position += new Vector3(0.2f, 0);
+                yield return null;
+            }
+        }
+    }
+
+    public IEnumerator Tilt(float angle, float duration)
+    {
+        Quaternion originalRotation = transform.rotation;
+        Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
+        float timeElapsed = 0;
+
+        while (timeElapsed < duration)
+        {
+            transform.rotation = Quaternion.Slerp(originalRotation, targetRotation, timeElapsed / duration);
+            timeElapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        transform.rotation = originalRotation;
     }
 }

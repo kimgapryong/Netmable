@@ -38,7 +38,6 @@ public class Supporter : MonoBehaviour
     {
         FollowPlayer();
         MonsterCheck();
-        Debug.Log(fallow);
     }
     private void FollowPlayer()
     {
@@ -91,6 +90,7 @@ public class Supporter : MonoBehaviour
 
                     }
                 }
+               
             }
             
         }
@@ -114,7 +114,10 @@ public class Supporter : MonoBehaviour
                 transform.position = Vector2.MoveTowards(transform.position, transPos, (speed + 10) * Time.deltaTime);
                 yield return null;
             }
-
+            if (mons != null)
+            {
+                Destroy(mons.gameObject);
+            }
             fallow = true;
    
         }
@@ -125,6 +128,8 @@ public class Supporter : MonoBehaviour
     {
         GameObject clone = Instantiate(attackBool, transform.position + new Vector3(4, 0, 0), Quaternion.identity);
         clone.GetComponent<AttackBoolTest>().sup = this;
+
+        
     }
 
 }

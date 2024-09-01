@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
 
 public class MovePlayer : MonoBehaviour
 {
     public Animator animator;
-
+    private AnimatorStateInfo stateInfo;
+    public CameraMove cam;
 
     private float downPower = 2f;
     private float horizontal;
@@ -53,7 +55,7 @@ public class MovePlayer : MonoBehaviour
         PlayerMove();
         PlayerJump();
         SlidingWall();
-        Debug.Log(horizontal);
+        stateInfo = animator.GetCurrentAnimatorStateInfo(0);
     }
     
 
@@ -100,6 +102,9 @@ public class MovePlayer : MonoBehaviour
                 rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
                 animator.SetBool("isJump", true) ;
                 animator.SetBool("isGround", false);
+
+                
+            
             }
             else if (doubleJump)
             {
@@ -107,7 +112,7 @@ public class MovePlayer : MonoBehaviour
                 rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
                 animator.SetBool("isJump", false);
                 animator.SetBool("isDouble", true ) ;
-       
+
             }
         }
 
@@ -136,7 +141,7 @@ public class MovePlayer : MonoBehaviour
             rigid.velocity = new Vector2(PlayerManager.Instance.playerStatus.speed * -horizontal, PlayerManager.Instance.playerStatus.jumpPower);
             Invoke("WallJumpCheck", wallJumpCooldown);
 
-            
+            StartCoroutine(cam.CamMover(facingRight));
         }
     }
 
@@ -169,6 +174,7 @@ public class MovePlayer : MonoBehaviour
         if(isGround && rigid.velocity.y == 0){
             animator.SetBool("isJump", false);
             animator.SetBool("isDouble", false);
+            
 
         }
 
@@ -181,6 +187,11 @@ public class MovePlayer : MonoBehaviour
         {
             animator.SetBool("isWallSliding", false);
             wallSliding = false;
+        }
+
+        if (stateInfo.IsName("PlayerDown"))
+        {
+            StartCoroutine(cam.Shake(0.01f, 0.01f, 0.7f));
         }
     }
 

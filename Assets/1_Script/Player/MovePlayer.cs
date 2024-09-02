@@ -17,8 +17,8 @@ public class MovePlayer : MonoBehaviour
     private float lastWallJumpTime;
 
     private bool isEnemy = false;
-    private bool isGround;
-    private bool isWall;
+    public bool isGround;
+    public bool isWall;
     private bool wallJump;
     private bool wallSliding;
     private bool doubleJump;

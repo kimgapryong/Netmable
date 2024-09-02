@@ -113,14 +113,16 @@ public class PlayerAttack : MonoBehaviour
 
     private MovePlayer mover;
     private PlayerStatus status;
+    public CameraMove cam;
     
 
-    private bool checkAttack = true;
+    private bool checkAttack;
     private float timer = 0.2f;
     private float times = 0.0f;
     public Transform trans;
     public Vector2 vec2;
 
+    private float normalizedTime;
     private void Start()
     {
         mover = GetComponent<MovePlayer>();
@@ -130,46 +132,62 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         AttackPlayer();
+
+        Check();
     }
 
     private void AttackPlayer()
     {
         if(times >= timer)
         {
-            Debug.Log(times);
             if(Input.GetMouseButton(0) && mover.isGround)
             {
                 if (checkAttack)
                 {
                     checkAttack = false;
                     mover.animator.SetTrigger("Attack1");
-      
+                    mover.animator.ResetTrigger("Attack2");  // Attack2 트리거 해제
                 }
                 else
                 {
-                    checkAttack=true;
+                    checkAttack = true;
                     mover.animator.SetTrigger("Attack2");
-        
+                    mover.animator.ResetTrigger("Attack1");  // Attack1 트리거 해제
                 }
                 mover.enabled = false;
                 Collider2D[] colider = Physics2D.OverlapBoxAll(trans.position, vec2, 0);
                 foreach(Collider2D colider2d in colider)
                 {
-                    if(colider2d != null)
+                  if(colider2d != null)
                     {
-                        colider2d.GetComponent<Monster>().TakeDamage(status.damage);
+                        Monster monster = colider2d.GetComponent<Monster>();
+                        if (monster != null)
+                        {
+                            monster.TakeDamage(status.damage);
+                            StartCoroutine(cam.Shake(0.1f, 0.15f, 0.5f));
+                        }
                     }
                 }
-                mover.enabled = true;
+               
                 times = 0.0f;
             }
         }
         else
         {
-            Debug.Log(times);
             times += Time.deltaTime;
         }
     }
+
+    private void Check()
+    {
+        AnimatorStateInfo stateInfo = mover.animator.GetCurrentAnimatorStateInfo(0);
+        normalizedTime = stateInfo.normalizedTime % 1;  // 0에서 1 사이의 값으로 정규화
+        if (mover.enabled == false && normalizedTime > 0.95f && (stateInfo.IsName("Attack1") || stateInfo.IsName("Attack2")))
+        {
+            mover.enabled = true;
+        }
+    }
+
 
     private void OnDrawGizmos()
     {

@@ -42,9 +42,9 @@ public class Dialogue : MonoBehaviour
             currentString = chat.Dequeue();
             textMeshPro.text = currentString;
             float x = textMeshPro.preferredWidth;
-            Debug.Log(x);
+          
             x = (x > 3) ? x + 0.7f : 3;
-            Debug.Log(x);
+         
             background.transform.localScale = new Vector2(x, textMeshPro.preferredHeight + 0.5f);
             yield return new WaitForSeconds(2); // 한 대사를 2초 동안 표시
         }

@@ -50422,7 +50422,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &398359791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51923,6 +51923,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6232971c672c004781078334df069ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cam: {fileID: 0}
   trans: {fileID: 122668726}
   vec2: {x: 3, y: 4}
 --- !u!114 &987009798

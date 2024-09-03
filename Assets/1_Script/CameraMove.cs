@@ -32,8 +32,11 @@ public class CameraMove : MonoBehaviour
        
         cam.orthographicSize -= scrollData * zoomSpeed;
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
-
-        initialPosition = player.transform.position;
+        if(player != null )
+        {
+            initialPosition = player.position;
+        }
+        
     }
     private void LateUpdate()
     {

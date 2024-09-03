@@ -86,7 +86,7 @@ public class PlayerAttack : MonoBehaviour
     //    canAttack = true; 
     //}
 
-    //// Trigger 이벤트 처리
+    // Trigger 이벤트 처리
     //private void OnTriggerEnter2D(Collider2D collision)
     //{
     //    if (collision.CompareTag("Enemy"))
@@ -112,63 +112,81 @@ public class PlayerAttack : MonoBehaviour
     //}
 
     private MovePlayer mover;
+    private Animator monAnime;
     private PlayerStatus status;
+    private PlayerCheckMonster checkMonster;
     public CameraMove cam;
     
 
     private bool checkAttack;
+    private bool canAttack = true;
     private float timer = 0.2f;
     private float times = 0.0f;
     public Transform trans;
     public Vector2 vec2;
-
-    private float normalizedTime;
     private void Start()
     {
         mover = GetComponent<MovePlayer>();
         status = GetComponent<PlayerStatus>();
+        checkMonster = GetComponent<PlayerCheckMonster>();
     }
 
     private void Update()
     {
         AttackPlayer();
-
-        Check();
     }
 
     private void AttackPlayer()
     {
-        if(times >= timer)
+        if (times >= timer && canAttack)
         {
-            if(Input.GetMouseButton(0) && mover.isGround)
+            if (Input.GetMouseButton(0) && mover.isGround)
             {
+                canAttack = false; // 다른 애니메이션 실행을 막음
                 if (checkAttack)
                 {
                     checkAttack = false;
                     mover.animator.SetTrigger("Attack1");
-                    mover.animator.ResetTrigger("Attack2");  // Attack2 트리거 해제
+                    mover.animator.ResetTrigger("Attack2");
+                    StartCoroutine(EnableMovementAfterDelay(mover.animator.GetCurrentAnimatorStateInfo(0).length));
                 }
                 else
                 {
                     checkAttack = true;
                     mover.animator.SetTrigger("Attack2");
-                    mover.animator.ResetTrigger("Attack1");  // Attack1 트리거 해제
+                    mover.animator.ResetTrigger("Attack1");
+                    StartCoroutine(EnableMovementAfterDelay(mover.animator.GetCurrentAnimatorStateInfo(0).length));
                 }
                 mover.enabled = false;
+                checkMonster.enabled = false;
+
                 Collider2D[] colider = Physics2D.OverlapBoxAll(trans.position, vec2, 0);
-                foreach(Collider2D colider2d in colider)
+                foreach (Collider2D colider2d in colider)
                 {
-                  if(colider2d != null)
+                    if (colider2d != null)
                     {
                         Monster monster = colider2d.GetComponent<Monster>();
                         if (monster != null)
                         {
                             monster.TakeDamage(status.damage);
-                            StartCoroutine(cam.Shake(0.1f, 0.15f, 0.5f));
+                            monAnime = monster.GetComponent<Animator>();
+                            if (monster != null && monAnime != null)
+                            {
+                                monAnime.enabled = false;
+                            }
+                            Rigidbody2D rigid = monster.GetComponent<Rigidbody2D>();
+                            if (mover.facingRight)
+                            {
+                                rigid.velocity = new Vector2(5f, 0);
+                            }
+                            else
+                            {
+                                rigid.velocity = new Vector2(-5f, 0);
+                            }
+                            //StartCoroutine(cam.Shake(0.1f, 0.15f, 0.5f));
                         }
                     }
                 }
-               
                 times = 0.0f;
             }
         }
@@ -178,14 +196,12 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    private void Check()
+    private IEnumerator EnableMovementAfterDelay(float delay)
     {
-        AnimatorStateInfo stateInfo = mover.animator.GetCurrentAnimatorStateInfo(0);
-        normalizedTime = stateInfo.normalizedTime % 1;  // 0에서 1 사이의 값으로 정규화
-        if (mover.enabled == false && normalizedTime > 0.95f && (stateInfo.IsName("Attack1") || stateInfo.IsName("Attack2")))
-        {
-            mover.enabled = true;
-        }
+        yield return new WaitForSeconds(delay);
+        mover.enabled = true;
+        canAttack = true; // 애니메이션이 끝난 후 공격 가능 상태로 전환
+        checkMonster.enabled = true;
     }
 
 

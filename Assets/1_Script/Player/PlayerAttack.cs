@@ -202,6 +202,11 @@ public class PlayerAttack : MonoBehaviour
         mover.enabled = true;
         canAttack = true; // 애니메이션이 끝난 후 공격 가능 상태로 전환
         checkMonster.enabled = true;
+        if(monAnime != null)
+        {
+            monAnime.enabled = true;
+        }
+   
     }
 
 

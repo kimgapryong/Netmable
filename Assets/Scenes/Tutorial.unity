@@ -51941,7 +51941,7 @@ MonoBehaviour:
   FireSkil: 0
   isChaging: 0
   movePlayer: {fileID: 0}
-  SkilsFire: {fileID: 0}
+  SkilsFire: {fileID: 122668726}
   fireBool: {fileID: -143145628645418483, guid: 548ee21938c9ddc45bb68ef51e7b2993, type: 3}
   chaDamage: 0
 --- !u!70 &987009799

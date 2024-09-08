@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class PlayerCheckMonster : MonoBehaviour
 {
-    private bool isAttack = true;
+    public bool isAttack = true;
+    public bool isEnemy = true;
     private MovePlayer move;
 
     private void Start()
@@ -17,7 +18,7 @@ public class PlayerCheckMonster : MonoBehaviour
     //적 관련 체크
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && isAttack)
+        if (collision.gameObject.CompareTag("Enemy") && isAttack && isEnemy)
         {
             isAttack = false;
             GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Monster>().damage);
@@ -42,10 +43,11 @@ public class PlayerCheckMonster : MonoBehaviour
                 Destroy(collision.gameObject); // 아이템 오브젝트 삭제
             }
         }
+
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && isAttack)
+        if (collision.gameObject.CompareTag("Enemy") && isAttack && isEnemy)
         {
             isAttack = false;
             GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Monster>().damage);

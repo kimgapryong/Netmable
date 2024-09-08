@@ -42,6 +42,7 @@ public class MovePlayer : MonoBehaviour
         animator = GetComponent<Animator>();
         checkGround = transform.Find("CheckGround");
         checkWall = transform.Find("CheckWall");
+        cam = Camera.main.GetComponent<CameraMove>();
 
         rigid = GetComponent<Rigidbody2D>();
         gravityVec = new Vector2(0, -Physics2D.gravity.y);

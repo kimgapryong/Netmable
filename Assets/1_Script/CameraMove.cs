@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    public Transform player;  
+    public static CameraMove Instance {  get; private set; }
+    private Transform player;  
     public float smoothSpeed = 0.125f;
     public Vector3 offset;  
 
     public float lookAheadDistanceX = 2f;  
     public float lookAheadSmoothTime = 0.5f;  
     private Vector3 currentVelocity;
+    private Vector3 smoothedPosition;
 
     public float zoomSpeed = 6f;
     public float minZoom = 3f;
@@ -20,8 +22,21 @@ public class CameraMove : MonoBehaviour
 
     private Vector3 initialPosition;
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
+        player = GameObject.Find("Player").transform;
         cam = GetComponent<Camera>();
     }
 
@@ -34,7 +49,7 @@ public class CameraMove : MonoBehaviour
         cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minZoom, maxZoom);
         if(player != null )
         {
-            initialPosition = player.position;
+            initialPosition = smoothedPosition;
         }
         
     }
@@ -52,7 +67,7 @@ public class CameraMove : MonoBehaviour
 
             targetPosition += lookAheadPos;
 
-            Vector3 smoothedPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothSpeed);
+            smoothedPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothSpeed);
             transform.position = smoothedPosition;
         }
        

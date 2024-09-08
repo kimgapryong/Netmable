@@ -16,17 +16,15 @@ public class PlayerAttack : MonoBehaviour
     private float times = 0.0f;
     public Transform trans;
 
-    private Vector2 playVec;
-    private Vector2 originVec;
     public Vector2 vec2;
-    private Transform originalParent; // trans의 원래 부모
+
 
     private void Start()
     {
         mover = GetComponent<MovePlayer>();
         status = GetComponent<PlayerStatus>();
         checkMonster = GetComponent<PlayerCheckMonster>();
-        originalParent = trans.parent; // 부모 저장
+        cam = Camera.main.GetComponent<CameraMove>();
     }
 
     private void Update()
@@ -41,11 +39,9 @@ public class PlayerAttack : MonoBehaviour
             if (Input.GetMouseButton(0) && mover.isGround)
             {
                 canAttack = false; // 다른 애니메이션 실행을 막음
-                originVec = trans.position;
-                playVec = transform.position;
 
-                // 부모 관계를 일시적으로 끊음
-                trans.SetParent(null);
+                mover.enabled = false;
+                checkMonster.isEnemy = false;
 
                 if (checkAttack)
                 {
@@ -62,14 +58,12 @@ public class PlayerAttack : MonoBehaviour
                     StartCoroutine(EnableMovementAfterDelay(mover.animator.GetCurrentAnimatorStateInfo(0).length));
                 }
 
-                mover.enabled = false;
-                checkMonster.enabled = false;
-
                 Collider2D[] colider = Physics2D.OverlapBoxAll(trans.position, vec2, 0);
                 foreach (Collider2D colider2d in colider)
                 {
                     if (colider2d != null)
                     {
+                        StartCoroutine(cam.Shake(0.3f, 0.6f, 0.3f));
                         Monster monster = colider2d.GetComponent<Monster>();
                         if (monster != null)
                         {
@@ -88,7 +82,7 @@ public class PlayerAttack : MonoBehaviour
                             {
                                 rigid.velocity = new Vector2(-5f, 0);
                             }
-                            //StartCoroutine(cam.Shake(0.1f, 0.15f, 0.5f));
+                            
                         }
                     }
                 }
@@ -107,14 +101,13 @@ public class PlayerAttack : MonoBehaviour
         mover.enabled = true;
         yield return new WaitForSeconds(delay - 0.25f);
         canAttack = true; // 애니메이션이 끝난 후 공격 가능 상태로 전환
-        checkMonster.enabled = true;
         if (monAnime != null)
         {
             monAnime.enabled = true;
         }
+        yield return new WaitForSeconds(0.4f);
+        checkMonster.isEnemy = true;
 
-        // 공격이 끝난 후 부모 관계를 다시 설정
-        trans.SetParent(originalParent);
     }
 
 

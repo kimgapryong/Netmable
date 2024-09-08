@@ -18,10 +18,16 @@ public class PlayerManager : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+     
+            if (player != null)
+            {
+                DontDestroyOnLoad(player);
+            }
         }
         else
         {
@@ -31,10 +37,6 @@ public class PlayerManager : MonoBehaviour
     void Start()
     {
         movePlayer = GameObject.Find("Player").GetComponent<MovePlayer>();
-        if (bulletMagic != null)
-        {
-            Debug.Log(bulletMagic);
-        }
         playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
 
         StartCoroutine(PlayerHpPlus());

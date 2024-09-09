@@ -129,8 +129,8 @@ GameObject:
   m_Component:
   - component: {fileID: 456529335}
   - component: {fileID: 456529334}
-  - component: {fileID: 456529333}
   - component: {fileID: 456529336}
+  - component: {fileID: 456529337}
   m_Layer: 8
   m_Name: Layser
   m_TagString: Untagged
@@ -138,23 +138,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &456529333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 456529332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 1
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 778646e931f1a984184149c9890b1428, type: 2}
 --- !u!120 &456529334
 LineRenderer:
   serializedVersion: 2
@@ -322,6 +305,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 51, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &456529337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456529332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sharedProfile: {fileID: 11400000, guid: bd5144aea4d6d1c47992354df0f932ab, type: 2}
+  isGlobal: 1
+  blendDistance: 0
+  weight: 1
+  priority: 0
 --- !u!1 &897459350
 GameObject:
   m_ObjectHideFlags: 0
@@ -58179,10 +58179,9 @@ GameObject:
   - component: {fileID: 2113593846}
   - component: {fileID: 2113593845}
   - component: {fileID: 2113593844}
-  - component: {fileID: 2113593849}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -58205,7 +58204,7 @@ MonoBehaviour:
     m_Bits: 256
   stopNaNPropagation: 1
   finalBlitToCameraTarget: 0
-  antialiasingMode: 0
+  antialiasingMode: 1
   temporalAntialiasing:
     jitterSpread: 0.75
     sharpness: 0.25
@@ -58365,23 +58364,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2113593849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113593843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b9a305e18de0c04dbd257a21cd47087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sharedProfile: {fileID: 0}
-  isGlobal: 0
-  blendDistance: 1
-  weight: 1
-  priority: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

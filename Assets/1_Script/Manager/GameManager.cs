@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
+    public GameObject ManagerObj;
 
     public PlayerManager playerManager;
     public MonsterManager monsterManager;
@@ -15,6 +16,10 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(Instance);
+            if (ManagerObj != null)
+            {
+                DontDestroyOnLoad (ManagerObj); 
+            }
         }
         else
         {

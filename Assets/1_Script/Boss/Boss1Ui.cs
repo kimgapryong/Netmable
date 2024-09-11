@@ -11,6 +11,8 @@ public class Boss1Ui : MonoBehaviour
     public Image[] attack1Image;
     public Image attack2Image;
 
+    public Transform[] skilBool;
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -21,14 +23,17 @@ public class Boss1Ui : MonoBehaviour
     public IEnumerator Attack1Ui()
     {
         attack1.SetActive(true);
+        for(int i = 0; i < attack1Image.Length; i++)
+        {
+            attack1Image[i].enabled = false;
+        }
         for(int i =0; i < attack1Image.Length; i++)
         {
-            for (int j =0; j < 2; j++)
-            {
+          
                 attack1Image[i].enabled = true;
                 yield return new WaitForSeconds(0.2f);
                 attack1Image[i].enabled = false;
-            }
+           
             yield return new WaitForSeconds(0.2f);
         }
         attack1.SetActive(false);
@@ -37,12 +42,11 @@ public class Boss1Ui : MonoBehaviour
     public IEnumerator Attack2Ui()
     {
         attack2.SetActive(true);
-        for (int j = 0; j < 2; j++)
-        {
+       
             attack2Image.enabled = true;
             yield return new WaitForSeconds(0.2f);
             attack2Image.enabled = false;
-        }
+        
         attack2.SetActive(false);
     }
     

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -26,6 +27,11 @@ public class Supporter : MonoBehaviour
     private Transform player;
     private MonsterManager monster;
 
+    private List<Monster> monsters = new List<Monster>();
+
+    public delegate void onDestroyMonster(List<Monster> monster);
+    public event onDestroyMonster onDestroy;
+
     private void Start()
     {
         monster = FindObjectOfType<MonsterManager>();
@@ -38,6 +44,11 @@ public class Supporter : MonoBehaviour
     {
         FollowPlayer();
         MonsterCheck();
+        if(onDestroy != null)
+        {
+            Debug.Log(monsters);
+            onDestroy?.Invoke(monsters);
+        }
     }
     private void FollowPlayer()
     {
@@ -67,7 +78,8 @@ public class Supporter : MonoBehaviour
     {
         foreach(Monster mons in monster.monsters)
         {
-            if(mons != null)
+            
+            if (mons != null)
             {
                 if(Vector2.Distance(player.position, mons.transform.position) < 16)
                 {
@@ -90,7 +102,8 @@ public class Supporter : MonoBehaviour
 
                     }
                 }
-               
+                Debug.Log(monsters);
+                monsters.Add(mons);
             }
             
         }

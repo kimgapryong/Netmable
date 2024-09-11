@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class AttackBoolTest : MonoBehaviour
     public Vector3 originalCameraPosition;
     public Supporter sup;
     private MovePlayer movePlayer;
+
 
     private void Start()
     {
@@ -52,8 +54,24 @@ public class AttackBoolTest : MonoBehaviour
             mainCamera.transform.position = originalCameraPosition;
         }
         movePlayer.enabled = true;
+        sup.onDestroy += checkMonster;
     }
 
+    private void checkMonster(List<Monster> monster)
+    {
+        if(monster != null)
+        {
+            foreach(Monster m in monster)
+            {
+                if (m != null && m.gameObject != null)
+                {
+                    Destroy(m.gameObject);
+                }
+            }
+        }
+        movePlayer.enabled = true;
+        sup.onDestroy -= checkMonster;
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

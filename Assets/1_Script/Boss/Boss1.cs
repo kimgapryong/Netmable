@@ -30,7 +30,7 @@ public class Boss1 : Boss
         StartCoroutine(ui.Attack1Ui());
         yield return StartCoroutine(ui.Attack1Ui());
         yield return new WaitForSeconds(0.4f);
-        for(int i = 0; i < ui.skilBool.Length; i++)
+        for(int i = 0; i < ui.attack1Image.Length; i++)
         {
             GameObject clone = Instantiate(skill1obj, ui.skilBool[i].position, Quaternion.identity);
             BossSkilBool bossSkil = clone.GetComponent<BossSkilBool>();

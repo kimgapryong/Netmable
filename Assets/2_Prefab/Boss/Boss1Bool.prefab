@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8386042239455614737}
   - component: {fileID: 1432725099751819987}
+  - component: {fileID: -1035324514649021491}
   m_Layer: 0
   m_Name: Boss1Bool
   m_TagString: Untagged
@@ -86,3 +87,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-1035324514649021491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7342148781528709027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e0157cabd0afd4b8982170c3738516, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

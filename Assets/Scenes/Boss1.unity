@@ -261,6 +261,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &489521501
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 489521503}
+  - component: {fileID: 489521502}
+  m_Layer: 0
+  m_Name: BossStage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &489521502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489521501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec15102869bfd564ab0cbaa028d32a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &489521503
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489521501}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.45702, y: 65.31375, z: -11.260253}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &533568593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 533568594}
+  m_Layer: 0
+  m_Name: BossStageCenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &533568594
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533568593}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.7, y: 29.4, z: -10.664536}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &758097687
 GameObject:
   m_ObjectHideFlags: 0
@@ -58409,6 +58484,14 @@ MonoBehaviour:
   ui: {fileID: 1734008232}
   animator: {fileID: 0}
   skill1obj: {fileID: 7342148781528709027, guid: e9573c751ac60e44ba0f5ea089d1dd83, type: 3}
+  center: {fileID: 533568594}
+  attackTrans:
+  - {fileID: 881577600}
+  - {fileID: 211653877}
+  - {fileID: 758097688}
+  - {fileID: 1049107958}
+  partic: {fileID: 8185654657925518103, guid: ec0c0e8df1dcbee4fa25642123bf98bc, type: 3}
+  particle: {fileID: 0}
 --- !u!1 &1734008231
 GameObject:
   m_ObjectHideFlags: 0
@@ -58449,11 +58532,6 @@ MonoBehaviour:
   - {fileID: 1837053482}
   - {fileID: 1739792537}
   attack2Image: {fileID: 2042693850}
-  skilBool:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!114 &1734008233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58816,3 +58894,5 @@ SceneRoots:
   - {fileID: 1508613218}
   - {fileID: 1734008236}
   - {fileID: 876715502}
+  - {fileID: 489521503}
+  - {fileID: 533568594}

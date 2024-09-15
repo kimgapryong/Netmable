@@ -63,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     if (colider2d != null)
                     {
-                        StartCoroutine(cam.Shake(0.3f, 0.6f, 0.3f));
+                        StartCoroutine(cam.Shake(0.3f, 0.3f, 0.5f));
                         Monster monster = colider2d.GetComponent<Monster>();
                         if (monster != null)
                         {

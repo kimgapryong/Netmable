@@ -52676,9 +52676,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64ef440e040271b4fa9db63e66096bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stageObj:
-  - {fileID: 1470588261}
   player: {fileID: 0}
+  triggerPoints:
+  - targetObject: {fileID: 1470588261}
+    onTrigger:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1235320077}
+          m_TargetAssemblyTypeName: NextStage, Assembly-CSharp
+          m_MethodName: MoveBoss
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &1247026236
 GameObject:
   m_ObjectHideFlags: 0
@@ -53768,6 +53783,7 @@ MonoBehaviour:
   player: {fileID: 987009789}
   bulletMagic: {fileID: 1899908862967208834, guid: be4a52daa116f1446844bea0b3e86936, type: 3}
   bulletVec: {x: 0, y: 0}
+  boss: {fileID: 0}
 --- !u!4 &1720130424
 Transform:
   m_ObjectHideFlags: 0
@@ -54874,7 +54890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 913356caeb64a9d499fb073c3e1b0340, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ManagerObj: {fileID: 0}
+  ManagerObj: {fileID: 985919376}
   playerManager: {fileID: 1720130423}
   monsterManager: {fileID: 2023173953}
   uiManager: {fileID: 0}

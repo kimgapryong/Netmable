@@ -102,7 +102,6 @@ public class Supporter : MonoBehaviour
 
                     }
                 }
-                Debug.Log(monsters);
                 monsters.Add(mons);
             }
             

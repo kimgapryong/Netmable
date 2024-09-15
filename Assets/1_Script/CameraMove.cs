@@ -74,26 +74,30 @@ public class CameraMove : MonoBehaviour
     }
 
     //흔들림 설정
-    public IEnumerator Shake(float shakeD, float shakeM, float damping )
+    public IEnumerator Shake(float shakeD, float shakeM, float damping)
     {
         float elapsed = 0.0f;
+        float currentMagnitude = shakeM;  // 진폭을 별도의 변수로 관리
 
         while (elapsed < shakeD)
         {
-            float x = Random.Range(-1f, 1f) * shakeM;
-            float y = Random.Range(-1f, 1f) * shakeM;
+            float x = Random.Range(-1f, 1f) * currentMagnitude;
+            float y = Random.Range(-1f, 1f) * currentMagnitude;
 
             transform.localPosition = new Vector3(initialPosition.x + x, initialPosition.y + y, -10);
 
             elapsed += Time.deltaTime;
 
-            yield return null;
+            // 진폭을 감쇠시키는 부분에서 시간을 고려하여 자연스럽게 줄어들도록 변경
+            currentMagnitude = Mathf.Lerp(shakeM, 0f, elapsed / shakeD);
 
-            shakeM *= damping;
+            yield return null;
         }
 
-        transform.localPosition = new Vector3(initialPosition.x , initialPosition.y , -10); ;
+        // 쉐이크가 끝나면 원래 위치로 복귀
+        transform.localPosition = new Vector3(initialPosition.x, initialPosition.y, -10);
     }
+
 
     public IEnumerator CamMover(bool right)
     {

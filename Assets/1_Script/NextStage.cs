@@ -1,15 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class NextStage : MonoBehaviour
 {
     public static NextStage Instance {  get; private set; }
-
-    public Transform[] stageObj;
     public Transform player;
+    public List<TriggerPoint> triggerPoints = new List<TriggerPoint>();
 
     private void Awake()
     {
@@ -27,16 +28,37 @@ public class NextStage : MonoBehaviour
     {
         player = GameObject.Find("Player").transform;
     }
+
     private void Update()
     {
-        Action();
-    }
-    private void Action()
-    {
-        if(player.transform.position.x >= stageObj[0].position.x)
+    
+        foreach (TriggerPoint trigger in triggerPoints)
         {
-            SceneManager.LoadScene("Boss1");
+            if (trigger.CheckTrigger(player))
+            {
+                trigger.onTrigger.Invoke();  
+                triggerPoints.Remove(trigger); 
+                break; 
+            }
         }
+    }
+    
+    public void MoveBoss()
+    {
+        SceneManager.LoadScene("Boss1");
+    }
+
+}
+
+[Serializable]
+public class TriggerPoint
+{
+    public Transform targetObject;  
+    public UnityEvent onTrigger;  
+
+    public bool CheckTrigger(Transform player)
+    {
+        return player.position.x >= targetObject.position.x;
     }
 
 }

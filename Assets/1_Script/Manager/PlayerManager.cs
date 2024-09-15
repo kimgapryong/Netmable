@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class PlayerManager : MonoBehaviour
     private MovePlayer movePlayer;
     public BulletMagic bulletMagic;
     public Vector2 bulletVec;
-
+    public Boss boss;
 
     private void Awake()
     {
@@ -23,25 +24,28 @@ public class PlayerManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
-     
             if (player != null)
             {
                 DontDestroyOnLoad(player);
             }
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
             Destroy(gameObject);
         }
     }
-    void Start()
+
+    private void Start()
     {
         movePlayer = GameObject.Find("Player").GetComponent<MovePlayer>();
         playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
 
         StartCoroutine(PlayerHpPlus());
     }
-    void Update()
+
+    private void Update()
     {
         if (movePlayer.facingRight)
         {
@@ -51,10 +55,31 @@ public class PlayerManager : MonoBehaviour
         {
             bulletVec = Vector2.left;
         }
-        
+
         PlayerDie();
     }
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StartCoroutine(FindBossAfterSceneLoad());
+    }
 
+    private IEnumerator FindBossAfterSceneLoad()
+    {
+        yield return new WaitForSeconds(1f);  
+
+        boss = GameObject.Find("Boss")?.GetComponent<Boss>();
+
+        if (boss != null)
+        {
+            Debug.Log("Boss 찾음: 델리게이트 등록 완료");
+            boss.OnPlayerTrigger += PlayerTakeDamage;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
     private IEnumerator PlayerHpPlus()
     {
         while (true)

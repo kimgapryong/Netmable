@@ -9,7 +9,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
 
-
+    public CameraMove cam;
     public PlayerStatus playerStatus;
     public GameObject player;
     private MovePlayer movePlayer;
@@ -41,7 +41,7 @@ public class PlayerManager : MonoBehaviour
     {
         movePlayer = GameObject.Find("Player").GetComponent<MovePlayer>();
         playerStatus = GameObject.Find("Player").GetComponent<PlayerStatus>();
-
+        cam = Camera.main.GetComponent<CameraMove>();
         StartCoroutine(PlayerHpPlus());
     }
 
@@ -105,6 +105,10 @@ public class PlayerManager : MonoBehaviour
             playerStatus.currentHp -= damage;
             StartCoroutine(palyerDamage());
 
+            if(cam != null)
+            {
+                StartCoroutine(cam.Shake(0.35f, 0.2f, 0.5f));
+            }
         }
         
     }

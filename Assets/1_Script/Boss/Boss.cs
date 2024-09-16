@@ -48,4 +48,5 @@ public abstract class Boss : MonoBehaviour
         transform.position = Vector3.zero;
         yield return new WaitForSeconds(time);
     }
+    public abstract void BossMovers();
 }

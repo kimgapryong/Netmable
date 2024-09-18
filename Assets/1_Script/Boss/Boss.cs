@@ -15,14 +15,16 @@ public abstract class Boss : MonoBehaviour
     public int currentHp;
 
     public int damage;
+    public float speed;
 
     public Animator animators;
 
-    public void GetBossData(string bossName, int maxHp, int damage)
+    public void GetBossData(string bossName, int maxHp, int damage, float speed)
     {
         this.bossName = bossName;
         this.maxHp = maxHp;
         this.damage = damage;
+        this.speed = speed; 
     }
     public IEnumerator GetCam()
     {
@@ -48,5 +50,4 @@ public abstract class Boss : MonoBehaviour
         transform.position = Vector3.zero;
         yield return new WaitForSeconds(time);
     }
-    public abstract void BossMovers();
 }

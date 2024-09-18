@@ -6,22 +6,21 @@ using Random = UnityEngine.Random;
 public class Boss1 : Boss
 {
     public Boss1Ui ui;
-    public float speed = 10f;
 
     private GameObject player;
     private MovePlayer movePlayer;
+
+
     private Rigidbody2D rb;
     private Collider2D col;
     private bool isAttack = true;
-    private bool isMove = true;
-    private bool isGround;
+    public bool isMove = true;
     public Animator animator;
 
     public GameObject skill1obj;
     public GameObject skill2obj;
     public GameObject magicHole;
 
-    public LayerMask ground;
     public Transform grounds;
     public Transform center;
     public Transform[] attackTrans;
@@ -32,8 +31,10 @@ public class Boss1 : Boss
 
     private void Start()
     {
+        
         player = GameObject.Find("Player");
         movePlayer = player.GetComponent<MovePlayer>();
+
         rb =GetComponent<Rigidbody2D>();
         col = rb.GetComponent<Collider2D>();
         StartCoroutine(GetCam());
@@ -54,7 +55,7 @@ public class Boss1 : Boss
             Debug.Log(damage);
             StartCoroutine(Attack3());
         }
-        BossMovers();
+
     }
     public IEnumerator Attack1()
     {
@@ -106,8 +107,11 @@ public class Boss1 : Boss
         velocityModule.radial = new ParticleSystem.MinMaxCurve(0);
         velocityModule.speedModifier = new ParticleSystem.MinMaxCurve(0);
 
-        transform.position = center.position;
+        rb.bodyType = RigidbodyType2D.Static;
         isMove = false;
+        yield return new WaitForSeconds(0.1f);
+        transform.position = center.position;
+        
         col.isTrigger = true;
         rb.constraints = (RigidbodyConstraints2D)(RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY);
 
@@ -171,6 +175,7 @@ public class Boss1 : Boss
                 col.isTrigger = false;
                 rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.None;
                 rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezeRotationZ;
+                rb.bodyType = RigidbodyType2D.Dynamic;
                 Destroy(clone); 
                 break;
             }
@@ -178,6 +183,7 @@ public class Boss1 : Boss
         }
         yield return new WaitForSeconds(2);
         isMove = true;
+        
     }
 
     public IEnumerator Attack3()
@@ -263,82 +269,5 @@ public class Boss1 : Boss
         }
     }
 
-    public override void BossMovers()
-    {
-        float distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
-
-
-        if (distanceToPlayer > 3f)
-        {
-            StartCoroutine(FollowPlayer());
-        }
-    }
-
-    private IEnumerator FollowPlayer()
-    {
-        Vector2 direction = (player.transform.position - transform.position).normalized;
-
-        if (isMove)
-        {
-            transform.Translate(direction * speed * Time.deltaTime);
-        }
-
-
-        if (player.transform.position.y > transform.position.y + 3 && movePlayer.isGround)
-        {
-            isMove = false;
-
-
-            if (movePlayer.facingRight)
-            {
-                transform.position = new Vector3(player.transform.position.x - 1.5f, transform.position.y + 3, 0);
-            }
-            else
-            {
-                transform.position = new Vector3(player.transform.position.x + 1.5f, transform.position.y + 3, 0);
-            }
-
-            yield return new WaitForSeconds(0.4f);  
-
-
-            if (!IsGrounded())
-            {
-
-                if (movePlayer.facingRight)
-                {
-                    transform.position = new Vector3(player.transform.position.x + 2f, transform.position.y + 3, 0);
-                }
-                else
-                {
-                    transform.position = new Vector3(player.transform.position.x - 2f, transform.position.y + 3, 0);
-                }
-            }
-
-            yield return new WaitForSeconds(0.6f); 
-
-            if (IsGrounded())
-            {
-                isMove = true;  
-            }
-        }
-
-
-        if (direction.x > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1) * 3; 
-        }
-        else if (direction.x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1) * 3;  
-        }
-    }
-
-
-    private bool IsGrounded()
-    {
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 1.5f);
-        return hit.collider != null; 
-    }
 
 }

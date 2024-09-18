@@ -11,4 +11,6 @@ public class BossScriptable : ScriptableObject
     public int maxHp;
 
     public int damage;
+
+    public int speed;
 }

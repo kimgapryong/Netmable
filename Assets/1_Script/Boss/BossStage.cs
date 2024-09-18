@@ -14,7 +14,7 @@ public class BossStage : MonoBehaviour
         main = Camera.main;
         main.orthographicSize = CAMSIZE;
         boss = GameObject.Find("Boss").GetComponent<Boss1>();
-        boss.GetBossData(BossScript.bossName, BossScript.maxHp, BossScript.damage);
+        boss.GetBossData(BossScript.bossName, BossScript.maxHp, BossScript.damage, BossScript.speed);
         pla = GameObject.Find("Player");
 
         pla.transform.position = new Vector3(-40, -4.3f,0);

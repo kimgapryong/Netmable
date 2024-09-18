@@ -153,7 +153,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 236, y: 0}
+  m_AnchoredPosition: {x: 125, y: 0}
   m_SizeDelta: {x: 150, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &109225693
@@ -219,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 211653876}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -46.6, y: 36.5, z: 0}
+  m_LocalPosition: {x: -33.6, y: 36.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -362,7 +362,7 @@ Transform:
   m_GameObject: {fileID: 758097687}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -97.4, y: -43.3, z: 0}
+  m_LocalPosition: {x: -97.4, y: -36.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -459,7 +459,7 @@ Transform:
   m_GameObject: {fileID: 881577599}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 81, y: 7.1, z: 0}
+  m_LocalPosition: {x: 81, y: -7.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58298,7 +58298,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -166}
+  m_AnchoredPosition: {x: 0, y: -92}
   m_SizeDelta: {x: 0, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &931460171
@@ -58364,7 +58364,7 @@ Transform:
   m_GameObject: {fileID: 1049107957}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 51.6, y: -75.8, z: 0}
+  m_LocalPosition: {x: 35.3, y: -75.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -58419,9 +58419,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1508613218}
   - component: {fileID: 1508613217}
-  - component: {fileID: 1508613219}
   - component: {fileID: 1508613221}
   - component: {fileID: 1508613220}
+  - component: {fileID: 1508613222}
+  - component: {fileID: 1508613223}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -58499,43 +58500,6 @@ Transform:
   - {fileID: 822040590}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1508613219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1508613216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e1715871a810c943b74f46978662913, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bossName: 
-  cam: {fileID: 0}
-  maxHp: 0
-  currentHp: 0
-  damage: 0
-  animators: {fileID: 0}
-  ui: {fileID: 1734008232}
-  speed: 10
-  animator: {fileID: 0}
-  skill1obj: {fileID: 7342148781528709027, guid: e9573c751ac60e44ba0f5ea089d1dd83, type: 3}
-  skill2obj: {fileID: 2768066538576091075, guid: 11690d38fb2a04b4b94469a104dd3414, type: 3}
-  magicHole: {fileID: 2040445023071301945, guid: bce895b960dfd7a4d816b9ae11b897fe, type: 3}
-  ground:
-    serializedVersion: 2
-    m_Bits: 64
-  grounds: {fileID: 822040590}
-  center: {fileID: 533568594}
-  attackTrans:
-  - {fileID: 881577600}
-  - {fileID: 211653877}
-  - {fileID: 758097688}
-  - {fileID: 1049107958}
-  electryTrans: []
-  partic: {fileID: 8185654657925518103, guid: ec0c0e8df1dcbee4fa25642123bf98bc, type: 3}
-  particle: {fileID: 0}
 --- !u!50 &1508613220
 Rigidbody2D:
   serializedVersion: 4
@@ -58551,7 +58515,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -58599,6 +58563,60 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &1508613222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508613216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e1715871a810c943b74f46978662913, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bossName: 
+  cam: {fileID: 0}
+  maxHp: 0
+  currentHp: 0
+  damage: 0
+  speed: 10
+  animators: {fileID: 0}
+  ui: {fileID: 1734008232}
+  animator: {fileID: 0}
+  skill1obj: {fileID: 7342148781528709027, guid: e9573c751ac60e44ba0f5ea089d1dd83, type: 3}
+  skill2obj: {fileID: 8075458582043564331, guid: bb911a1a47a415b4a910d646b3c59295, type: 3}
+  magicHole: {fileID: 2040445023071301945, guid: bce895b960dfd7a4d816b9ae11b897fe, type: 3}
+  grounds: {fileID: 822040590}
+  center: {fileID: 533568594}
+  attackTrans:
+  - {fileID: 881577600}
+  - {fileID: 211653877}
+  - {fileID: 758097688}
+  - {fileID: 1049107958}
+  electryTrans: []
+  partic: {fileID: 8185654657925518103, guid: ec0c0e8df1dcbee4fa25642123bf98bc, type: 3}
+  particle: {fileID: 168240624325765634, guid: ec0c0e8df1dcbee4fa25642123bf98bc, type: 3}
+--- !u!114 &1508613223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508613216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cd5e0976d5b2e847ac23e8dea875027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  check: {fileID: 0}
+  rb: {fileID: 0}
+  mover: {fileID: 0}
+  boss: {fileID: 0}
+  mask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1616344984
 GameObject:
   m_ObjectHideFlags: 0
@@ -58788,7 +58806,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -204, y: 0}
+  m_AnchoredPosition: {x: -118, y: 0}
   m_SizeDelta: {x: 150, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1739792536
@@ -58863,7 +58881,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 166}
+  m_AnchoredPosition: {x: 0, y: 88}
   m_SizeDelta: {x: 0, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1837053481

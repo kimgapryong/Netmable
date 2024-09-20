@@ -10,7 +10,7 @@ public class Boss1 : Boss
     private GameObject player;
     private MovePlayer movePlayer;
 
-
+    private Finding find;
     private Rigidbody2D rb;
     private Collider2D col;
     private bool isAttack = true;
@@ -29,15 +29,22 @@ public class Boss1 : Boss
     public GameObject partic;
     public ParticleSystem particle;
 
+    public GameObject fire;
+    public GameObject normal1;
+    public GameObject normal2;
+
     private void Start()
     {
         
         player = GameObject.Find("Player");
         movePlayer = player.GetComponent<MovePlayer>();
-
+        find = GetComponent<Finding>();
         rb =GetComponent<Rigidbody2D>();
         col = rb.GetComponent<Collider2D>();
         StartCoroutine(GetCam());
+
+        find.normal += NormalAttack1;
+        find.normal += NormalAttack2;
     }
     private void Update()
     {
@@ -269,5 +276,51 @@ public class Boss1 : Boss
         }
     }
 
+    public void NormalAttack1(Vector2 vec)
+    {
+        GameObject clone = Instantiate(normal1, fire.transform.position, Quaternion.identity);
+        StartCoroutine(attackTime(vec, clone));
+    }
 
+    private IEnumerator attackTime(Vector2 vec, GameObject obj)
+    {
+        float speed = 35;
+        float time = 0;
+        float die = 6;
+        while (time <= die)
+        {
+            yield return null;
+            obj.transform.Translate(vec * speed * Time.deltaTime);
+            time += Time.deltaTime;
+        }
+    }
+
+    public void NormalAttack2(Vector2 vec)
+    {
+        Vector2 newVec = new Vector2 (vec.x, vec.y + 100f);
+        GameObject clone = Instantiate(normal2, newVec, Quaternion.identity);
+
+        StartCoroutine(attackLength(vec, clone));
+    }
+
+    private IEnumerator attackLength(Vector2 targetPosition, GameObject clone)
+    {
+        Vector3 startPosition = clone.transform.position;
+
+        float lightningSpeed = 1000f;  
+        float targetScaleY = Vector2.Distance(startPosition, targetPosition);
+
+
+        while (clone.transform.localScale.y < targetScaleY)
+        {
+
+            clone.transform.localScale += new Vector3(0, lightningSpeed * Time.deltaTime, 0);
+
+            clone.transform.position = Vector3.MoveTowards(clone.transform.position, targetPosition, lightningSpeed * Time.deltaTime);
+
+            yield return null;  
+        }
+
+        Destroy(clone);
+    }
 }

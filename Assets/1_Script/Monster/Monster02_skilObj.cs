@@ -21,7 +21,11 @@ public class Monster02_skilObj : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-        monsters.isStop = false;
+        if(monsters != null)
+        {
+            monsters.isStop = false;
+        }
+        
 
         // 플레이어 위치에 따라 공격 방향 설정
         isLeftAttack = player.transform.position.x < monster.position.x;

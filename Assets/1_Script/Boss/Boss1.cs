@@ -13,7 +13,7 @@ public class Boss1 : Boss
     private Finding find;
     private Rigidbody2D rb;
     private Collider2D col;
-    private bool isAttack = true;
+    public bool isAttack = true;
     public bool isMove = true;
     public Animator animator;
 
@@ -278,8 +278,13 @@ public class Boss1 : Boss
 
     public void NormalAttack1(Vector2 vec)
     {
-        GameObject clone = Instantiate(normal1, fire.transform.position, Quaternion.identity);
-        StartCoroutine(attackTime(vec, clone));
+        if (Vector2.Distance(player.transform.position, transform.position) < 14 && isAttack)
+        {
+            GameObject clone = Instantiate(normal1, fire.transform.position, Quaternion.identity);
+            StartCoroutine(attackTime(vec, clone));
+            StartCoroutine(NormalCool());
+        }
+           
     }
 
     private IEnumerator attackTime(Vector2 vec, GameObject obj)
@@ -297,17 +302,22 @@ public class Boss1 : Boss
 
     public void NormalAttack2(Vector2 vec)
     {
-        Vector2 newVec = new Vector2 (vec.x, vec.y + 100f);
-        GameObject clone = Instantiate(normal2, newVec, Quaternion.identity);
+        if (Vector2.Distance(player.transform.position, transform.position) > 30 && isAttack)
+        {
+            Vector2 newVec = new Vector2(vec.x, vec.y + 100f);
+            GameObject clone = Instantiate(normal2, newVec, Quaternion.identity);
 
-        StartCoroutine(attackLength(vec, clone));
+            StartCoroutine(attackLength(vec, clone));
+            StartCoroutine(NormalCool());
+        }
+         
     }
 
     private IEnumerator attackLength(Vector2 targetPosition, GameObject clone)
     {
         Vector3 startPosition = clone.transform.position;
 
-        float lightningSpeed = 1000f;  
+        float lightningSpeed = 500f;  
         float targetScaleY = Vector2.Distance(startPosition, targetPosition);
 
 
@@ -322,5 +332,12 @@ public class Boss1 : Boss
         }
 
         Destroy(clone);
+    }
+
+    private IEnumerator NormalCool()
+    {
+        isAttack = false;
+        yield return new WaitForSeconds(0.5f);
+        isAttack = true;
     }
 }

@@ -9,7 +9,6 @@ public class Finding : MonoBehaviour
     public delegate void NormalAttack(Vector2 vector);
     public event NormalAttack normal;
 
-    public bool isAttack = true;
     public bool isRight;
 
     public Transform player;
@@ -64,34 +63,22 @@ public class Finding : MonoBehaviour
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y);
         }
 
-        if(Vector2.Distance(player.position, transform.position) < dis1)
+            normal?.Invoke(player.transform.position);
+        
+        if(Vector2.Distance(player.transform.position, transform.position) < 8)
         {
-            if(isAttack)
-            {
-                isAttack = false;
-                normal -= boss.NormalAttack2;
-                normal += boss.NormalAttack1;
-                normal?.Invoke(attackpos);
-                StartCoroutine(NormalCool());
-            }
-        }else if(Vector2.Distance(player.position, transform.position) > dis2)
-        {
-            if (isAttack)
-            {
-                isAttack = false;
-                normal -= boss.NormalAttack1;
-                normal += boss.NormalAttack2;
-                normal?.Invoke(player.transform.position);
-                StartCoroutine(NormalCool());
-            }
+            rb.velocity = new Vector2(0, rb.velocity.y);
         }
         else
         {
             Vector2 target = (player.position - transform.position).normalized;
             rb.velocity = new Vector2(target.x * boss.speed, rb.velocity.y);
+
         }
-       
-        if(player.position.y > disy && isGround && canTeleport || Vector2.Distance(player.position, transform.position) > 31 && canTeleport && isGround)
+
+
+
+        if (player.position.y > disy && isGround && canTeleport || Vector2.Distance(player.position, transform.position) > 31 && canTeleport && isGround)
         {
             TeleportBehindPlayer();
         }
@@ -122,9 +109,4 @@ public class Finding : MonoBehaviour
         canTeleport = true; 
     }
 
-    private IEnumerator NormalCool()
-    {
-        yield return new WaitForSeconds(1.5f);
-        isAttack = true;
-    }
 }

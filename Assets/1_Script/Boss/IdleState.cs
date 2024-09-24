@@ -6,7 +6,7 @@ public class IdleState : BossState
 {
     protected override void PlaLogic()
     {
-        StartCoroutine(boss.IdleBoss(5));
+        
     }
 
 }

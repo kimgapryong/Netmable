@@ -27,6 +27,7 @@ public class Finding : MonoBehaviour
     private bool canTeleport = true;  
     private bool isGround;
 
+
     public LayerMask mask;
     private void Start()
     {
@@ -78,8 +79,9 @@ public class Finding : MonoBehaviour
 
 
 
-        if (player.position.y > disy && isGround && canTeleport || Vector2.Distance(player.position, transform.position) > 31 && canTeleport && isGround)
+        if (player.position.y > disy && isGround && canTeleport && Vector2.Distance(player.position, transform.position) > 31 && canTeleport && isGround)
         {
+            Debug.Log(player.position);
             TeleportBehindPlayer();
         }
 

@@ -64,7 +64,7 @@ public class Boss1 : Boss
         }
 
     }
-    public IEnumerator Attack1()
+    public override IEnumerator Attack1()
     {
         StartCoroutine(ui.Attack1Ui());
         yield return StartCoroutine(ui.Attack1Ui());
@@ -89,7 +89,7 @@ public class Boss1 : Boss
         }
     }
 
-    public IEnumerator Attack2()
+    public override IEnumerator Attack2()
     {
         StartCoroutine (ParticleGet());
         yield return new WaitForSeconds(0.5f);
@@ -170,7 +170,7 @@ public class Boss1 : Boss
         life.speedModifier = new ParticleSystem.MinMaxCurve(10);
 
         yield return new WaitForSeconds(0.5f);
-        StartCoroutine(cam.Shake(2f, 1.4f, 0.4f));
+        StartCoroutine(cam.Shake(5f, 1.4f, 0.4f));
         PlayerDamageTirgger();
         while (rate > 0)
         {
@@ -193,7 +193,7 @@ public class Boss1 : Boss
         
     }
 
-    public IEnumerator Attack3()
+    public override IEnumerator Attack3()
     {
         Vector2 elePos = new Vector2(0, -4.5f);
         int xPos = 15;
@@ -281,21 +281,23 @@ public class Boss1 : Boss
         if (Vector2.Distance(player.transform.position, transform.position) < 14 && isAttack)
         {
             GameObject clone = Instantiate(normal1, fire.transform.position, Quaternion.identity);
-            StartCoroutine(attackTime(vec, clone));
+            float bossScale = transform.localScale.x;
+            StartCoroutine(attackTime(bossScale, clone));
             StartCoroutine(NormalCool());
         }
            
     }
 
-    private IEnumerator attackTime(Vector2 vec, GameObject obj)
+    private IEnumerator attackTime(float bossScale, GameObject obj)
     {
         float speed = 35;
         float time = 0;
         float die = 6;
+        Vector2 newVec = new Vector2(bossScale, 0);
         while (time <= die)
         {
             yield return null;
-            obj.transform.Translate(vec * speed * Time.deltaTime);
+            obj.transform.Translate(newVec * speed * Time.deltaTime);
             time += Time.deltaTime;
         }
     }
@@ -317,7 +319,7 @@ public class Boss1 : Boss
     {
         Vector3 startPosition = clone.transform.position;
 
-        float lightningSpeed = 500f;  
+        float lightningSpeed = 250f;  
         float targetScaleY = Vector2.Distance(startPosition, targetPosition);
 
 
@@ -337,7 +339,7 @@ public class Boss1 : Boss
     private IEnumerator NormalCool()
     {
         isAttack = false;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(3f);
         isAttack = true;
     }
 }

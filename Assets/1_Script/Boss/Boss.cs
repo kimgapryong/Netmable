@@ -8,6 +8,10 @@ public abstract class Boss : MonoBehaviour
     public delegate void PlayerTrigger(int damage);
     public event PlayerTrigger OnPlayerTrigger;
 
+  
+    public AttackState bossState;
+    
+
     public string bossName;
     public CameraMove cam;
 
@@ -18,6 +22,13 @@ public abstract class Boss : MonoBehaviour
     public float speed;
 
     public Animator animators;
+
+    private void Awake()
+    {
+        bossState = new AttackState();
+        bossState.SetBoss(this);
+
+    }
 
     public void GetBossData(string bossName, int maxHp, int damage, float speed)
     {
@@ -50,4 +61,7 @@ public abstract class Boss : MonoBehaviour
         transform.position = Vector3.zero;
         yield return new WaitForSeconds(time);
     }
+    public abstract IEnumerator Attack1();
+    public abstract IEnumerator Attack2();
+    public abstract IEnumerator Attack3();
 }

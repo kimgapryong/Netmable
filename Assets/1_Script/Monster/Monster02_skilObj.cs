@@ -28,7 +28,11 @@ public class Monster02_skilObj : MonoBehaviour
         
 
         // 플레이어 위치에 따라 공격 방향 설정
-        isLeftAttack = player.transform.position.x < monster.position.x;
+        if(monster != null)
+        {
+            isLeftAttack = player.transform.position.x < monster.position.x;
+        }
+        
 
         StartCoroutine(MonsterAttack());
     }

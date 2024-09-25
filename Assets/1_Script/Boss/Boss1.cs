@@ -54,7 +54,10 @@ public class Boss1 : Boss
         //    StartCoroutine(Attack3());
         //}
 
-        if()
+        if (bossAttack)
+        {
+            fsm.ChangeState(State.Attack) ;
+        }
     }
     public override IEnumerator Attack1()
     {

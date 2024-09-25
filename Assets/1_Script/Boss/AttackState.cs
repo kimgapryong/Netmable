@@ -1,23 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AttackState : BossState
 {
-    private bool bossAttack = true;
-    private float coolTime = 5f;
-    protected override void PlaLogic()
-    {
-        if (bossAttack)
-        {
 
-        }
-    }
-    private IEnumerator BossAttackCool()
+    private Rigidbody2D rigidbody2;
+
+    public AttackState(Boss boss) : base(boss) { }
+
+
+    public override void OnstateEnter()
     {
-        bossAttack = false;
-        yield return new WaitForSeconds(coolTime);
-        bossAttack = true;
+        rigidbody2 = boss.GetComponent<Rigidbody2D>();
+        rigidbody2.velocity = new Vector2(0, rigidbody2.velocity.y);
+        boss.isAttack = false;
     }
+
+    public override void OnstateExit()
+    {
+        boss.isAttack = true;
+    }
+
+    public override void OnstateUpdate()
+    {
+        int randomAttack = Random.Range(0, boss.skilCount);
+        boss.bossSkils[randomAttack]?.Invoke();
+    }
+
+
 
 }

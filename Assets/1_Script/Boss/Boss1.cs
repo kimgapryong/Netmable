@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -5,17 +6,8 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 public class Boss1 : Boss
 {
-    public Boss1Ui ui;
-
-    private GameObject player;
-    private MovePlayer movePlayer;
-
     private Finding find;
-    private Rigidbody2D rb;
-    private Collider2D col;
-    public bool isAttack = true;
     public bool isMove = true;
-    public Animator animator;
 
     public GameObject skill1obj;
     public GameObject skill2obj;
@@ -33,36 +25,36 @@ public class Boss1 : Boss
     public GameObject normal1;
     public GameObject normal2;
 
-    private void Start()
+    protected override void Start()
     {
-        
-        player = GameObject.Find("Player");
-        movePlayer = player.GetComponent<MovePlayer>();
+        base.Start();
         find = GetComponent<Finding>();
-        rb =GetComponent<Rigidbody2D>();
-        col = rb.GetComponent<Collider2D>();
+
         StartCoroutine(GetCam());
+
+        skilCount = 3;
 
         find.normal += NormalAttack1;
         find.normal += NormalAttack2;
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            StartCoroutine(Attack1());
-        }
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            Debug.Log(damage);
-            StartCoroutine(Attack2());
-        }
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            Debug.Log(damage);
-            StartCoroutine(Attack3());
-        }
+        //if (Input.GetKeyDown(KeyCode.H))
+        //{
+        //    StartCoroutine(Attack1());
+        //}
+        //if (Input.GetKeyDown(KeyCode.J))
+        //{
+        //    Debug.Log(damage);
+        //    StartCoroutine(Attack2());
+        //}
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    Debug.Log(damage);
+        //    StartCoroutine(Attack3());
+        //}
 
+        if()
     }
     public override IEnumerator Attack1()
     {
@@ -97,8 +89,8 @@ public class Boss1 : Boss
 
     private IEnumerator ParticleGet()
     {
-        float number = 110;
-        float num = 135f;
+        float number = 90;
+        float num = 30f;
 
         float radialNum = 0;
         float speedModifierNum = 0;
@@ -124,12 +116,12 @@ public class Boss1 : Boss
 
         while (shapeModule.radius <= number)
         {
-            shapeModule.radius += 0.3f;
+            shapeModule.radius += 20f;
             yield return null; 
 
             if (shapeModule.radius >= number)
             {
-                yield return new WaitForSeconds(2.2f);
+                yield return new WaitForSeconds(0.3f);
                 velocityModule.enabled = true;
                 eml.rateOverTime = 370;
                 velocityModule.radial = new ParticleSystem.MinMaxCurve(radialNum);
@@ -139,10 +131,10 @@ public class Boss1 : Boss
                 while (num > 0)
                 {
                     
-                    shapeModule.radius -= 0.6f;
-                    radialNum += 0.05f;
+                    shapeModule.radius -= 2f;
+                    radialNum += 0.7f;
                     velocityModule.radial = new ParticleSystem.MinMaxCurve(radialNum);
-                    speedModifierNum -= 0.05f;
+                    speedModifierNum -= 0.7f;
                     velocityModule.speedModifier = new ParticleSystem.MinMaxCurve(speedModifierNum);
 
                     yield return new WaitForSeconds(0.1f);
@@ -150,9 +142,9 @@ public class Boss1 : Boss
                   
                     if(num <= 0)
                     {
-                        yield return new WaitForSeconds(1.5f);
+                        yield return new WaitForSeconds(2.2f);
                         eml.rateOverTime = 0;
-                        yield return new WaitForSeconds(2f);
+                        yield return new WaitForSeconds(0.3f);
                         StartCoroutine(PaeticelEmisson(clone, velocityModule, eml));
                     }
                 }
@@ -341,5 +333,27 @@ public class Boss1 : Boss
         isAttack = false;
         yield return new WaitForSeconds(3f);
         isAttack = true;
+    }
+
+    //boss Idle
+    private float idleCool = 5f;
+    public override void BossIdle()
+    {
+        if(isIdle)
+        {
+            //기달리는 애니메이션
+            transform.position = center.position;
+            StartCoroutine(StateIdle());
+        }
+    }
+    private IEnumerator StateIdle()
+    {
+        find.enabled = false;
+        isAttack = false;
+        isIdle = false;
+        yield return new WaitForSeconds(idleCool);
+        isIdle = true;
+        isAttack = true;
+        find.enabled = true;
     }
 }

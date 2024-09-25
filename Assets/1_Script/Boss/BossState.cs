@@ -1,10 +1,16 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class BossState 
+public abstract class BossState
 {
     protected Boss boss;
+
+    protected BossState(Boss boss)
+    {
+        this.boss = boss;
+    }
 
     public void SetBoss(Boss boss)
     {
@@ -12,5 +18,8 @@ public abstract class BossState
         Debug.Log(boss.name);
     }
 
-    protected abstract void PlaLogic();
+    public abstract void OnstateEnter();
+    public abstract void OnstateUpdate();
+    public abstract void OnstateExit();
+
 }

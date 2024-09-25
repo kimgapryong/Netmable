@@ -4,9 +4,19 @@ using UnityEngine;
 
 public class IdleState : BossState
 {
-    protected override void PlaLogic()
+    public IdleState(Boss boss) : base(boss) { }
+    public override void OnstateEnter()
     {
-        
+       //animation
     }
 
+    public override void OnstateExit()
+    {
+        boss.BossIdle();
+    }
+
+    public override void OnstateUpdate()
+    {
+        //animation
+    }
 }

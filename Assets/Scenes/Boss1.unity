@@ -58615,6 +58615,7 @@ MonoBehaviour:
   speed: 10
   animators: {fileID: 0}
   ui: {fileID: 1734008232}
+  isAttack: 1
   isMove: 1
   animator: {fileID: 0}
   skill1obj: {fileID: 7342148781528709027, guid: e9573c751ac60e44ba0f5ea089d1dd83, type: 3}
@@ -58645,7 +58646,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cd5e0976d5b2e847ac23e8dea875027, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAttack: 1
   isRight: 0
   player: {fileID: 0}
   check: {fileID: 0}
@@ -58669,7 +58669,7 @@ GameObject:
   - component: {fileID: 1734008233}
   - component: {fileID: 1734008232}
   m_Layer: 5
-  m_Name: Boss1Ui
+  m_Name: BossUi
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

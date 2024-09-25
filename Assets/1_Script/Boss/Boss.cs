@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Boss : MonoBehaviour
@@ -8,9 +9,26 @@ public abstract class Boss : MonoBehaviour
     public delegate void PlayerTrigger(int damage);
     public event PlayerTrigger OnPlayerTrigger;
 
-  
-    public AttackState bossState;
-    
+
+    public State bossState;
+    public FSM fsm;
+
+    public List<Action> bossSkils = new List<Action>();
+    public bool bossAttack;
+    public int skilCount;
+
+    public bool isAttack = true;
+    public bool isIdle = true;
+
+    public Boss1Ui ui;
+
+    public Animator animator;
+
+    public GameObject player;
+    public MovePlayer movePlayer;
+
+    public Rigidbody2D rb;
+    public Collider2D col;
 
     public string bossName;
     public CameraMove cam;
@@ -23,13 +41,25 @@ public abstract class Boss : MonoBehaviour
 
     public Animator animators;
 
-    private void Awake()
+    public enum State
     {
-        bossState = new AttackState();
-        bossState.SetBoss(this);
-
+        Idle,
+        Attack
     }
 
+
+    protected virtual void Start()
+    {
+        bossState = State.Idle;
+        fsm = new FSM(bossState);
+        StartCoroutine(BossAttackCool());
+
+        player = GameObject.Find("Player");
+        movePlayer = player.GetComponent<MovePlayer>();
+        rb = GetComponent<Rigidbody2D>();
+        col = rb.GetComponent<Collider2D>();
+        ui = GameObject.Find("BossUi").GetComponent<Boss1Ui>();
+    }
     public void GetBossData(string bossName, int maxHp, int damage, float speed)
     {
         this.bossName = bossName;
@@ -64,4 +94,13 @@ public abstract class Boss : MonoBehaviour
     public abstract IEnumerator Attack1();
     public abstract IEnumerator Attack2();
     public abstract IEnumerator Attack3();
+    public abstract void BossIdle();
+
+    private float coolTime = 5f;
+    public IEnumerator BossAttackCool()
+    {
+        bossAttack = false;
+        yield return new WaitForSeconds(coolTime);
+        bossAttack = true;
+    }
 }

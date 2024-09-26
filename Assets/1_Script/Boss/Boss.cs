@@ -11,7 +11,9 @@ public abstract class Boss : MonoBehaviour
 
 
     public State bossState;
+    public BossState bossAtction;
     public FSM fsm;
+    public Dictionary<State, BossState> stateDiction;
 
     public List<Action> bossSkils = new List<Action>();
     public bool bossAttack;
@@ -50,9 +52,15 @@ public abstract class Boss : MonoBehaviour
 
     protected virtual void Start()
     {
-        bossState = State.Idle;
-        fsm = new FSM(bossState);
-        StartCoroutine(BossAttackCool());
+
+        bossAtction = new BossState();
+        stateDiction = new Dictionary<State, BossState>() {
+            { State.Idle, new IdleState(this) },
+            { State.Attack, new AttackState(this) }
+        };
+        fsm = new FSM(State.Idle, stateDiction);
+
+        
 
         player = GameObject.Find("Player");
         movePlayer = player.GetComponent<MovePlayer>();
@@ -97,8 +105,9 @@ public abstract class Boss : MonoBehaviour
     public abstract void BossIdle();
 
     private float coolTime = 5f;
-    public IEnumerator BossAttackCool()
+    public IEnumerator BossAttackCool(IEnumerator waitSkill)
     {
+        yield return StartCoroutine(waitSkill);
         bossAttack = false;
         yield return new WaitForSeconds(coolTime);
         bossAttack = true;

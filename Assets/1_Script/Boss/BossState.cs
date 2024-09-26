@@ -5,9 +5,12 @@ using UnityEngine;
 
 public abstract class BossState
 {
-    protected Boss boss;
 
-    protected BossState(Boss boss)
+    public delegate void BossStateEvent();
+    public event BossStateEvent bossEvent;
+
+    protected Boss boss;
+    public BossState(Boss boss)
     {
         this.boss = boss;
     }

@@ -1,28 +1,36 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FSM
 {
-    private Boss.State bossState;
-    private Dictionary<Boss.State, BossState> stateDictionary;
-    public FSM(Boss.State state)
+    private Boss.State bossState;  
+    public Dictionary<Boss.State, BossState> stateDictionary; 
+
+
+    public FSM(Boss.State initialState, Dictionary<Boss.State, BossState> stateDict)
     {
-        stateDictionary = new Dictionary<Boss.State, BossState> ();
-        bossState = state;
+        bossState = initialState;
+        stateDictionary = stateDict;
     }
+
 
     public void ChangeState(Boss.State nextState)
     {
-        if(bossState == nextState) return;
+        if (bossState == nextState) return;  
 
-        if (bossState != null) bossState.OnstateExit();
+        if (stateDictionary[bossState] != null)
+            stateDictionary[bossState].OnstateExit(); 
+
         bossState = nextState;
-        bossState.OnstateEnter();
+
+        if (stateDictionary[bossState] != null)
+            stateDictionary[bossState].OnstateEnter();  
     }
-    
+
+
     public void UpdateState()
     {
-        if(bossState != null) bossState.OnstateUpdate();
+        if (stateDictionary[bossState] != null)
+            stateDictionary[bossState].OnstateUpdate();
     }
 }

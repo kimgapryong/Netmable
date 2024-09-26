@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class IdleState : BossState
 {
-    public IdleState(Boss boss) : base(boss) { }
+    public IdleState(Boss boss) : base(boss)
+    {
+    }
+
     public override void OnstateEnter()
     {
        //animation

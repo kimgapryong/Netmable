@@ -65,6 +65,7 @@ public class PlayerAttack : MonoBehaviour
                     {
                         StartCoroutine(cam.Shake(0.3f, 0.3f, 0.5f));
                         Monster monster = colider2d.GetComponent<Monster>();
+                        Boss boss = colider2d.GetComponent<Boss>();
                         if (monster != null)
                         {
                             monster.TakeDamage(status.damage);
@@ -83,6 +84,10 @@ public class PlayerAttack : MonoBehaviour
                                 rigid.velocity = new Vector2(-5f, 0);
                             }
                             
+                        }
+                        if(boss != null)
+                        {
+                            boss.TakeDamage(status.damage / 2);
                         }
                     }
                 }

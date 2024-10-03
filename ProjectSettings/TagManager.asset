@@ -10,6 +10,7 @@ TagManager:
   - Skil
   - ' Tongue'
   - Stage1
+  - Boss
   layers:
   - Default
   - TransparentFX

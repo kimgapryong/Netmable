@@ -57,8 +57,11 @@ public class FireBoolSkil : Skil
             Destroy(gameObject);
             Destroy(clone, 0.3f);
 
-
-            
+        }else if (collision.CompareTag("Boss")){
+            collision.gameObject.GetComponent<Boss>().TakeDamage(status.damage / 2 + damage /2 );
+            GameObject clone = Instantiate(firePaticle, collision.transform.position, Quaternion.identity);
+            Destroy(gameObject);
+            Destroy(clone, 0.3f);
         }
     }
 }

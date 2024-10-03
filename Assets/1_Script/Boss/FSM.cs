@@ -18,13 +18,11 @@ public class FSM
     {
         if (bossState == nextState) return;  
 
-        if (stateDictionary[bossState] != null)
-            stateDictionary[bossState].OnstateExit(); 
+        stateDictionary[bossState].OnstateExit(); 
 
         bossState = nextState;
 
-        if (stateDictionary[bossState] != null)
-            stateDictionary[bossState].OnstateEnter();  
+        stateDictionary[bossState].OnstateEnter();  
     }
 
 

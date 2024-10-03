@@ -34,7 +34,7 @@ public class Monster02_skilObj : MonoBehaviour
         }
         
 
-        StartCoroutine(MonsterAttack());
+        StartCoroutine(MonsterAttack());    
     }
 
     private IEnumerator MonsterAttack()

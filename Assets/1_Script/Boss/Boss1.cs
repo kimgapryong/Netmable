@@ -6,9 +6,9 @@ using UnityEngine;
 using Random = UnityEngine.Random;
 public class Boss1 : Boss
 {
-    private Finding find;
+    public BossScriptable data;
     public bool isMove = true;
-
+   
     public GameObject skill1obj;
     public GameObject skill2obj;
     public GameObject magicHole;
@@ -27,17 +27,22 @@ public class Boss1 : Boss
 
     protected override void Start()
     {
+        GetBossData(data.bossName, data.maxHp, data.damage, data.speed);
         base.Start();
         find = GetComponent<Finding>();
-
         StartCoroutine(GetCam());
-
         skilCount = 3;
 
         find.normal += NormalAttack1;
         find.normal += NormalAttack2;
+
+        //질문 유니티상에 bossUI의 헬스바 슬라이더 설정하는 거
+        //질문 코루틴을 반복문으로 리스트에 넣는 법 물어보기
+        bossSkils.Add(Attack1);
+        bossSkils.Add(Attack3);
+       
     }
-    private void Update()
+    protected override void LateUpdate()
     {
         //if (Input.GetKeyDown(KeyCode.H))
         //{
@@ -54,18 +59,24 @@ public class Boss1 : Boss
         //    StartCoroutine(Attack3());
         //}
 
-        if (isIdle)
+        if (isIdle && !attackCool)
         {
+   
             fsm.ChangeState(State.Idle);
-            fsm.UpdateState();
+            StartCoroutine(StateIdle());
+            
         }else if(isAttack)
         {
+
             fsm.ChangeState(State.Attack);
-            fsm.UpdateState();
+            StartCoroutine(StateAttack());
+
         }
+        base.LateUpdate();
     }
     public override IEnumerator Attack1()
     {
+        attackCool = true;
         StartCoroutine(ui.Attack1Ui());
         yield return StartCoroutine(ui.Attack1Ui());
         yield return new WaitForSeconds(0.4f);
@@ -87,10 +98,13 @@ public class Boss1 : Boss
             }
             yield return new WaitForSeconds(0.5f);
         }
+        yield return new WaitForSeconds(1f);
+        attackCool = false;
     }
 
     public override IEnumerator Attack2()
     {
+        attackCool = true;
         StartCoroutine (ParticleGet());
         yield return new WaitForSeconds(0.5f);
     }
@@ -189,12 +203,15 @@ public class Boss1 : Boss
             yield return null;
         }
         yield return new WaitForSeconds(2);
+        find.enabled = true;
+        attackCool = false;
         isMove = true;
         
     }
 
     public override IEnumerator Attack3()
     {
+        attackCool = true;
         Vector2 elePos = new Vector2(0, -4.5f);
         int xPos = 15;
         
@@ -274,6 +291,8 @@ public class Boss1 : Boss
 
             yield return null;
         }
+        yield return new WaitForSeconds(1f);
+        attackCool = false;
     }
 
     public void NormalAttack1(Vector2 vec)
@@ -281,7 +300,7 @@ public class Boss1 : Boss
         if (Vector2.Distance(player.transform.position, transform.position) < 14 && isAttack)
         {
             GameObject clone = Instantiate(normal1, fire.transform.position, Quaternion.identity);
-            float bossScale = transform.localScale.x;
+            float bossScale = transform.localScale.x / 3;
             StartCoroutine(attackTime(bossScale, clone));
             StartCoroutine(NormalCool());
         }
@@ -312,7 +331,7 @@ public class Boss1 : Boss
             StartCoroutine(attackLength(vec, clone));
             StartCoroutine(NormalCool());
         }
-         
+        
     }
 
     private IEnumerator attackLength(Vector2 targetPosition, GameObject clone)
@@ -333,7 +352,9 @@ public class Boss1 : Boss
             yield return null;  
         }
 
-        Destroy(clone);
+        //질문 보스스테이지 끝쪽을 보면 총알이 안 지워짐
+        Destroy(clone, 1f);
+
     }
 
     private IEnumerator NormalCool()
@@ -345,23 +366,29 @@ public class Boss1 : Boss
 
     //boss Idle
     private float idleCool = 5f;
+    private float attackState = 20f;
     public override void BossIdle()
     {
-        if(isIdle)
-        {
-            //기달리는 애니메이션
-            transform.position = center.position;
-            StartCoroutine(StateIdle());
-        }
+
+        //기달리는 애니메이션
+        transform.position = new Vector2(2, -3.6f);
+        StartCoroutine(StateIdle());
+     
     }
-    private IEnumerator StateIdle()
+    public override IEnumerator StateIdle()
     {
         find.enabled = false;
-        isAttack = false;
-        isIdle = false;
         yield return new WaitForSeconds(idleCool);
-        isIdle = true;
-        isAttack = true;
+        isIdle = false;
         find.enabled = true;
+        isAttack = true;
     }
+    public override IEnumerator StateAttack()
+    {
+        yield return new WaitForSeconds(attackState);
+        isAttack = false;
+        isIdle = true;
+    }
+
+
 }

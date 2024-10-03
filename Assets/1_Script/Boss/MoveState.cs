@@ -2,19 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IdleState : BossState
+public class MoveState : BossState
 {
-    public IdleState(Boss boss) : base(boss)
+    public MoveState(Boss boss) : base(boss)
     {
     }
 
     public override void OnstateEnter()
     {
-      
-        //animation
-        boss.isIdle = false;
-        boss.BossIdle();
-    }
+       boss.find.enabled = true;
+    } 
 
     public override void OnstateExit()
     {
@@ -23,7 +20,6 @@ public class IdleState : BossState
 
     public override void OnstateUpdate()
     {
-      
-        //animation
+        boss.find.enabled = false;
     }
 }

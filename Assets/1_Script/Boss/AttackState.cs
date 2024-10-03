@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -7,12 +8,13 @@ public class AttackState : BossState
 {
 
     private Rigidbody2D rigidbody2;
-
+    private int attackCount = 0;
     public AttackState(Boss boss) : base(boss) { }
 
 
     public override void OnstateEnter()
     {
+        
         rigidbody2 = boss.GetComponent<Rigidbody2D>();
         rigidbody2.velocity = new Vector2(0, rigidbody2.velocity.y);
         boss.isAttack = false;
@@ -20,13 +22,31 @@ public class AttackState : BossState
 
     public override void OnstateExit()
     {
-        boss.isAttack = true;
+       
     }
 
     public override void OnstateUpdate()
     {
-        int randomAttack = Random.Range(0, boss.skilCount);
-        boss.bossSkils[randomAttack]?.Invoke();
+      
+        if (!boss.attackCool)
+        {
+         
+            if(attackCount <= 3)
+            {
+                attackCount++;
+                int randomAttack = Random.Range(0, boss.skilCount - 1);
+                boss.StartCoroutine(boss.bossSkils[randomAttack]?.Invoke());
+            }
+            else
+            {
+                attackCount = 0;
+                boss.find.enabled = false;
+                boss.StartCoroutine(boss.Attack2());
+            }
+           
+
+        }
+      
     }
 
 

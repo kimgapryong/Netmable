@@ -10,6 +10,7 @@ public class Finding : MonoBehaviour
     public event NormalAttack normal;
 
     public bool isRight;
+    private bool attackTrue = true;
 
     public Transform player;
     public Transform check;
@@ -18,10 +19,8 @@ public class Finding : MonoBehaviour
 
     public Boss1 boss;
 
-    private Vector2 attackpos;
     private float tele = 5; 
-    private float dis1 = 15;  
-    private float dis2 = 30;
+
 
     private float disy = 11; 
     private bool canTeleport = true;  
@@ -42,30 +41,31 @@ public class Finding : MonoBehaviour
     {
         if(boss.isMove)
         {
+            
             Check();
         }
-        
+        if(attackTrue)
+        {
+            normal?.Invoke(player.transform.position);
+            StartCoroutine(AttackTrueCool());
+        }
     }
 
     private void Check()
     {
         isGround = Physics2D.Raycast(check.position, Vector2.down, 1.3f, mask);
       
-        if(transform.position.x < player.transform.position.x)
+        if(transform.position.x <= player.transform.position.x)
         {
             isRight = true;
-            attackpos = Vector2.right;
             transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y);
         }
-        else
+        else if(transform.position.x > player.transform.position.x)
         {
             isRight = false;
-            attackpos = Vector2.left;
             transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y);
         }
 
-            normal?.Invoke(player.transform.position);
-        
         if(Vector2.Distance(player.transform.position, transform.position) < 8)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
@@ -110,5 +110,10 @@ public class Finding : MonoBehaviour
         yield return new WaitForSeconds(tele);
         canTeleport = true; 
     }
-
+    private IEnumerator AttackTrueCool()
+    {
+        attackTrue = false;
+        yield return new WaitForSeconds(0.7f);
+        attackTrue = true;
+    }
 }

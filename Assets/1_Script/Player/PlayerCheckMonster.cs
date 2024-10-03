@@ -9,10 +9,12 @@ public class PlayerCheckMonster : MonoBehaviour
     public bool isAttack = true;
     public bool isEnemy = true;
     private MovePlayer move;
+    private PlayerStatus status;
 
     private void Start()
     {
         move = GetComponent<MovePlayer>();  
+        status = GetComponent<PlayerStatus>();
     }
 
     //적 관련 체크
@@ -25,10 +27,15 @@ public class PlayerCheckMonster : MonoBehaviour
             move.enabled = false;   
             StartCoroutine(WaitSecond());
         }
-        else if (collision.gameObject.tag == "Tongue")
+        else if (collision.gameObject.tag == "Tongue" && isAttack)
         {
             isAttack = false;
             GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Monster02_skilObj>().damage);
+            StartCoroutine(WaitSecond());
+        }else if(collision.gameObject.tag == "Boss" && isAttack)
+        {
+            isAttack = false;
+            GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Boss>().damage);
             StartCoroutine(WaitSecond());
         }
 
@@ -44,6 +51,7 @@ public class PlayerCheckMonster : MonoBehaviour
             }
         }
 
+      
     }
     private void OnCollisionStay2D(Collision2D collision)
     {

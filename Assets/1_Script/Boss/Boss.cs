@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using UnityEditorInternal;
 using UnityEngine;
 
 public abstract class Boss : MonoBehaviour
@@ -11,16 +12,17 @@ public abstract class Boss : MonoBehaviour
 
 
     public State bossState;
-    public BossState bossAtction;
     public FSM fsm;
     public Dictionary<State, BossState> stateDiction;
 
-    public List<Action> bossSkils = new List<Action>();
+    public Finding find;
+    public List<Func<IEnumerator>> bossSkils = new List<Func<IEnumerator>>();
     public bool bossAttack;
     public int skilCount;
 
-    public bool isAttack = true;
+    public bool isAttack = false;
     public bool isIdle = true;
+    public bool attackCool;
 
     public Boss1Ui ui;
 
@@ -46,34 +48,40 @@ public abstract class Boss : MonoBehaviour
     public enum State
     {
         Idle,
-        Attack
+        Attack,
+      
     }
 
 
     protected virtual void Start()
     {
 
-        bossAtction = new BossState();
         stateDiction = new Dictionary<State, BossState>() {
             { State.Idle, new IdleState(this) },
-            { State.Attack, new AttackState(this) }
+            { State.Attack, new AttackState(this) },
+           
         };
         fsm = new FSM(State.Idle, stateDiction);
-
-        
 
         player = GameObject.Find("Player");
         movePlayer = player.GetComponent<MovePlayer>();
         rb = GetComponent<Rigidbody2D>();
         col = rb.GetComponent<Collider2D>();
         ui = GameObject.Find("BossUi").GetComponent<Boss1Ui>();
+
+        ui.GetBoss(this);
+    }
+    protected virtual void LateUpdate()
+    {
+        fsm.UpdateState();
     }
     public void GetBossData(string bossName, int maxHp, int damage, float speed)
     {
         this.bossName = bossName;
         this.maxHp = maxHp;
         this.damage = damage;
-        this.speed = speed; 
+        this.speed = speed;
+        currentHp = maxHp;
     }
     public IEnumerator GetCam()
     {
@@ -103,6 +111,8 @@ public abstract class Boss : MonoBehaviour
     public abstract IEnumerator Attack2();
     public abstract IEnumerator Attack3();
     public abstract void BossIdle();
+    public abstract IEnumerator StateIdle();
+    public abstract IEnumerator StateAttack();
 
     private float coolTime = 5f;
     public IEnumerator BossAttackCool(IEnumerator waitSkill)

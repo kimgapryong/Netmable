@@ -11,13 +11,31 @@ public class Boss1Ui : MonoBehaviour
     public Image[] attack1Image;
     public Image attack2Image;
 
+    public Slider bossSlider;
+    public Image bossImage;
+    public Text bossName;
+    public Text hpText;
+
+    private Boss boss;
+
+    public void GetBoss(Boss boss)
+    {
+        this.boss = boss;
+    }
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            StartCoroutine(Attack1Ui());
-        }else if(Input.GetKeyDown(KeyCode.Alpha2)) { StartCoroutine(Attack2Ui()); }
+        //if (Input.GetKeyDown(KeyCode.Alpha1))
+        //{
+        //    StartCoroutine(Attack1Ui());
+        //}else if(Input.GetKeyDown(KeyCode.Alpha2)) { StartCoroutine(Attack2Ui()); }
+        UpadateBossUi();
+    }
+
+    private void UpadateBossUi()
+    {
+        hpText.text = $"{boss.currentHp}/ {boss.maxHp}";
+        bossSlider.value = (float)boss.currentHp / boss.maxHp;  
     }
     public IEnumerator Attack1Ui()
     {

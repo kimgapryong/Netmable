@@ -31,7 +31,7 @@ public class UiManager : MonoBehaviour
     public int nextSkil = 5;
 
     //∏ÛΩ∫≈Õ UI
-
+    public GameObject monsterUi;
     public Slider mSlider;
     public Image mImage;
     public Text mhpTxt;

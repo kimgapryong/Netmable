@@ -16,6 +16,8 @@ public class BossStage : MonoBehaviour
         boss = GameObject.Find("Boss").GetComponent<Boss1>();
         boss.GetBossData(BossScript.bossName, BossScript.maxHp, BossScript.damage, BossScript.speed);
         pla = GameObject.Find("Player");
+        UiManager.Instance.monsterUi.SetActive(false);
+     
 
         pla.transform.position = new Vector3(-40, -4.3f,0);
     }

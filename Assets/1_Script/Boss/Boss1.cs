@@ -44,20 +44,20 @@ public class Boss1 : Boss
     }
     protected override void LateUpdate()
     {
-        //if (Input.GetKeyDown(KeyCode.H))
-        //{
-        //    StartCoroutine(Attack1());
-        //}
-        //if (Input.GetKeyDown(KeyCode.J))
-        //{
-        //    Debug.Log(damage);
-        //    StartCoroutine(Attack2());
-        //}
-        //if (Input.GetKeyDown(KeyCode.K))
-        //{
-        //    Debug.Log(damage);
-        //    StartCoroutine(Attack3());
-        //}
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            StartCoroutine(Attack1());
+        }
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            Debug.Log(damage);
+            StartCoroutine(Attack2());
+        }
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log(damage);
+            StartCoroutine(Attack3());
+        }
 
         if (isIdle && !attackCool)
         {

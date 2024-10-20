@@ -134,7 +134,7 @@ public class Boss1 : Boss
         transform.position = center.position;
         
         col.isTrigger = true;
-        rb.constraints = (RigidbodyConstraints2D)(RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY);
+        //rb.constraints = (RigidbodyConstraints2D)(RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY);
 
         while (shapeModule.radius <= number)
         {
@@ -194,9 +194,9 @@ public class Boss1 : Boss
             {
                 yield return new WaitForSeconds(4);
                 col.isTrigger = false;
-                rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.None;
-                rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezeRotationZ;
                 rb.bodyType = RigidbodyType2D.Dynamic;
+                //rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.None;
+                //rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezeRotationZ;
                 Destroy(clone); 
                 break;
             }
@@ -295,13 +295,13 @@ public class Boss1 : Boss
         attackCool = false;
     }
 
-    public void NormalAttack1(Vector2 vec)
+    public void NormalAttack1()
     {
         if (Vector2.Distance(player.transform.position, transform.position) < 14 && isAttack)
         {
             GameObject clone = Instantiate(normal1, fire.transform.position, Quaternion.identity);
-            float bossScale = transform.localScale.x / 3;
-            StartCoroutine(attackTime(bossScale, clone));
+            //float bossScale = transform.localScale.x / 3;
+            StartCoroutine(attackTime(transform.localScale.x / 3, clone));
             StartCoroutine(NormalCool());
         }
            
@@ -321,14 +321,14 @@ public class Boss1 : Boss
         }
     }
 
-    public void NormalAttack2(Vector2 vec)
+    public void NormalAttack2()
     {
         if (Vector2.Distance(player.transform.position, transform.position) > 30 && isAttack)
         {
-            Vector2 newVec = new Vector2(vec.x, vec.y + 100f);
+            Vector2 newVec = new Vector2(player.transform.position.x, player.transform.position.y + 100f);
             GameObject clone = Instantiate(normal2, newVec, Quaternion.identity);
 
-            StartCoroutine(attackLength(vec, clone));
+            StartCoroutine(attackLength(player.transform.position, clone));
             StartCoroutine(NormalCool());
         }
         

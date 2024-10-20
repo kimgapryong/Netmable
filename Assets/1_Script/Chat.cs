@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 public class Chat : MonoBehaviour
 {
     public Dialogue dialogue;
@@ -27,6 +29,7 @@ public class DialogueLine
     public DialogueCharacter character;
     [TextArea(3, 10)]
     public string line;
+    public UnityEvent onEvent;
 }
 
 [System.Serializable]

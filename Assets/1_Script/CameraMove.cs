@@ -4,7 +4,9 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     public static CameraMove Instance {  get; private set; }
-    private Transform player;  
+    private Transform player;
+    Transform originalTarget;
+    private Coroutine followCoroutine;
     public float smoothSpeed = 0.125f;
     public Vector3 offset;  
 
@@ -135,5 +137,40 @@ public class CameraMove : MonoBehaviour
         }
 
         transform.rotation = originalRotation;
+    }
+
+    public IEnumerator FollowTemporary(Transform newTarget)
+    {
+        originalTarget = player; // 기존 플레이어(카메라의 원래 타겟)를 저장
+        player = newTarget;      // 새 타겟으로 설정
+
+        while (player == newTarget)  // 외부에서 타겟이 바뀌지 않으면 계속 추적
+        {
+            Vector3 targetPosition = newTarget.position + offset;
+            smoothedPosition = Vector3.SmoothDamp(transform.position, targetPosition, ref currentVelocity, smoothSpeed);
+            transform.position = smoothedPosition;
+            yield return null;
+        }
+    }
+
+    public void StartFollowing(Transform newTarget)
+    {
+        if (followCoroutine != null)  // 기존에 실행 중이던 코루틴이 있으면 중단
+        {
+            StopCoroutine(followCoroutine);
+        }
+
+        followCoroutine = StartCoroutine(FollowTemporary(newTarget));  // 새로운 코루틴 시작
+    }
+
+    public void StopFollowing()
+    {
+        if (followCoroutine != null)  // 코루틴 중단
+        {
+            StopCoroutine(followCoroutine);
+            followCoroutine = null;
+        }
+
+        player = originalTarget;  // 원래 타겟으로 복귀
     }
 }

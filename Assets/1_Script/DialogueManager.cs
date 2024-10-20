@@ -7,6 +7,7 @@ using TMPro;
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
+    private DialogueLine currentLine;
 
     public GameObject dialogueChat;
     public Image characterIcon;
@@ -16,8 +17,10 @@ public class DialogueManager : MonoBehaviour
 
     private Queue<DialogueLine> lines;
     private GameObject player;
+    private MovePlayer movePlayer;
+    private PlayerAttack attackPlayer;
     private Collider2D currentColl;
-
+    
     public bool isDialogueActive = false;
 
     public float typingSpeed = 0.2f;
@@ -30,6 +33,9 @@ public class DialogueManager : MonoBehaviour
             Instance = this;
         player = GameObject.Find("Player");
         lines = new Queue<DialogueLine>();
+        movePlayer = player.GetComponent<MovePlayer>();
+        attackPlayer = player.GetComponent<PlayerAttack>();
+
     }
     private void Update()
     {
@@ -43,7 +49,10 @@ public class DialogueManager : MonoBehaviour
     {
         currentColl = collison;
         isDialogueActive = true;
-        player.SetActive(false);
+        //player.SetActive(false);
+        movePlayer.enabled = false;
+        attackPlayer.enabled = false;
+        player.GetComponent<Animator>().enabled = false;
         dialogueChat.SetActive(true);
 
         foreach (DialogueLine dialogueLine in dialogue.dialogueLines)
@@ -59,7 +68,7 @@ public class DialogueManager : MonoBehaviour
         // 대사가 남아있는지 먼저 체크
         if (lines.Count == 0)
         {
-            EndDialogue();
+            EndDialogue(currentLine);
            
             if(currentColl != null)
             {
@@ -70,7 +79,7 @@ public class DialogueManager : MonoBehaviour
         }
 
         // 대사를 가져와서 출력
-        DialogueLine currentLine = lines.Dequeue();
+        currentLine = lines.Dequeue();
         characterName.text = currentLine.character.name;
 
         if (characterName.text == "주인공")
@@ -85,6 +94,7 @@ public class DialogueManager : MonoBehaviour
             characterIcon.gameObject.SetActive(true);
             playerIcon.gameObject.SetActive(false);
         }
+       
 
         StopAllCoroutines();  // 기존에 실행 중인 코루틴 중단
         StartCoroutine(TypeSentence(currentLine));  // 새로운 대사 출력
@@ -99,12 +109,18 @@ public class DialogueManager : MonoBehaviour
             dialogueArea.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+
+       
     }
 
-    void EndDialogue()
+    void EndDialogue(DialogueLine dialogueLine)
     {
+        dialogueLine.onEvent?.Invoke();
         isDialogueActive = false;
         dialogueChat.SetActive(false);
+        movePlayer.enabled = true;
+        attackPlayer.enabled = true;
+        player.GetComponent<Animator>().enabled = true;
         player.SetActive(true);
     }
 }

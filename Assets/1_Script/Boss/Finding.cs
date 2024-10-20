@@ -6,7 +6,7 @@ using static Finding;
 public class Finding : MonoBehaviour
 {
 
-    public delegate void NormalAttack(Vector2 vector);
+    public delegate void NormalAttack();
     public event NormalAttack normal;
 
     public bool isRight;
@@ -46,7 +46,7 @@ public class Finding : MonoBehaviour
         }
         if(attackTrue)
         {
-            normal?.Invoke(player.transform.position);
+            normal?.Invoke();
             StartCoroutine(AttackTrueCool());
         }
     }
@@ -55,15 +55,15 @@ public class Finding : MonoBehaviour
     {
         isGround = Physics2D.Raycast(check.position, Vector2.down, 1.3f, mask);
       
-        if(transform.position.x <= player.transform.position.x)
+        if(transform.position.x < player.transform.position.x)
         {
             isRight = true;
-            transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
         }
-        else if(transform.position.x > player.transform.position.x)
+        if(transform.position.x > player.transform.position.x)
         {
             isRight = false;
-            transform.localScale = new Vector3(-transform.localScale.x, transform.localScale.y);
+            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
         }
 
         if(Vector2.Distance(player.transform.position, transform.position) < 8)

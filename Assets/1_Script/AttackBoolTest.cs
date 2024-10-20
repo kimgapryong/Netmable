@@ -14,12 +14,13 @@ public class AttackBoolTest : MonoBehaviour
 
     private void Start()
     {
+        
         movePlayer = GameObject.Find("Player").GetComponent<MovePlayer>();
         if (mainCamera == null)
         {
             mainCamera = Camera.main;  // 기본 카메라를 설정
         }
-
+        mainCamera.GetComponent<CameraMove>().StopFollowing();
         originalCameraPosition = mainCamera.transform.position;  // 원래 카메라 위치를 저장
         StartCoroutine(FollowAttack());
     }

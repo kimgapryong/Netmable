@@ -27,6 +27,8 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
+    int num;
+
     private void Awake()
     {
         if (Instance == null)
@@ -35,7 +37,7 @@ public class DialogueManager : MonoBehaviour
         lines = new Queue<DialogueLine>();
         movePlayer = player.GetComponent<MovePlayer>();
         attackPlayer = player.GetComponent<PlayerAttack>();
-
+        animator = player.GetComponent<Animator>();
     }
     private void Update()
     {
@@ -52,7 +54,10 @@ public class DialogueManager : MonoBehaviour
         //player.SetActive(false);
         movePlayer.enabled = false;
         attackPlayer.enabled = false;
-        player.GetComponent<Animator>().enabled = false;
+        AnimatorControal(animator);
+        animator.SetBool("isIdle", true);
+        animator.SetBool("isGround", true);
+        
         dialogueChat.SetActive(true);
 
         foreach (DialogueLine dialogueLine in dialogue.dialogueLines)
@@ -62,11 +67,31 @@ public class DialogueManager : MonoBehaviour
 
         DisplayNextDialogueLine();
     }
+    private void AnimatorControal(Animator anima)
+    {
+        for(int i = 0; i < anima.parameterCount; i++)
+        {
+            AnimatorControllerParameter param = anima.GetParameter(i);
 
+            if (param.type == AnimatorControllerParameterType.Bool)
+            {
+                animator.SetBool(param.name, false);
+            }
+            
+        }
+    }
+
+    bool canDialogue;
+    bool typing;
     public void DisplayNextDialogueLine()
     {
+        //if (!canDialogue)
+        //    return;
+
         // 대사가 남아있는지 먼저 체크
-        if (lines.Count == 0)
+   
+
+        if (lines.Count == 0 )
         {
             EndDialogue(currentLine);
            
@@ -78,49 +103,89 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        // 대사를 가져와서 출력
-        currentLine = lines.Dequeue();
-        characterName.text = currentLine.character.name;
-
-        if (characterName.text == "주인공")
+        if (typing)
         {
-            playerIcon.sprite = currentLine.character.icon;
-            playerIcon.gameObject.SetActive(true);
-            characterIcon.gameObject.SetActive(false);
+            StopAllCoroutines();
+            dialogueArea.text = currentLine.line;
+            typing = false;
+
+
+            if (currentLine != null)
+            {
+                if (currentLine.onEvent != null)
+                {
+                    currentLine.onEvent?.Invoke();
+                    
+                }
+
+            }
         }
         else
         {
-            characterIcon.sprite = currentLine.character.icon;
-            characterIcon.gameObject.SetActive(true);
-            playerIcon.gameObject.SetActive(false);
-        }
-       
 
-        StopAllCoroutines();  // 기존에 실행 중인 코루틴 중단
-        StartCoroutine(TypeSentence(currentLine));  // 새로운 대사 출력
+            // 대사를 가져와서 출력
+            currentLine = lines.Dequeue();
+            characterName.text = currentLine.character.name;
+
+            if (characterName.text == "주인공")
+            {
+                playerIcon.sprite = currentLine.character.icon;
+                playerIcon.gameObject.SetActive(true);
+                characterIcon.gameObject.SetActive(false);
+            }
+            else
+            {
+                characterIcon.sprite = currentLine.character.icon;
+                characterIcon.gameObject.SetActive(true);
+                playerIcon.gameObject.SetActive(false);
+            }
+
+
+            StopAllCoroutines();  // 기존에 실행 중인 코루틴 중단
+            StartCoroutine(TypeSentence(currentLine));  // 새로운 대사 출력
+        }
+
+      
     }
 
 
     IEnumerator TypeSentence(DialogueLine dialogueLine)
     {
+        typing = true;
         dialogueArea.text = "";
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
             dialogueArea.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        typing = false;
 
-       
+
+        if (currentLine != null)
+        {
+            if (currentLine.onEvent != null)
+            {
+                currentLine.onEvent?.Invoke();
+                
+            }
+
+        }
+
     }
+ 
 
     void EndDialogue(DialogueLine dialogueLine)
     {
-        dialogueLine.onEvent?.Invoke();
+        //if (dialogueLine != null)
+        //{
+        //    dialogueLine.onEvent?.Invoke();
+        //}
+        
         isDialogueActive = false;
         dialogueChat.SetActive(false);
         movePlayer.enabled = true;
         attackPlayer.enabled = true;
-        player.GetComponent<Animator>().enabled = true;
+        
         player.SetActive(true);
     }
 }

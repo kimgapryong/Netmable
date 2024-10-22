@@ -8,8 +8,10 @@ public class Monster03 : Monster
     public Transform groundCheck;
     public LayerMask ground;
 
-    private Vector2 weightGravity;
+
     private Rigidbody2D rb;
+    private Vector2 transMove;
+    private Vector2 weightGravity;
 
     public float jumpForce = 30f;
     public float downPower = 0.5f;
@@ -21,6 +23,7 @@ public class Monster03 : Monster
     public bool attackJump = true;
     public bool canMove = true;
     public bool isGround;
+    public bool monsterUp = true;
     
     protected override void Update()
     {
@@ -32,7 +35,7 @@ public class Monster03 : Monster
         }
         else
         {
-            Debug.Log("2");
+            
             canJump= false;
         }
 
@@ -52,6 +55,7 @@ public class Monster03 : Monster
         rb = GetComponent<Rigidbody2D>();
         weightGravity =new Vector2(0, -Physics2D.gravity.y);
     }
+   
     protected override void MonsterMove()
     {
         if(canJump)
@@ -62,10 +66,13 @@ public class Monster03 : Monster
                 rb.AddForceY(jumpForce);
                 rb.velocityY = jumpForce;
                 groundOne = true;
+                transMove = new Vector3(transform.localScale.x, 0);
             }
             if(canMove)
             {
-                transform.Translate(new Vector3(transform.localScale.x, 0) * speed * Time.deltaTime);
+                transform.Translate(transMove * speed * Time.deltaTime);
+                Debug.Log("xPosition" + transMove.x + " " + "yPosition" + transMove.y);
+                //rb.velocity = transMove * speed;
             }
         }
     }
@@ -78,6 +85,17 @@ public class Monster03 : Monster
             rb.velocity -= weightGravity * downPower * Time.deltaTime;
         }
         
+        if(health <= MaxHp / 2)
+        {
+            if(monsterUp)
+            {
+                monsterUp = false;
+                damage = 200;
+                speed = 40f;
+                jumpForce -= 5;
+                weightGravity *= 2;
+            }
+        }
     }
 
     private IEnumerator coolControal()

@@ -8,7 +8,7 @@ public class Monster01 : Monster
 
     public Animator animator;
 
-    private Rigidbody2D rigid;
+    private Rigidbody2D rb;
     private TrailRenderer trail;
     private Transform monsterGround;
     public LayerMask ground;
@@ -27,7 +27,7 @@ public class Monster01 : Monster
     {
         ResetData(_data);
         monsterGround = transform.Find("GroundCheck");
-        rigid = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
         trail = GetComponent<TrailRenderer>();
         trail.emitting = false;
         animator = GetComponent<Animator>();
@@ -88,9 +88,9 @@ public class Monster01 : Monster
         dash = false;
         isGround = false;
         isDash = true;
-        float orign = rigid.gravityScale;
-        rigid.gravityScale = 0;
-        rigid.velocity = new Vector2(-transform.localScale.x * dashPower, 0f);
+        float orign = rb.gravityScale;
+        rb.gravityScale = 0;
+        rb.velocity = new Vector2(-transform.localScale.x * dashPower, 0f);
         if(trail != null)
         {
             trail.emitting = true;
@@ -102,8 +102,8 @@ public class Monster01 : Monster
         {
             trail.emitting = false;
         }
-        rigid.velocity = Vector2.zero;
-        rigid.gravityScale = orign;
+        rb.velocity = Vector2.zero;
+        rb.gravityScale = orign;
         isDash = false;
         isGround = true;
         yield return new WaitForSeconds(dashCoolTime);

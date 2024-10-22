@@ -9,6 +9,7 @@ public abstract class Monster : MonoBehaviour
     public GameObject paticle;
     public MonsterData monsterData;
 
+    
     public Sprite monsterSprite;
     public string monsterName;
 
@@ -61,16 +62,18 @@ public abstract class Monster : MonoBehaviour
        
         }
     }
-    private void Check()
+    public virtual void Check()
     {
         if(player != null)
         {
             if (player.transform.position.x <= transform.position.x)
             {
+              
                 transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
             }
             if (player.transform.position.x > transform.position.x)
             {
+               
                 transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
             }
         }

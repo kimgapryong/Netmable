@@ -752,7 +752,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389492395}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -767,9 +767,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!19719996 &389492399
 TilemapCollider2D:
@@ -50661,7 +50661,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &398359791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -51009,8 +51009,8 @@ GameObject:
   - component: {fileID: 466259596}
   - component: {fileID: 466259595}
   m_Layer: 0
-  m_Name: Circle
-  m_TagString: Untagged
+  m_Name: Monster03
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51125,6 +51125,7 @@ MonoBehaviour:
   attackJump: 1
   canMove: 1
   isGround: 0
+  monsterUp: 1
 --- !u!58 &466259596
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -51184,9 +51185,9 @@ Rigidbody2D:
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!1 &519420028
 GameObject:
@@ -52612,7 +52613,7 @@ Transform:
   m_GameObject: {fileID: 987009789}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.8, y: 2.9, z: 0}
+  m_LocalPosition: {x: 26.3, y: 36.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -54095,7 +54096,7 @@ GameObject:
   - component: {fileID: 1599951917}
   m_Layer: 5
   m_Name: PlayerSlider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -76,6 +76,8 @@ public class Supporter : MonoBehaviour
 
     public void MonsterCheck()
     {
+      
+
         foreach(Monster mons in monster.monsters)
         {
             if (mons != null)

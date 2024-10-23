@@ -74,7 +74,7 @@ public class Supporter : MonoBehaviour
         transPos = transform.position;
     }
 
-    public void MonsterCheck()
+    public void MonsterCheck(DialogueLine line)
     {
       
 
@@ -94,7 +94,7 @@ public class Supporter : MonoBehaviour
         {
             canAttack = false;
             fallow = false;
-            StartCoroutine(TransMove(firstMon));
+            StartCoroutine(TransMove(firstMon , line));
             cam.StartFollowing(transform);
         }
     }
@@ -116,7 +116,7 @@ public class Supporter : MonoBehaviour
         Debug.Log("몬스터 거리:" + lower + " " + "몬스터:" + mons);
         return mons;
     }
-    private IEnumerator TransMove(Monster mons)
+    private IEnumerator TransMove(Monster mons, DialogueLine line)
     {
         Vector2 mosPos = mons.transform.position;
         if (!fallow)
@@ -127,7 +127,7 @@ public class Supporter : MonoBehaviour
                 yield return null;
             }
 
-            MonsterAttack();
+            MonsterAttack(line);
             yield return new WaitForSeconds(1);
             while (Vector2.Distance(transform.position, transPos) > 0.1f)
             {
@@ -144,12 +144,13 @@ public class Supporter : MonoBehaviour
 
     }
 
-    private void MonsterAttack()
+    private void MonsterAttack(DialogueLine line)
     {
         GameObject clone = Instantiate(attackBool, transform.position + new Vector3(4, 0, 0), Quaternion.identity);
         clone.GetComponent<AttackBoolTest>().sup = this;
+        clone.GetComponent<AttackBoolTest>().current = line;
 
-        
+
     }
 
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -27,8 +28,6 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    int num;
-
     private void Awake()
     {
         if (Instance == null)
@@ -45,6 +44,12 @@ public class DialogueManager : MonoBehaviour
         {
             
             DisplayNextDialogueLine();  
+        }
+        if (aginScrren && !currentLine.isEvent)
+        {
+            aginScrren = false;
+            dialogueChat.SetActive(true);
+            DisplayNextDialogueLine();
         }
     }
     public void StartDialogue(Dialogue dialogue, Collider2D collison)
@@ -63,9 +68,11 @@ public class DialogueManager : MonoBehaviour
         foreach (DialogueLine dialogueLine in dialogue.dialogueLines)
         {
             lines.Enqueue(dialogueLine);
+            Debug.Log(dialogueLine);
         }
-
-        DisplayNextDialogueLine();
+        currentLine = lines.Dequeue();
+        chatSys(currentLine);
+        //DisplayNextDialogueLine();
     }
     private void AnimatorControal(Animator anima)
     {
@@ -82,18 +89,21 @@ public class DialogueManager : MonoBehaviour
     }
 
     bool canDialogue;
-    bool typing;
+    bool typing = false;
+    bool okEvent;
+    bool aginScrren;
     public void DisplayNextDialogueLine()
     {
         //if (!canDialogue)
         //    return;
 
         // 대사가 남아있는지 먼저 체크
-   
 
+        Debug.Log("start");
+        Debug.Log(lines.Count);
         if (lines.Count == 0 )
         {
-            EndDialogue(currentLine);
+            EndDialogue();
            
             if(currentColl != null)
             {
@@ -112,10 +122,12 @@ public class DialogueManager : MonoBehaviour
 
             if (currentLine != null)
             {
-                if (currentLine.onEvent != null)
+                if (currentLine.onEvent != null && currentLine.onEvent.GetPersistentEventCount() > 0)
                 {
-                    currentLine.onEvent?.Invoke();
-                    
+                    currentLine.onEvent?.Invoke(currentLine);
+                    currentLine.isEvent = true;
+                    aginScrren = true;
+                    dialogueChat.SetActive(false);
                 }
 
             }
@@ -124,30 +136,40 @@ public class DialogueManager : MonoBehaviour
         {
 
             // 대사를 가져와서 출력
-            currentLine = lines.Dequeue();
-            characterName.text = currentLine.character.name;
-
-            if (characterName.text == "주인공")
+            if (!currentLine.isEvent)
             {
-                playerIcon.sprite = currentLine.character.icon;
-                playerIcon.gameObject.SetActive(true);
-                characterIcon.gameObject.SetActive(false);
+                Debug.Log("대사 출력 시작");
+               
+                // 대사 큐에서 다음 대사 가져오기
+                currentLine = lines.Dequeue();
+               
+                chatSys(currentLine);  // 대사 출력
             }
-            else
-            {
-                characterIcon.sprite = currentLine.character.icon;
-                characterIcon.gameObject.SetActive(true);
-                playerIcon.gameObject.SetActive(false);
-            }
-
-
-            StopAllCoroutines();  // 기존에 실행 중인 코루틴 중단
-            StartCoroutine(TypeSentence(currentLine));  // 새로운 대사 출력
         }
 
       
     }
+    private void chatSys(DialogueLine dialogueLine)
+    {
+        characterName.text = dialogueLine.character.name;
 
+        if (characterName.text == "주인공")
+        {
+            playerIcon.sprite = dialogueLine.character.icon;
+            playerIcon.gameObject.SetActive(true);
+            characterIcon.gameObject.SetActive(false);
+        }
+        else
+        {
+            characterIcon.sprite = dialogueLine.character.icon;
+            characterIcon.gameObject.SetActive(true);
+            playerIcon.gameObject.SetActive(false);
+        }
+        
+
+        StopAllCoroutines();  // 기존에 실행 중인 코루틴 중단
+        StartCoroutine(TypeSentence(dialogueLine));  // 새로운 대사 출력
+    }
 
     IEnumerator TypeSentence(DialogueLine dialogueLine)
     {
@@ -163,10 +185,12 @@ public class DialogueManager : MonoBehaviour
 
         if (currentLine != null)
         {
-            if (currentLine.onEvent != null)
+            if (currentLine.onEvent != null && currentLine.onEvent.GetPersistentEventCount() > 0)
             {
-                currentLine.onEvent?.Invoke();
-                
+                currentLine.onEvent?.Invoke(dialogueLine);
+                currentLine.isEvent = true;
+                aginScrren = true;
+                dialogueChat.SetActive(false);
             }
 
         }
@@ -174,7 +198,7 @@ public class DialogueManager : MonoBehaviour
     }
  
 
-    void EndDialogue(DialogueLine dialogueLine)
+    void EndDialogue()
     {
         //if (dialogueLine != null)
         //{

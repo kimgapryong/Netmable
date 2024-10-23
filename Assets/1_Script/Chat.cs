@@ -29,7 +29,8 @@ public class DialogueLine
     public DialogueCharacter character;
     [TextArea(3, 10)]
     public string line;
-    public UnityEvent onEvent;
+    public bool isEvent = false;
+    public UnityEvent<DialogueLine> onEvent;
 }
 
 [System.Serializable]

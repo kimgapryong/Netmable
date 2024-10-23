@@ -50893,7 +50893,8 @@ MonoBehaviour:
     - character:
         name: "\uC8FC\uC778\uACF5"
         icon: {fileID: 0}
-      line: "\uC5EC\uAE30\uAC00\uAC00\uAC00\uAC00"
+      line: "\uAC00\uAC00\uAC00\uAC00\uAC00\u314F\uAC00\uAC00\u314F\u314F\u314F\uAC00\uAC00\uAC00"
+      isEvent: 0
       onEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -50901,13 +50902,14 @@ MonoBehaviour:
         name: "\uC694\uC815"
         icon: {fileID: 0}
       line: "\uB0B4\uAC00\uAC00\uAC01 \uB3C4\uC6B0\uC640\uC544\u3157\uC559\n"
+      isEvent: 0
       onEvent:
         m_PersistentCalls:
           m_Calls:
           - m_Target: {fileID: 398359791}
             m_TargetAssemblyTypeName: Supporter, Assembly-CSharp
             m_MethodName: MonsterCheck
-            m_Mode: 1
+            m_Mode: 0
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -50920,6 +50922,7 @@ MonoBehaviour:
         name: "\uC694\uC815"
         icon: {fileID: 0}
       line: 11111
+      isEvent: 0
       onEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -55132,6 +55135,7 @@ MonoBehaviour:
         name: "\uC8FC\uC778\uACF5"
         icon: {fileID: 0}
       line: "\uC548\uB155\uD558\uC2DC\uC640\uC778\n"
+      isEvent: 0
       onEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -55139,6 +55143,7 @@ MonoBehaviour:
         name: "\uC545\uB2F91"
         icon: {fileID: 0}
       line: "\uC545\uB2F9\uC545\uB2F9\uC545\uB2F9\n"
+      isEvent: 0
       onEvent:
         m_PersistentCalls:
           m_Calls: []

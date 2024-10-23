@@ -10,7 +10,7 @@ public class AttackBoolTest : MonoBehaviour
     public Vector3 originalCameraPosition;
     public Supporter sup;
     private MovePlayer movePlayer;
-
+    public DialogueLine current;
 
     private void Start()
     {
@@ -50,6 +50,8 @@ public class AttackBoolTest : MonoBehaviour
     private void OnDestroy()
     {
         // 공격이 끝나거나 파괴되면 카메라를 원래 위치로 돌려놓음
+        //current.onEvent = null;
+        current.isEvent = false;
         if (mainCamera != null)
         {
             mainCamera.transform.position = originalCameraPosition;

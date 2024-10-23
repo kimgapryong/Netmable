@@ -75,6 +75,8 @@ public class ChagingSkil : Skil
             collision.gameObject.GetComponent<Boss>().TakeDamage(status.damage / 2 + damage);
             target = collision.transform;
             clone = Instantiate(ChagingPaticle, target.position, Quaternion.identity);
+
+            Destroy(clone, 1f);
         }
     }
 

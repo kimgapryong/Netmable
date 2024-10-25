@@ -43,10 +43,10 @@ public abstract class Skil : MonoBehaviour
         key = skil.keyCode;
     }
 
-    public abstract void SkilSpeed();
+    public virtual void SkilSpeed() { }
 
 
-    protected abstract void OnTriggerEnter2D(Collider2D collision);
+    protected virtual void OnTriggerEnter2D(Collider2D collision) { }
 
 
 

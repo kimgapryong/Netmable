@@ -24,11 +24,19 @@ public class Monster03 : Monster
     public bool canMove = true;
     public bool isGround;
     public bool monsterUp = true;
+
+    public bool isRay;
     
     protected override void Update()
     {
         base.Update();
         isGround = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(4f, 1f), CapsuleDirection2D.Horizontal, 0, ground);
+
+        //레이케스트 확인
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, rightCheck, 4f, ground);
+        isRay = hit.collider != null;
+        Debug.DrawRay(transform.position, rightCheck * 4f, Color.red);
+        Debug.Log(isRay);
         if (Vector2.Distance(player.transform.position, transform.position) <= plaDistance)
         {
             canJump = true;
@@ -54,25 +62,29 @@ public class Monster03 : Monster
         ResetData(data);
         rb = GetComponent<Rigidbody2D>();
         weightGravity =new Vector2(0, -Physics2D.gravity.y);
+
     }
    
     protected override void MonsterMove()
     {
         if(canJump)
         {
-            if(attackJump)
+            if(!isRay)
             {
-                attackJump = false;
-                rb.AddForceY(jumpForce);
-                rb.velocityY = jumpForce;
-                groundOne = true;
-                transMove = new Vector3(transform.localScale.x, 0);
-            }
-            if(canMove)
-            {
-                transform.Translate(transMove * speed * Time.deltaTime);
-                Debug.Log("xPosition" + transMove.x + " " + "yPosition" + transMove.y);
-                //rb.velocity = transMove * speed;
+                if (attackJump)
+                {
+                    attackJump = false;
+                    rb.AddForceY(jumpForce);
+                    rb.velocityY = jumpForce;
+                    groundOne = true;
+                    transMove = new Vector3(transform.localScale.x, 0);
+                }
+                if (canMove)
+                {
+                    transform.Translate(transMove * speed * Time.deltaTime);
+                    Debug.Log("xPosition" + transMove.x + " " + "yPosition" + transMove.y);
+                    //rb.velocity = transMove * speed;
+                }
             }
         }
     }

@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour
     public Vector2 bulletVec;
     public Boss boss;
 
+    public bool okAtk = true;
+
     private void Awake()
     {
         if (Instance == null)
@@ -100,7 +102,7 @@ public class PlayerManager : MonoBehaviour
 
     public void PlayerTakeDamage(int damage)
     {
-        if(playerStatus.currentHp > 0)
+        if(playerStatus.currentHp > 0 && okAtk)
         {
             playerStatus.currentHp -= damage;
             StartCoroutine(palyerDamage());

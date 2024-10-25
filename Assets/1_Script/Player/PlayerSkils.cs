@@ -11,6 +11,7 @@ public class PlayerSkils : MonoBehaviour
     //불 스킬 쿨타임
     private bool FireCoolTimes = true;
     private bool ChaCoolTimes = true;
+    private bool shieldTimes = true;
     public MovePlayer movePlayer;
     public Transform SkilsFire;
 
@@ -23,6 +24,7 @@ public class PlayerSkils : MonoBehaviour
     //스킬 키코드
     private KeyCode fireKey;
     private KeyCode chagingkey;
+    private KeyCode shieldKey;
 
     //스킬 넣어주는 액션
     public FireBoolSkil fireBool;
@@ -33,6 +35,7 @@ public class PlayerSkils : MonoBehaviour
     {
         FireBoolSkil();
         UseChaSkil();
+        ShieldSkil();
     }
     private void Start()
     {
@@ -164,4 +167,29 @@ public class PlayerSkils : MonoBehaviour
         yield return new WaitForSeconds(1f);
         ChaCoolTimes = true;
     }
+
+    //쉴드
+    public void GetShield(KeyCode key)
+    {
+        Debug.Log("쉴드 등록");
+        shieldKey = key;
+    }
+    public void ShieldSkil()
+    {
+        if(Input.GetKeyDown(shieldKey) && shieldTimes)
+        {
+            Debug.Log("쉴드스킬");
+            shieldTimes = false;
+            PlayerManager.Instance.okAtk = false;
+            StartCoroutine(ShieldCool());
+        }
+    }
+    private IEnumerator ShieldCool()
+    {
+        yield return new WaitForSeconds(3f);
+        PlayerManager.Instance.okAtk = true;
+        yield return new WaitForSeconds(1f);
+        shieldTimes = true;
+    }
 }
+

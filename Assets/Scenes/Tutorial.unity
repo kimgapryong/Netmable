@@ -50803,6 +50803,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &418583720
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 418583721}
+  m_Layer: 0
+  m_Name: Raycast
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &418583721
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418583720}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.29, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 466259594}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &423002698
 GameObject:
   m_ObjectHideFlags: 0
@@ -51147,6 +51178,7 @@ Transform:
   m_Children:
   - {fileID: 133918089}
   - {fileID: 187093355}
+  - {fileID: 418583721}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
 --- !u!114 &466259595
@@ -51177,6 +51209,7 @@ MonoBehaviour:
   normalAttack: 1
   data: {fileID: 11400000, guid: fece2acda171a0940a75bda513dd33fe, type: 2}
   groundCheck: {fileID: 187093355}
+  rayCheck: {fileID: 418583721}
   ground:
     serializedVersion: 2
     m_Bits: 64
@@ -54632,6 +54665,7 @@ MonoBehaviour:
   bulletMagic: {fileID: 1899908862967208834, guid: be4a52daa116f1446844bea0b3e86936, type: 3}
   bulletVec: {x: 0, y: 0}
   boss: {fileID: 0}
+  okAtk: 1
 --- !u!4 &1720130424
 Transform:
   m_ObjectHideFlags: 0

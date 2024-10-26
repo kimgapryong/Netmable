@@ -6,6 +6,7 @@ public class Monster03 : Monster
 {
     public MonsterData data;
     public Transform groundCheck;
+    public Transform rayCheck;
     public LayerMask ground;
 
 
@@ -33,7 +34,7 @@ public class Monster03 : Monster
         isGround = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(4f, 1f), CapsuleDirection2D.Horizontal, 0, ground);
 
         //레이케스트 확인
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, rightCheck, 4f, ground);
+        RaycastHit2D hit = Physics2D.Raycast(rayCheck.position, rightCheck, 4f, ground);
         isRay = hit.collider != null;
         Debug.DrawRay(transform.position, rightCheck * 4f, Color.red);
         Debug.Log(isRay);

@@ -10,7 +10,7 @@ public abstract class Item : MonoBehaviour
     public string itemName;
     public Sprite itemIcon;
     public int count;
-
+    
     private Collider2D itemCollider;
 
     private void Awake()

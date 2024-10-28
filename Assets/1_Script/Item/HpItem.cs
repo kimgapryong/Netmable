@@ -29,7 +29,7 @@ public class HpItem : Item
     private void Start()
     {
         itemName = "체력포션";
-         = PlayerManager.Instance.playerStatus;
+        // = PlayerManager.Instance.playerStatus;
     }
 
 }

@@ -62,6 +62,15 @@ public class PlayerCheckMonster : MonoBehaviour
             StartCoroutine(WaitSecond());
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Boss") && isAttack)
+        {
+            isAttack = false;
+            GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Boss>().damage);
+            StartCoroutine(WaitSecond());
+        }
+    }
 
     private IEnumerator WaitSecond()
     {

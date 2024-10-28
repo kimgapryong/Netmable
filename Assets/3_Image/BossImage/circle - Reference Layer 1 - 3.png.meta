@@ -1,0 +1,3890 @@
+fileFormatVersion: 2
+guid: d3afbf84ae624e24ea02401105e1db04
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7035669082932274318
+    second: circle - Reference Layer 1 - 3_0
+  - first:
+      213: -8506519824702446939
+    second: circle - Reference Layer 1 - 3_1
+  - first:
+      213: -651716405813453516
+    second: circle - Reference Layer 1 - 3_2
+  - first:
+      213: 3830262699159856895
+    second: circle - Reference Layer 1 - 3_3
+  - first:
+      213: 4964892399183481112
+    second: circle - Reference Layer 1 - 3_4
+  - first:
+      213: 2917396630638041374
+    second: circle - Reference Layer 1 - 3_5
+  - first:
+      213: 4543476985662472060
+    second: circle - Reference Layer 1 - 3_6
+  - first:
+      213: 3465395176604383865
+    second: circle - Reference Layer 1 - 3_7
+  - first:
+      213: -1940716660496366683
+    second: circle - Reference Layer 1 - 3_8
+  - first:
+      213: 4597536112874449280
+    second: circle - Reference Layer 1 - 3_9
+  - first:
+      213: 6367147783577447126
+    second: circle - Reference Layer 1 - 3_10
+  - first:
+      213: -2279241472086885349
+    second: circle - Reference Layer 1 - 3_11
+  - first:
+      213: -7928079970971032657
+    second: circle - Reference Layer 1 - 3_12
+  - first:
+      213: 2578585338494419208
+    second: circle - Reference Layer 1 - 3_13
+  - first:
+      213: -2290885121461332878
+    second: circle - Reference Layer 1 - 3_14
+  - first:
+      213: -6327412614673123912
+    second: circle - Reference Layer 1 - 3_15
+  - first:
+      213: 7989290115183150152
+    second: circle - Reference Layer 1 - 3_16
+  - first:
+      213: 694448383032708641
+    second: circle - Reference Layer 1 - 3_17
+  - first:
+      213: -1281078980295022273
+    second: circle - Reference Layer 1 - 3_18
+  - first:
+      213: 5460103752568354295
+    second: circle - Reference Layer 1 - 3_19
+  - first:
+      213: -6772425212526971822
+    second: circle - Reference Layer 1 - 3_20
+  - first:
+      213: -7458301004361642549
+    second: circle - Reference Layer 1 - 3_21
+  - first:
+      213: -640997495667492729
+    second: circle - Reference Layer 1 - 3_22
+  - first:
+      213: -808629581449796276
+    second: circle - Reference Layer 1 - 3_23
+  - first:
+      213: 9084048402059218152
+    second: circle - Reference Layer 1 - 3_24
+  - first:
+      213: 8887624467360187493
+    second: circle - Reference Layer 1 - 3_25
+  - first:
+      213: 5235579024944246668
+    second: circle - Reference Layer 1 - 3_26
+  - first:
+      213: -6491868326388946973
+    second: circle - Reference Layer 1 - 3_27
+  - first:
+      213: 3380004638622135473
+    second: circle - Reference Layer 1 - 3_28
+  - first:
+      213: -5505488114858172370
+    second: circle - Reference Layer 1 - 3_29
+  - first:
+      213: 8593217709572862863
+    second: circle - Reference Layer 1 - 3_30
+  - first:
+      213: -8181445126029879701
+    second: circle - Reference Layer 1 - 3_31
+  - first:
+      213: 5568245980058758040
+    second: circle - Reference Layer 1 - 3_32
+  - first:
+      213: 1636364918440887842
+    second: circle - Reference Layer 1 - 3_33
+  - first:
+      213: -2005788763076402550
+    second: circle - Reference Layer 1 - 3_34
+  - first:
+      213: -4558227878172763786
+    second: circle - Reference Layer 1 - 3_35
+  - first:
+      213: -223685154417452942
+    second: circle - Reference Layer 1 - 3_36
+  - first:
+      213: -6260176992604698240
+    second: circle - Reference Layer 1 - 3_37
+  - first:
+      213: -2438302157372631759
+    second: circle - Reference Layer 1 - 3_38
+  - first:
+      213: 3235108404345353283
+    second: circle - Reference Layer 1 - 3_39
+  - first:
+      213: -2856280582413501554
+    second: circle - Reference Layer 1 - 3_40
+  - first:
+      213: 4920603777912641513
+    second: circle - Reference Layer 1 - 3_41
+  - first:
+      213: -2594970569461562733
+    second: circle - Reference Layer 1 - 3_42
+  - first:
+      213: -6213416075054425857
+    second: circle - Reference Layer 1 - 3_43
+  - first:
+      213: -8657614667080040792
+    second: circle - Reference Layer 1 - 3_44
+  - first:
+      213: 5488847583922642822
+    second: circle - Reference Layer 1 - 3_45
+  - first:
+      213: -8260652698152733678
+    second: circle - Reference Layer 1 - 3_46
+  - first:
+      213: -66050748812859328
+    second: circle - Reference Layer 1 - 3_47
+  - first:
+      213: -8411069521196214988
+    second: circle - Reference Layer 1 - 3_48
+  - first:
+      213: 7270348732046502686
+    second: circle - Reference Layer 1 - 3_49
+  - first:
+      213: 4712437697927027342
+    second: circle - Reference Layer 1 - 3_50
+  - first:
+      213: 8851657289634335425
+    second: circle - Reference Layer 1 - 3_51
+  - first:
+      213: 2069103259280862857
+    second: circle - Reference Layer 1 - 3_52
+  - first:
+      213: 8598318625734605516
+    second: circle - Reference Layer 1 - 3_53
+  - first:
+      213: 1705985466573096987
+    second: circle - Reference Layer 1 - 3_54
+  - first:
+      213: -1126091374132601181
+    second: circle - Reference Layer 1 - 3_55
+  - first:
+      213: -936830161073017258
+    second: circle - Reference Layer 1 - 3_56
+  - first:
+      213: 46939097785375655
+    second: circle - Reference Layer 1 - 3_57
+  - first:
+      213: 6640662495716713724
+    second: circle - Reference Layer 1 - 3_58
+  - first:
+      213: 9133562553760336521
+    second: circle - Reference Layer 1 - 3_59
+  - first:
+      213: -3922956557435324179
+    second: circle - Reference Layer 1 - 3_60
+  - first:
+      213: 8581212600214851167
+    second: circle - Reference Layer 1 - 3_61
+  - first:
+      213: -1846518831355517355
+    second: circle - Reference Layer 1 - 3_62
+  - first:
+      213: 4462894362228776062
+    second: circle - Reference Layer 1 - 3_63
+  - first:
+      213: 894580400961258192
+    second: circle - Reference Layer 1 - 3_64
+  - first:
+      213: -3622935624749951101
+    second: circle - Reference Layer 1 - 3_65
+  - first:
+      213: 1104110644124110866
+    second: circle - Reference Layer 1 - 3_66
+  - first:
+      213: -3585328093383154212
+    second: circle - Reference Layer 1 - 3_67
+  - first:
+      213: -6145917333192725731
+    second: circle - Reference Layer 1 - 3_68
+  - first:
+      213: -3293036263084901159
+    second: circle - Reference Layer 1 - 3_69
+  - first:
+      213: -3448385133984922893
+    second: circle - Reference Layer 1 - 3_70
+  - first:
+      213: 2728341727333641355
+    second: circle - Reference Layer 1 - 3_71
+  - first:
+      213: 1204188421165994619
+    second: circle - Reference Layer 1 - 3_72
+  - first:
+      213: -4684387608357477929
+    second: circle - Reference Layer 1 - 3_73
+  - first:
+      213: -1213856696637156833
+    second: circle - Reference Layer 1 - 3_74
+  - first:
+      213: -2816939477570175562
+    second: circle - Reference Layer 1 - 3_75
+  - first:
+      213: 8225123031396347263
+    second: circle - Reference Layer 1 - 3_76
+  - first:
+      213: -8885251907836583453
+    second: circle - Reference Layer 1 - 3_77
+  - first:
+      213: -2527454079514912169
+    second: circle - Reference Layer 1 - 3_78
+  - first:
+      213: -1737426546374897900
+    second: circle - Reference Layer 1 - 3_79
+  - first:
+      213: -3104621204456987206
+    second: circle - Reference Layer 1 - 3_80
+  - first:
+      213: -8711381335181460515
+    second: circle - Reference Layer 1 - 3_81
+  - first:
+      213: -5409727384566988182
+    second: circle - Reference Layer 1 - 3_82
+  - first:
+      213: -5219208746748818016
+    second: circle - Reference Layer 1 - 3_83
+  - first:
+      213: 8184284956966371982
+    second: circle - Reference Layer 1 - 3_84
+  - first:
+      213: 1476400416877595799
+    second: circle - Reference Layer 1 - 3_85
+  - first:
+      213: 738345320421400259
+    second: circle - Reference Layer 1 - 3_86
+  - first:
+      213: 2446657400609294422
+    second: circle - Reference Layer 1 - 3_87
+  - first:
+      213: -3671500547548968710
+    second: circle - Reference Layer 1 - 3_88
+  - first:
+      213: -8492797839774734502
+    second: circle - Reference Layer 1 - 3_89
+  - first:
+      213: -1586317019311114313
+    second: circle - Reference Layer 1 - 3_90
+  - first:
+      213: -4215547928492756938
+    second: circle - Reference Layer 1 - 3_91
+  - first:
+      213: 3974297335614994608
+    second: circle - Reference Layer 1 - 3_92
+  - first:
+      213: 5784939648783015964
+    second: circle - Reference Layer 1 - 3_93
+  - first:
+      213: -6786797768693291186
+    second: circle - Reference Layer 1 - 3_94
+  - first:
+      213: 8617708138673410079
+    second: circle - Reference Layer 1 - 3_95
+  - first:
+      213: 1414884014950911609
+    second: circle - Reference Layer 1 - 3_96
+  - first:
+      213: -4772082846839294971
+    second: circle - Reference Layer 1 - 3_97
+  - first:
+      213: -4696247312040612517
+    second: circle - Reference Layer 1 - 3_98
+  - first:
+      213: -8373613152462108320
+    second: circle - Reference Layer 1 - 3_99
+  - first:
+      213: -5690500585117538509
+    second: circle - Reference Layer 1 - 3_100
+  - first:
+      213: 2419324365847110745
+    second: circle - Reference Layer 1 - 3_101
+  - first:
+      213: 2053455353658696025
+    second: circle - Reference Layer 1 - 3_102
+  - first:
+      213: -2480826277442797275
+    second: circle - Reference Layer 1 - 3_103
+  - first:
+      213: -6657344190288851873
+    second: circle - Reference Layer 1 - 3_104
+  - first:
+      213: 8085780223719623819
+    second: circle - Reference Layer 1 - 3_105
+  - first:
+      213: -1129277128322686894
+    second: circle - Reference Layer 1 - 3_106
+  - first:
+      213: -2082992613325268345
+    second: circle - Reference Layer 1 - 3_107
+  - first:
+      213: -7510847336381265787
+    second: circle - Reference Layer 1 - 3_108
+  - first:
+      213: -56992051373351321
+    second: circle - Reference Layer 1 - 3_109
+  - first:
+      213: -5081167367627889079
+    second: circle - Reference Layer 1 - 3_110
+  - first:
+      213: -7964069027688762244
+    second: circle - Reference Layer 1 - 3_111
+  - first:
+      213: -4401902683138390393
+    second: circle - Reference Layer 1 - 3_112
+  - first:
+      213: 7872177874090006802
+    second: circle - Reference Layer 1 - 3_113
+  - first:
+      213: -6130607094787599620
+    second: circle - Reference Layer 1 - 3_114
+  - first:
+      213: 1263917799793885598
+    second: circle - Reference Layer 1 - 3_115
+  - first:
+      213: -1880242223455730583
+    second: circle - Reference Layer 1 - 3_116
+  - first:
+      213: 8521367973891589673
+    second: circle - Reference Layer 1 - 3_117
+  - first:
+      213: -3091937191538130512
+    second: circle - Reference Layer 1 - 3_118
+  - first:
+      213: 5744398354013820811
+    second: circle - Reference Layer 1 - 3_119
+  - first:
+      213: 4736630837899358234
+    second: circle - Reference Layer 1 - 3_120
+  - first:
+      213: -7148208431972674404
+    second: circle - Reference Layer 1 - 3_121
+  - first:
+      213: -4832340181189303129
+    second: circle - Reference Layer 1 - 3_122
+  - first:
+      213: 4309459707807060938
+    second: circle - Reference Layer 1 - 3_123
+  - first:
+      213: -6420616108249534337
+    second: circle - Reference Layer 1 - 3_124
+  - first:
+      213: -6460790003684294692
+    second: circle - Reference Layer 1 - 3_125
+  - first:
+      213: -3193905388978165378
+    second: circle - Reference Layer 1 - 3_126
+  - first:
+      213: 3120828858813254255
+    second: circle - Reference Layer 1 - 3_127
+  - first:
+      213: 3808127234030060801
+    second: circle - Reference Layer 1 - 3_128
+  - first:
+      213: -1041892014271023703
+    second: circle - Reference Layer 1 - 3_129
+  - first:
+      213: -428430986726671581
+    second: circle - Reference Layer 1 - 3_130
+  - first:
+      213: 8022022797314673010
+    second: circle - Reference Layer 1 - 3_131
+  - first:
+      213: 689815361764655671
+    second: circle - Reference Layer 1 - 3_132
+  - first:
+      213: 3879860311146657237
+    second: circle - Reference Layer 1 - 3_133
+  - first:
+      213: 190638201032348490
+    second: circle - Reference Layer 1 - 3_134
+  - first:
+      213: 5261611121305910594
+    second: circle - Reference Layer 1 - 3_135
+  - first:
+      213: -8921026407884190423
+    second: circle - Reference Layer 1 - 3_136
+  - first:
+      213: 5002189728316914430
+    second: circle - Reference Layer 1 - 3_137
+  - first:
+      213: -208634449626966509
+    second: circle - Reference Layer 1 - 3_138
+  - first:
+      213: -1837492189682882583
+    second: circle - Reference Layer 1 - 3_139
+  - first:
+      213: -1368774237630429688
+    second: circle - Reference Layer 1 - 3_140
+  - first:
+      213: -3965049825645479947
+    second: circle - Reference Layer 1 - 3_141
+  - first:
+      213: 3965180582007551134
+    second: circle - Reference Layer 1 - 3_142
+  - first:
+      213: -2364742442545394669
+    second: circle - Reference Layer 1 - 3_143
+  - first:
+      213: 7493399635636993688
+    second: circle - Reference Layer 1 - 3_144
+  - first:
+      213: 4873173910071285288
+    second: circle - Reference Layer 1 - 3_145
+  - first:
+      213: -5179248885882330704
+    second: circle - Reference Layer 1 - 3_146
+  - first:
+      213: 2763743660000341254
+    second: circle - Reference Layer 1 - 3_147
+  - first:
+      213: -7251918868086354013
+    second: circle - Reference Layer 1 - 3_148
+  - first:
+      213: -7346392203957955789
+    second: circle - Reference Layer 1 - 3_149
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 239
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e84606d11c7b3a160800000000000000
+      internalID: 7035669082932274318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_1
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 239
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a2eac5f945c2f980800000000000000
+      internalID: -8506519824702446939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_2
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 239
+        width: 18
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43dd131c163a4f6f0800000000000000
+      internalID: -651716405813453516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_3
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 247
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff62adb91a3d72530800000000000000
+      internalID: 3830262699159856895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_4
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 251
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8194e59f457d6e440800000000000000
+      internalID: 4964892399183481112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_5
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 247
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e191a1e47ccac7820800000000000000
+      internalID: 2917396630638041374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_6
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 251
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7ff29ffe3cad0f30800000000000000
+      internalID: 4543476985662472060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_7
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 247
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97a3bdb7d8e871030800000000000000
+      internalID: 3465395176604383865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_8
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 251
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a38e69ca703115e0800000000000000
+      internalID: -1940716660496366683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_9
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 247
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08969e16cbabdcf30800000000000000
+      internalID: 4597536112874449280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_10
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 247
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6daac80bc27ac5850800000000000000
+      internalID: 6367147783577447126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_11
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 251
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1c3ce205f18e50e0800000000000000
+      internalID: -2279241472086885349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_12
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 251
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa3e16b654dc9f190800000000000000
+      internalID: -7928079970971032657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_13
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 251
+        width: 10
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8018df314b9f8c320800000000000000
+      internalID: 2578585338494419208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_14
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 247
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 274d112ae142530e0800000000000000
+      internalID: -2290885121461332878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_15
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 247
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b5351340c38038a0800000000000000
+      internalID: -6327412614673123912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_16
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 231
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 844080bd709afde60800000000000000
+      internalID: 7989290115183150152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_17
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 231
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12e4281002d23a900800000000000000
+      internalID: 694448383032708641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_18
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 231
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f39ab427471b83ee0800000000000000
+      internalID: -1281078980295022273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_19
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 243
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f53d902f6f26cb40800000000000000
+      internalID: 5460103752568354295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_20
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 243
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2543e6ba6238302a0800000000000000
+      internalID: -6772425212526971822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_21
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 243
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcdc51790cace7890800000000000000
+      internalID: -7458301004361642549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 219
+        width: 17
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 788f2d08c28ba17f0800000000000000
+      internalID: -640997495667492729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_23
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 219
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45efc21eab27c4f0800000000000000
+      internalID: -808629581449796276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_24
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 219
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ecc13f64e5011e70800000000000000
+      internalID: 9084048402059218152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_25
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 227
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 564031a4d5f275b70800000000000000
+      internalID: 8887624467360187493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_26
+      rect:
+        serializedVersion: 2
+        x: 115
+        y: 227
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8fa947426388a840800000000000000
+      internalID: 5235579024944246668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_27
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 235
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e72afc072048e5a0800000000000000
+      internalID: -6491868326388946973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_28
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 227
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b4be309f4038ee20800000000000000
+      internalID: 3380004638622135473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_29
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 235
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e206eb69ab39893b0800000000000000
+      internalID: -5505488114858172370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_30
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 231
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f83bfa06afd314770800000000000000
+      internalID: 8593217709572862863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_31
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 231
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6653a9410ba57e80800000000000000
+      internalID: -8181445126029879701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_32
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 231
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b266f8732664d40800000000000000
+      internalID: 5568245980058758040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_33
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 227
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2268496393985b610800000000000000
+      internalID: 1636364918440887842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_34
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 227
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a826c524fb10a24e0800000000000000
+      internalID: -2005788763076402550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_35
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 227
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 679da3435ebedb0c0800000000000000
+      internalID: -4558227878172763786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_36
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 199
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2785b65898f45ecf0800000000000000
+      internalID: -223685154417452942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_37
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 227
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08949bc61326f19a0800000000000000
+      internalID: -6260176992604698240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_38
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 199
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1355cb64b19692ed0800000000000000
+      internalID: -2438302157372631759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_39
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 199
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344b2e214f965ec20800000000000000
+      internalID: 3235108404345353283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_40
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8bb56a81f37c58d0800000000000000
+      internalID: -2856280582413501554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_41
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e79de6c01f794440800000000000000
+      internalID: 4920603777912641513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_42
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39286ac0400dcfbd0800000000000000
+      internalID: -2594970569461562733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_43
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 211
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff8dda4fff285c9a0800000000000000
+      internalID: -6213416075054425857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_44
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 199
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae7b7e8459f9d780800000000000000
+      internalID: -8657614667080040792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_45
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 199
+        width: 10
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68f58f1ebcd4c2c40800000000000000
+      internalID: 5488847583922642822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_46
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 215
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 214fbb943244c5d80800000000000000
+      internalID: -8260652698152733678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_47
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 199
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0486cd3a137551ff0800000000000000
+      internalID: -66050748812859328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_48
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 215
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4351cff85d0e54b80800000000000000
+      internalID: -8411069521196214988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_49
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 199
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1be7ded6a775e460800000000000000
+      internalID: 7270348732046502686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_50
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 199
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8a99136e11f56140800000000000000
+      internalID: 4712437697927027342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_51
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 207
+        width: 14
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cac626286767da70800000000000000
+      internalID: 8851657289634335425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_52
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 207
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ee905a37ee6bc10800000000000000
+      internalID: 2069103259280862857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_53
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 207
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cca3988fb3d535770800000000000000
+      internalID: 8598318625734605516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_54
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 203
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b18811f3eb0eca710800000000000000
+      internalID: 1705985466573096987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_55
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 203
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3aed13c8cd15f50f0800000000000000
+      internalID: -1126091374132601181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_56
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 203
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65eee5a9ee5bff2f0800000000000000
+      internalID: -936830161073017258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_57
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 207
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ab13995cd2c6a000800000000000000
+      internalID: 46939097785375655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_58
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 207
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf4247a2b5f582c50800000000000000
+      internalID: 6640662495716713724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_59
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 55
+        width: 138
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ac1be30cee0ce70800000000000000
+      internalID: 9133562553760336521
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_60
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 195
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de837c4bbcbde89c0800000000000000
+      internalID: -3922956557435324179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_61
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e89e90567961770800000000000000
+      internalID: 8581212600214851167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_62
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 195
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5562cf9f7e8df56e0800000000000000
+      internalID: -1846518831355517355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_63
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7c5dbae6c26fed30800000000000000
+      internalID: 4462894362228776062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_64
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d2825e82203a6c00800000000000000
+      internalID: 894580400961258192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_65
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 187
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 387dba29e3fb8bdc0800000000000000
+      internalID: -3622935624749951101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_66
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210debfe7c6925f00800000000000000
+      internalID: 1104110644124110866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_67
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 187
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd52bae481b5e3ec0800000000000000
+      internalID: -3585328093383154212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_68
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 175
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ba1287fb055baa0800000000000000
+      internalID: -6145917333192725731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_69
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 187
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc385a47f8cc42d0800000000000000
+      internalID: -3293036263084901159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_70
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 179
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f24710bdffd420d0800000000000000
+      internalID: -3448385133984922893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_71
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 179
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ce89b78540dd520800000000000000
+      internalID: 2728341727333641355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_72
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 179
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b72dc3e2df226b010800000000000000
+      internalID: 1204188421165994619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_73
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d16c950a46bdfeb0800000000000000
+      internalID: -4684387608357477929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_74
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 175
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1296b404c3872fe0800000000000000
+      internalID: -1213856696637156833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_75
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 155
+        width: 14
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bdb7ad487838e8d0800000000000000
+      internalID: -2816939477570175562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_76
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 167
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7d634881d1852270800000000000000
+      internalID: 8225123031396347263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_77
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e1e985477e31b480800000000000000
+      internalID: -8885251907836583453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_78
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75ad66cd7edacecd0800000000000000
+      internalID: -2527454079514912169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_79
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 159
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41f8df7e2cb63e7e0800000000000000
+      internalID: -1737426546374897900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_80
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 159
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab5223aa67b2ae4d0800000000000000
+      internalID: -3104621204456987206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_81
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 159
+        width: 6
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ddb7a8d94d4fa1780800000000000000
+      internalID: -8711381335181460515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_82
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 151
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a628e2f0b99cce4b0800000000000000
+      internalID: -5409727384566988182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_83
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0adcc612c45a197b0800000000000000
+      internalID: -5219208746748818016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_84
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 151
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e82cd806ecb649170800000000000000
+      internalID: 8184284956966371982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_85
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79c4a3a5b5a3d7410800000000000000
+      internalID: 1476400416877595799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_86
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ce1a4138212f3a00800000000000000
+      internalID: 738345320421400259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_87
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 658c56261f544f120800000000000000
+      internalID: 2446657400609294422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_88
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af801b654b53c0dc0800000000000000
+      internalID: -3671500547548968710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_89
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a57a50b8c55832a80800000000000000
+      internalID: -8492797839774734502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_90
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7fdca53154cf9e0800000000000000
+      internalID: -1586317019311114313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_91
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6303e847e7d5f75c0800000000000000
+      internalID: -4215547928492756938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_92
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8fc19be5a872730800000000000000
+      internalID: 3974297335614994608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_93
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c10e8cce5fb384050800000000000000
+      internalID: 5784939648783015964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_94
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e476f9a236370d1a0800000000000000
+      internalID: -6786797768693291186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_95
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f101f9fb4ef389770800000000000000
+      internalID: 8617708138673410079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_96
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97e0785e38da2a310800000000000000
+      internalID: 1414884014950911609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_97
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 504b8633fe726cdb0800000000000000
+      internalID: -4772082846839294971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_98
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5daf6493f393deb0800000000000000
+      internalID: -4696247312040612517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_99
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06905f00433facb80800000000000000
+      internalID: -8373613152462108320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_100
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 111
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 337aaed0ed74701b0800000000000000
+      internalID: -5690500585117538509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_101
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 111
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 954a3ce41ba239120800000000000000
+      internalID: 2419324365847110745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_102
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 111
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95163f4b3c65f7c10800000000000000
+      internalID: 2053455353658696025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_103
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 521419705a5529dd0800000000000000
+      internalID: -2480826277442797275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_104
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c82562bbc5c93a0800000000000000
+      internalID: -6657344190288851873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_105
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8ccfaee546763070800000000000000
+      internalID: 8085780223719623819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_106
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2506a595f600450f0800000000000000
+      internalID: -1129277128322686894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_107
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78a1cfc1149b713e0800000000000000
+      internalID: -2082992613325268345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_108
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5884ec8442c14c790800000000000000
+      internalID: -7510847336381265787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_109
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 87
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76ededef706853ff0800000000000000
+      internalID: -56992051373351321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_110
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 87
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946ab3843311c79b0800000000000000
+      internalID: -5081167367627889079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_111
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 87
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c74bbed2a61f97190800000000000000
+      internalID: -7964069027688762244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_112
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 91
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78682bbf4dc49e2c0800000000000000
+      internalID: -4401902683138390393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_113
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 91
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21913d161189f3d60800000000000000
+      internalID: 7872177874090006802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_114
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 91
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf212b12455bbeaa0800000000000000
+      internalID: -6130607094787599620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_115
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 79
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e91020ada865a8110800000000000000
+      internalID: 1263917799793885598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_116
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9640b33e8a908e5e0800000000000000
+      internalID: -1880242223455730583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_117
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 79
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 926c23c260bf14670800000000000000
+      internalID: 8521367973891589673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_118
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b10d8e818b3715d0800000000000000
+      internalID: -3091937191538130512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_119
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 79
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b87155b2ed338bf40800000000000000
+      internalID: 5744398354013820811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_120
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a10f62db6a4ebb140800000000000000
+      internalID: 4736630837899358234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_121
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9411dfcd467ccc90800000000000000
+      internalID: -7148208431972674404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_122
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a46d52453410fcb0800000000000000
+      internalID: -4832340181189303129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_123
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac3d2b195c64ecb30800000000000000
+      internalID: 4309459707807060938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_124
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 67
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f70b2acdaa365e6a0800000000000000
+      internalID: -6420616108249534337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_125
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 67
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdfb00ee8b9a656a0800000000000000
+      internalID: -6460790003684294692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_126
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 67
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7920c388f7fca3d0800000000000000
+      internalID: -3193905388978165378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_127
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 55
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6a0a5eef496f4b20800000000000000
+      internalID: 3120828858813254255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_128
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 55
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1054ad30b8f29d430800000000000000
+      internalID: 3808127234030060801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_129
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 55
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a53f03bbb47a81f0800000000000000
+      internalID: -1041892014271023703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_130
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 55
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32bf2699948ed0af0800000000000000
+      internalID: -428430986726671581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_131
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 55
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 279c60e4b33f35f60800000000000000
+      internalID: 8022022797314673010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_132
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 47
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 732079eaa67b29900800000000000000
+      internalID: 689815361764655671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_133
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 47
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d57808856808d530800000000000000
+      internalID: 3879860311146657237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_134
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 47
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43172d0f6845a200800000000000000
+      internalID: 190638201032348490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_135
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24dfea7007ff40940800000000000000
+      internalID: 5261611121305910594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_136
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d0f266fb5223480800000000000000
+      internalID: -8921026407884190423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_137
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efaff6f1e095b6540800000000000000
+      internalID: 5002189728316914430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_138
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 316531ec218ca1df0800000000000000
+      internalID: -208634449626966509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_139
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e7a564c69aef76e0800000000000000
+      internalID: -1837492189682882583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_140
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 806055c3513210de0800000000000000
+      internalID: -1368774237630429688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_141
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f73da9f03059f8c0800000000000000
+      internalID: -3965049825645479947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_142
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9436dc1bb6270730800000000000000
+      internalID: 3965180582007551134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_143
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ccac6074fbe2fd0800000000000000
+      internalID: -2364742442545394669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_144
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89e3f225447edf760800000000000000
+      internalID: 7493399635636993688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_145
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 826108e1addf0a340800000000000000
+      internalID: 4873173910071285288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_146
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 35
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b165a1449c9f18b0800000000000000
+      internalID: -5179248885882330704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_147
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 35
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60dee80473aca5620800000000000000
+      internalID: 2763743660000341254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_148
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 35
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3af82c736320c5b90800000000000000
+      internalID: -7251918868086354013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: circle - Reference Layer 1 - 3_149
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333136e963f5c0a90800000000000000
+      internalID: -7346392203957955789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      circle - Reference Layer 1 - 3_0: 7035669082932274318
+      circle - Reference Layer 1 - 3_1: -8506519824702446939
+      circle - Reference Layer 1 - 3_10: 6367147783577447126
+      circle - Reference Layer 1 - 3_100: -5690500585117538509
+      circle - Reference Layer 1 - 3_101: 2419324365847110745
+      circle - Reference Layer 1 - 3_102: 2053455353658696025
+      circle - Reference Layer 1 - 3_103: -2480826277442797275
+      circle - Reference Layer 1 - 3_104: -6657344190288851873
+      circle - Reference Layer 1 - 3_105: 8085780223719623819
+      circle - Reference Layer 1 - 3_106: -1129277128322686894
+      circle - Reference Layer 1 - 3_107: -2082992613325268345
+      circle - Reference Layer 1 - 3_108: -7510847336381265787
+      circle - Reference Layer 1 - 3_109: -56992051373351321
+      circle - Reference Layer 1 - 3_11: -2279241472086885349
+      circle - Reference Layer 1 - 3_110: -5081167367627889079
+      circle - Reference Layer 1 - 3_111: -7964069027688762244
+      circle - Reference Layer 1 - 3_112: -4401902683138390393
+      circle - Reference Layer 1 - 3_113: 7872177874090006802
+      circle - Reference Layer 1 - 3_114: -6130607094787599620
+      circle - Reference Layer 1 - 3_115: 1263917799793885598
+      circle - Reference Layer 1 - 3_116: -1880242223455730583
+      circle - Reference Layer 1 - 3_117: 8521367973891589673
+      circle - Reference Layer 1 - 3_118: -3091937191538130512
+      circle - Reference Layer 1 - 3_119: 5744398354013820811
+      circle - Reference Layer 1 - 3_12: -7928079970971032657
+      circle - Reference Layer 1 - 3_120: 4736630837899358234
+      circle - Reference Layer 1 - 3_121: -7148208431972674404
+      circle - Reference Layer 1 - 3_122: -4832340181189303129
+      circle - Reference Layer 1 - 3_123: 4309459707807060938
+      circle - Reference Layer 1 - 3_124: -6420616108249534337
+      circle - Reference Layer 1 - 3_125: -6460790003684294692
+      circle - Reference Layer 1 - 3_126: -3193905388978165378
+      circle - Reference Layer 1 - 3_127: 3120828858813254255
+      circle - Reference Layer 1 - 3_128: 3808127234030060801
+      circle - Reference Layer 1 - 3_129: -1041892014271023703
+      circle - Reference Layer 1 - 3_13: 2578585338494419208
+      circle - Reference Layer 1 - 3_130: -428430986726671581
+      circle - Reference Layer 1 - 3_131: 8022022797314673010
+      circle - Reference Layer 1 - 3_132: 689815361764655671
+      circle - Reference Layer 1 - 3_133: 3879860311146657237
+      circle - Reference Layer 1 - 3_134: 190638201032348490
+      circle - Reference Layer 1 - 3_135: 5261611121305910594
+      circle - Reference Layer 1 - 3_136: -8921026407884190423
+      circle - Reference Layer 1 - 3_137: 5002189728316914430
+      circle - Reference Layer 1 - 3_138: -208634449626966509
+      circle - Reference Layer 1 - 3_139: -1837492189682882583
+      circle - Reference Layer 1 - 3_14: -2290885121461332878
+      circle - Reference Layer 1 - 3_140: -1368774237630429688
+      circle - Reference Layer 1 - 3_141: -3965049825645479947
+      circle - Reference Layer 1 - 3_142: 3965180582007551134
+      circle - Reference Layer 1 - 3_143: -2364742442545394669
+      circle - Reference Layer 1 - 3_144: 7493399635636993688
+      circle - Reference Layer 1 - 3_145: 4873173910071285288
+      circle - Reference Layer 1 - 3_146: -5179248885882330704
+      circle - Reference Layer 1 - 3_147: 2763743660000341254
+      circle - Reference Layer 1 - 3_148: -7251918868086354013
+      circle - Reference Layer 1 - 3_149: -7346392203957955789
+      circle - Reference Layer 1 - 3_15: -6327412614673123912
+      circle - Reference Layer 1 - 3_16: 7989290115183150152
+      circle - Reference Layer 1 - 3_17: 694448383032708641
+      circle - Reference Layer 1 - 3_18: -1281078980295022273
+      circle - Reference Layer 1 - 3_19: 5460103752568354295
+      circle - Reference Layer 1 - 3_2: -651716405813453516
+      circle - Reference Layer 1 - 3_20: -6772425212526971822
+      circle - Reference Layer 1 - 3_21: -7458301004361642549
+      circle - Reference Layer 1 - 3_22: -640997495667492729
+      circle - Reference Layer 1 - 3_23: -808629581449796276
+      circle - Reference Layer 1 - 3_24: 9084048402059218152
+      circle - Reference Layer 1 - 3_25: 8887624467360187493
+      circle - Reference Layer 1 - 3_26: 5235579024944246668
+      circle - Reference Layer 1 - 3_27: -6491868326388946973
+      circle - Reference Layer 1 - 3_28: 3380004638622135473
+      circle - Reference Layer 1 - 3_29: -5505488114858172370
+      circle - Reference Layer 1 - 3_3: 3830262699159856895
+      circle - Reference Layer 1 - 3_30: 8593217709572862863
+      circle - Reference Layer 1 - 3_31: -8181445126029879701
+      circle - Reference Layer 1 - 3_32: 5568245980058758040
+      circle - Reference Layer 1 - 3_33: 1636364918440887842
+      circle - Reference Layer 1 - 3_34: -2005788763076402550
+      circle - Reference Layer 1 - 3_35: -4558227878172763786
+      circle - Reference Layer 1 - 3_36: -223685154417452942
+      circle - Reference Layer 1 - 3_37: -6260176992604698240
+      circle - Reference Layer 1 - 3_38: -2438302157372631759
+      circle - Reference Layer 1 - 3_39: 3235108404345353283
+      circle - Reference Layer 1 - 3_4: 4964892399183481112
+      circle - Reference Layer 1 - 3_40: -2856280582413501554
+      circle - Reference Layer 1 - 3_41: 4920603777912641513
+      circle - Reference Layer 1 - 3_42: -2594970569461562733
+      circle - Reference Layer 1 - 3_43: -6213416075054425857
+      circle - Reference Layer 1 - 3_44: -8657614667080040792
+      circle - Reference Layer 1 - 3_45: 5488847583922642822
+      circle - Reference Layer 1 - 3_46: -8260652698152733678
+      circle - Reference Layer 1 - 3_47: -66050748812859328
+      circle - Reference Layer 1 - 3_48: -8411069521196214988
+      circle - Reference Layer 1 - 3_49: 7270348732046502686
+      circle - Reference Layer 1 - 3_5: 2917396630638041374
+      circle - Reference Layer 1 - 3_50: 4712437697927027342
+      circle - Reference Layer 1 - 3_51: 8851657289634335425
+      circle - Reference Layer 1 - 3_52: 2069103259280862857
+      circle - Reference Layer 1 - 3_53: 8598318625734605516
+      circle - Reference Layer 1 - 3_54: 1705985466573096987
+      circle - Reference Layer 1 - 3_55: -1126091374132601181
+      circle - Reference Layer 1 - 3_56: -936830161073017258
+      circle - Reference Layer 1 - 3_57: 46939097785375655
+      circle - Reference Layer 1 - 3_58: 6640662495716713724
+      circle - Reference Layer 1 - 3_59: 9133562553760336521
+      circle - Reference Layer 1 - 3_6: 4543476985662472060
+      circle - Reference Layer 1 - 3_60: -3922956557435324179
+      circle - Reference Layer 1 - 3_61: 8581212600214851167
+      circle - Reference Layer 1 - 3_62: -1846518831355517355
+      circle - Reference Layer 1 - 3_63: 4462894362228776062
+      circle - Reference Layer 1 - 3_64: 894580400961258192
+      circle - Reference Layer 1 - 3_65: -3622935624749951101
+      circle - Reference Layer 1 - 3_66: 1104110644124110866
+      circle - Reference Layer 1 - 3_67: -3585328093383154212
+      circle - Reference Layer 1 - 3_68: -6145917333192725731
+      circle - Reference Layer 1 - 3_69: -3293036263084901159
+      circle - Reference Layer 1 - 3_7: 3465395176604383865
+      circle - Reference Layer 1 - 3_70: -3448385133984922893
+      circle - Reference Layer 1 - 3_71: 2728341727333641355
+      circle - Reference Layer 1 - 3_72: 1204188421165994619
+      circle - Reference Layer 1 - 3_73: -4684387608357477929
+      circle - Reference Layer 1 - 3_74: -1213856696637156833
+      circle - Reference Layer 1 - 3_75: -2816939477570175562
+      circle - Reference Layer 1 - 3_76: 8225123031396347263
+      circle - Reference Layer 1 - 3_77: -8885251907836583453
+      circle - Reference Layer 1 - 3_78: -2527454079514912169
+      circle - Reference Layer 1 - 3_79: -1737426546374897900
+      circle - Reference Layer 1 - 3_8: -1940716660496366683
+      circle - Reference Layer 1 - 3_80: -3104621204456987206
+      circle - Reference Layer 1 - 3_81: -8711381335181460515
+      circle - Reference Layer 1 - 3_82: -5409727384566988182
+      circle - Reference Layer 1 - 3_83: -5219208746748818016
+      circle - Reference Layer 1 - 3_84: 8184284956966371982
+      circle - Reference Layer 1 - 3_85: 1476400416877595799
+      circle - Reference Layer 1 - 3_86: 738345320421400259
+      circle - Reference Layer 1 - 3_87: 2446657400609294422
+      circle - Reference Layer 1 - 3_88: -3671500547548968710
+      circle - Reference Layer 1 - 3_89: -8492797839774734502
+      circle - Reference Layer 1 - 3_9: 4597536112874449280
+      circle - Reference Layer 1 - 3_90: -1586317019311114313
+      circle - Reference Layer 1 - 3_91: -4215547928492756938
+      circle - Reference Layer 1 - 3_92: 3974297335614994608
+      circle - Reference Layer 1 - 3_93: 5784939648783015964
+      circle - Reference Layer 1 - 3_94: -6786797768693291186
+      circle - Reference Layer 1 - 3_95: 8617708138673410079
+      circle - Reference Layer 1 - 3_96: 1414884014950911609
+      circle - Reference Layer 1 - 3_97: -4772082846839294971
+      circle - Reference Layer 1 - 3_98: -4696247312040612517
+      circle - Reference Layer 1 - 3_99: -8373613152462108320
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

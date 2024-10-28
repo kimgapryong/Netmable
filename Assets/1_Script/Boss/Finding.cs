@@ -1,23 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static Finding;
 
 public class Finding : MonoBehaviour
 {
-
+   
     public delegate void NormalAttack();
     public event NormalAttack normal;
 
     public bool isRight;
     private bool attackTrue = true;
 
+    public Animator animator;
     public Transform player;
     public Transform check;
     public Rigidbody2D rb;
     public MovePlayer mover;
 
     public Boss1 boss;
+    private Vector2 origin;
 
     private float tele = 5; 
 
@@ -25,6 +26,7 @@ public class Finding : MonoBehaviour
     private float disy = 11; 
     private bool canTeleport = true;  
     private bool isGround;
+    public bool isWalk;
 
 
     public LayerMask mask;
@@ -57,11 +59,13 @@ public class Finding : MonoBehaviour
       
         if(transform.position.x < player.transform.position.x)
         {
+    
             isRight = true;
             transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
         }
         if(transform.position.x > player.transform.position.x)
         {
+            
             isRight = false;
             transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
         }
@@ -72,6 +76,10 @@ public class Finding : MonoBehaviour
         }
         else
         {
+            if(isWalk)
+            {
+                animator.SetBool("Side", true);
+            }
             Vector2 target = (player.position - transform.position).normalized;
             rb.velocity = new Vector2(target.x * boss.speed, rb.velocity.y);
 
@@ -113,7 +121,7 @@ public class Finding : MonoBehaviour
     private IEnumerator AttackTrueCool()
     {
         attackTrue = false;
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(1.3f);
         attackTrue = true;
     }
 }

@@ -8,6 +8,7 @@ public class Boss1 : Boss
 {
     public BossScriptable data;
     public bool isMove = true;
+    public float layerSpeed = 60f;
    
     public GameObject skill1obj;
     public GameObject skill2obj;
@@ -61,7 +62,8 @@ public class Boss1 : Boss
 
         if (isIdle && !attackCool)
         {
-   
+            find.isWalk = false;
+            animator.SetBool("Side", false);
             fsm.ChangeState(State.Idle);
             StartCoroutine(StateIdle());
             
@@ -299,13 +301,23 @@ public class Boss1 : Boss
     {
         if (Vector2.Distance(player.transform.position, transform.position) < 14 && isAttack)
         {
-            GameObject clone = Instantiate(normal1, fire.transform.position, Quaternion.identity);
+            GameObject clone = Instantiate(normal1, transform.position, Quaternion.identity);
+            if(transform.localScale.x > 0)
+            {
+                clone.GetComponent<ScaleUp>().AttackRight(transform);
+            }
+            else if(transform.localScale.x < 0)
+            {
+                clone.GetComponent<ScaleUp>().AttackRight(transform);
+            }
+            
             //float bossScale = transform.localScale.x / 3;
             StartCoroutine(attackTime(transform.localScale.x / 3, clone));
             StartCoroutine(NormalCool());
         }
            
     }
+
 
     private IEnumerator attackTime(float bossScale, GameObject obj)
     {
@@ -379,9 +391,11 @@ public class Boss1 : Boss
     {
         find.enabled = false;
         yield return new WaitForSeconds(idleCool);
+        find.isWalk = true;
         isIdle = false;
         find.enabled = true;
         isAttack = true;
+        
     }
     public override IEnumerator StateAttack()
     {

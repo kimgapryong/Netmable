@@ -109,7 +109,7 @@ public class PlayerManager : MonoBehaviour
 
             if(cam != null)
             {
-                StartCoroutine(cam.Shake(0.35f, 0.2f, 0.5f));
+                StartCoroutine(cam.Shake(0.55f, 0.2f, 0.8f));
             }
         }
         

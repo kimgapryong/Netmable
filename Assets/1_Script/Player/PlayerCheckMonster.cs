@@ -70,6 +70,14 @@ public class PlayerCheckMonster : MonoBehaviour
             GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Boss>().damage);
             StartCoroutine(WaitSecond());
         }
+
+        //보스 스킬
+        if (collision.CompareTag("BossSkil"))
+        {
+            isAttack = false;
+            GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Boss>().damage + 20);
+            StartCoroutine(WaitSecond());
+        }
     }
 
     private IEnumerator WaitSecond()

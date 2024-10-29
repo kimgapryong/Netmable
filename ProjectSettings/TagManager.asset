@@ -11,6 +11,7 @@ TagManager:
   - ' Tongue'
   - Stage1
   - Boss
+  - BossSkil
   layers:
   - Default
   - TransparentFX

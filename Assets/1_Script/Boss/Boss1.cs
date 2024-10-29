@@ -321,14 +321,17 @@ public class Boss1 : Boss
 
     private IEnumerator attackTime(float bossScale, GameObject obj)
     {
-        float speed = 35;
+        float speed = 45;
         float time = 0;
-        float die = 6;
+        float die = 3;
         Vector2 newVec = new Vector2(bossScale, 0);
         while (time <= die)
         {
             yield return null;
-            obj.transform.Translate(newVec * speed * Time.deltaTime);
+            if(obj != null)
+            {
+                obj.transform.Translate(newVec * speed * Time.deltaTime);
+            }
             time += Time.deltaTime;
         }
     }
@@ -337,7 +340,7 @@ public class Boss1 : Boss
     {
         if (Vector2.Distance(player.transform.position, transform.position) > 30 && isAttack)
         {
-            Vector2 newVec = new Vector2(player.transform.position.x, player.transform.position.y + 100f);
+            Vector2 newVec = new Vector2(player.transform.position.x, player.transform.position.y + 20);
             GameObject clone = Instantiate(normal2, newVec, Quaternion.identity);
 
             StartCoroutine(attackLength(player.transform.position, clone));
@@ -350,29 +353,28 @@ public class Boss1 : Boss
     {
         Vector3 startPosition = clone.transform.position;
 
-        float lightningSpeed = 250f;  
+        float lightningSpeed = 5f;  
         float targetScaleY = Vector2.Distance(startPosition, targetPosition);
 
-
-        while (clone.transform.localScale.y < targetScaleY)
+        Destroy(clone, 0.8f);
+        while (clone != null && clone.transform.localScale.y < targetScaleY)
         {
-
             clone.transform.localScale += new Vector3(0, lightningSpeed * Time.deltaTime, 0);
-
             clone.transform.position = Vector3.MoveTowards(clone.transform.position, targetPosition, lightningSpeed * Time.deltaTime);
 
-            yield return null;  
+            yield return null;
         }
 
+
         //질문 보스스테이지 끝쪽을 보면 총알이 안 지워짐
-        Destroy(clone, 1f);
+
 
     }
 
     private IEnumerator NormalCool()
     {
         isAttack = false;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(3.5f);
         isAttack = true;
     }
 

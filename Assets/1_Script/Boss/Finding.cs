@@ -9,7 +9,7 @@ public class Finding : MonoBehaviour
     public event NormalAttack normal;
 
     public bool isRight;
-    private bool attackTrue = true;
+    private bool attackTrue = false;
 
     public Animator animator;
     public Transform player;
@@ -37,6 +37,7 @@ public class Finding : MonoBehaviour
         mover = player.gameObject.GetComponent<MovePlayer>();
         boss = GetComponent<Boss1>();
         rb = GetComponent<Rigidbody2D>();
+        StartCoroutine(AttackTrueCool());
     }
 
     private void Update()

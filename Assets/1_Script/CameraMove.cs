@@ -81,7 +81,7 @@ public class CameraMove : MonoBehaviour
         float elapsed = 0.0f;
         float currentMagnitude = shakeM;  // 진폭을 별도의 변수로 관리
 
-        while (elapsed < shakeD)
+        while (elapsed < damping)
         {
             float x = Random.Range(-1f, 1f) * currentMagnitude;
             float y = Random.Range(-1f, 1f) * currentMagnitude;

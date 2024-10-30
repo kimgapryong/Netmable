@@ -4,11 +4,9 @@ using UnityEngine;
 public class ScaleUp : MonoBehaviour
 {
     public float layerSpeed = 1f; // 확장 속도
-    private BoxCollider2D boxCollider;
 
     private void Start()
     {
-        boxCollider = GetComponent<BoxCollider2D>();
         Destroy(gameObject, 1f);
     }
     public void AttackLeft(Transform player)

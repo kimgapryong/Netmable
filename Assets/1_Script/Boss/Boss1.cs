@@ -364,13 +364,7 @@ public class Boss1 : Boss
 
             yield return null;
         }
-
-
-        //질문 보스스테이지 끝쪽을 보면 총알이 안 지워짐
-
-
     }
-
     private IEnumerator NormalCool()
     {
         isAttack = false;

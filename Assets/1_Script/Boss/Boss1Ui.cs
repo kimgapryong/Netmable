@@ -11,6 +11,7 @@ public class Boss1Ui : MonoBehaviour
     public Image[] attack1Image;
     public Image attack2Image;
 
+    public Canvas canva;
     public Slider bossSlider;
     public Image bossImage;
     public Text bossName;

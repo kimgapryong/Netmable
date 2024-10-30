@@ -10,11 +10,13 @@ public class PlayerCheckMonster : MonoBehaviour
     public bool isEnemy = true;
     private MovePlayer move;
     private PlayerStatus status;
+    private CameraMove cam;
 
     private void Start()
     {
         move = GetComponent<MovePlayer>();  
         status = GetComponent<PlayerStatus>();
+        cam = Camera.main.GetComponent<CameraMove>();   
     }
 
     //적 관련 체크
@@ -37,7 +39,16 @@ public class PlayerCheckMonster : MonoBehaviour
             isAttack = false;
             GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Boss>().damage);
             StartCoroutine(WaitSecond());
-        }
+        } else if (collision.gameObject.tag =="BossSkil")
+            {
+                cam.Shake(0.2f, 0.5f, 0.2f);
+                if(collision.gameObject != null)
+            {
+                GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Boss>().damage);
+            }
+            
+           
+            }
 
         //아이템
         if (collision.gameObject.CompareTag("Item"))
@@ -52,6 +63,8 @@ public class PlayerCheckMonster : MonoBehaviour
         }
 
       
+
+
     }
     private void OnCollisionStay2D(Collision2D collision)
     {
@@ -61,6 +74,7 @@ public class PlayerCheckMonster : MonoBehaviour
             GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Monster>().damage);
             StartCoroutine(WaitSecond());
         }
+       
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -72,19 +86,21 @@ public class PlayerCheckMonster : MonoBehaviour
         }
 
         //보스 스킬
-        if (collision.CompareTag("BossSkil"))
+        if (collision.CompareTag("BossSkil") && isAttack)
         {
+  
             isAttack = false;
-            GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Boss>().damage + 20);
+            cam.Shake(0.35f, 1.2f, 0.4f);
+            GameManager.Instance.playerManager.PlayerTakeDamage(50);
             StartCoroutine(WaitSecond());
         }
     }
 
     private IEnumerator WaitSecond()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.3f);
         move.enabled = true;
-        yield return new WaitForSeconds(0.7f);
+        yield return new WaitForSeconds(0.3f);
         isAttack = true;
     }
 

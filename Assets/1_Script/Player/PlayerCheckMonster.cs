@@ -14,6 +14,7 @@ public class PlayerCheckMonster : MonoBehaviour
 
     private void Start()
     {
+        enabled = false;
         move = GetComponent<MovePlayer>();  
         status = GetComponent<PlayerStatus>();
         cam = Camera.main.GetComponent<CameraMove>();   
@@ -39,7 +40,7 @@ public class PlayerCheckMonster : MonoBehaviour
             isAttack = false;
             GameManager.Instance.playerManager.PlayerTakeDamage(collision.gameObject.GetComponent<Boss>().damage);
             StartCoroutine(WaitSecond());
-        } else if (collision.gameObject.tag =="BossSkil")
+        } else if (collision.gameObject.tag =="BossSkil" && isAttack)
             {
                 cam.Shake(0.2f, 0.5f, 0.2f);
                 if(collision.gameObject != null)
@@ -103,9 +104,5 @@ public class PlayerCheckMonster : MonoBehaviour
         yield return new WaitForSeconds(0.3f);
         isAttack = true;
     }
-
-
-
-   
 }
-
+ 

@@ -8,7 +8,7 @@ public class PlayerStatus : MonoBehaviour
 
     public event Action OnLevelUp;
     public int nextSkil = 5;
-    
+
     public int damage;
     public float speed;
     public float jumpPower;
@@ -53,7 +53,10 @@ public class PlayerStatus : MonoBehaviour
             currentLevel = maxLevel - 1;  // 레벨을 최대 레벨로 고정
         }
     }
-
+    public bool ManaOk(int mana)
+    {
+        return currentMp - mana >= 0;
+    }
     private void LevelUp()
     {
         if (currentLevel < maxLevel - 1) // maxLevel - 1로 수정하여 최대 레벨 이상으로 증가하지 않도록

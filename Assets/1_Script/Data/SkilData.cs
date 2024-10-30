@@ -12,5 +12,6 @@ public class SkilData : ScriptableObject
     public int damage;
     public int speed;
     public int nextSkilLevel;
+
     public KeyCode keyCode;
 }

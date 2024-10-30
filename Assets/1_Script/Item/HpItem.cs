@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class HpItem : Item
 {
-    private PlayerStatus status;
+
     private int amount;
     public int addHp = 50;
     public override void UseItem()
     {
-        Debug.Log("tkdyd");
         if (count > 0)
         {
             if(status.maxHp - status.currentHp < addHp)
@@ -28,8 +27,8 @@ public class HpItem : Item
 
     private void Start()
     {
+        status = PlayerManager.Instance.playerStatus;
         itemName = "체력포션";
-        // = PlayerManager.Instance.playerStatus;
     }
 
 }

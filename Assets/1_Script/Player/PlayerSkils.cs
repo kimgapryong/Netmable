@@ -13,6 +13,7 @@ public class PlayerSkils : MonoBehaviour
     private bool ChaCoolTimes = true;
     private bool shieldTimes = true;
     public MovePlayer movePlayer;
+    public PlayerStatus status;
     public Transform SkilsFire;
 
     //스킬 오브젝트
@@ -20,6 +21,9 @@ public class PlayerSkils : MonoBehaviour
     //차징
     private GameObject chaObj;
 
+    private int fireMana = 30;
+    private float chaMana;
+    private int shieldMana = 15;
 
     //스킬 키코드
     private KeyCode fireKey;
@@ -39,8 +43,8 @@ public class PlayerSkils : MonoBehaviour
     }
     private void Start()
     {
-        movePlayer = GameObject.Find("Player").GetComponent<MovePlayer>();
-       
+        movePlayer = GetComponent<MovePlayer>();
+        status = GetComponent<PlayerStatus>();
         StartCoroutine(fireBool.waitSkil()); //파이버블 Action
     }
 
@@ -56,9 +60,10 @@ public class PlayerSkils : MonoBehaviour
     {
         if(FireSkil)
         {
-            if (Input.GetKeyDown(fireKey) && FireCoolTimes)
+            if (Input.GetKeyDown(fireKey) && FireCoolTimes && status.ManaOk(fireMana))
             {
                 FireCoolTimes = false;
+                status.currentMp -= fireMana;
                 if (movePlayer.facingRight)
                 {
                     Instantiate(fireObj, SkilsFire.position, Quaternion.identity);
@@ -113,18 +118,22 @@ public class PlayerSkils : MonoBehaviour
         int maxDamage = 100;
         if (currentSkillObject != null)
         {
-            while (Input.GetKey(chagingkey))
+            while (Input.GetKey(chagingkey) && status.ManaOk((int)chaMana))
             {
                 chargingTime += Time.deltaTime;
 
                 if (chargingTime <= 4f)
                 {
+                    chaMana += 0.02f;
+                 
                     float scaleFactor = Mathf.Lerp(1f, 3.5f, chargingTime / 4f);
                     currentSkillObject.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
                     chaDamage = Mathf.RoundToInt(Mathf.Lerp(0, maxDamage, chargingTime / 4));
                 }
                 else if (chargingTime >= 8f)
                 {
+                    status.currentMp -= (int)chaMana;
+                    chaMana = 0;
                     Destroy(currentSkillObject);
                     StartCoroutine(ChaCoolTime());
                     yield break;
@@ -137,9 +146,11 @@ public class PlayerSkils : MonoBehaviour
 
                 yield return null;
             }
-        
+          
             if (currentSkillObject != null)
             {
+                status.currentMp -= (int)chaMana;
+                chaMana = 0;
                 chaSkil.collider2D.enabled = true;
                 if (movePlayer.facingRight)
                 {
@@ -176,10 +187,11 @@ public class PlayerSkils : MonoBehaviour
     }
     public void ShieldSkil()
     {
-        if(Input.GetKeyDown(shieldKey) && shieldTimes)
+        if(Input.GetKeyDown(shieldKey) && shieldTimes && status.ManaOk(shieldMana))
         {
             Debug.Log("쉴드스킬");
             shieldTimes = false;
+            status.currentMp -= shieldMana;
             PlayerManager.Instance.okAtk = false;
             StartCoroutine(ShieldCool());
         }

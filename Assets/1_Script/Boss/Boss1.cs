@@ -107,6 +107,7 @@ public class Boss1 : Boss
     public override IEnumerator Attack2()
     {
         attackCool = true;
+        animator.SetBool("Standly", true);
         StartCoroutine (ParticleGet());
         yield return new WaitForSeconds(0.5f);
     }
@@ -197,6 +198,7 @@ public class Boss1 : Boss
                 yield return new WaitForSeconds(4);
                 col.isTrigger = false;
                 rb.bodyType = RigidbodyType2D.Dynamic;
+
                 //rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.None;
                 //rb.constraints = (RigidbodyConstraints2D)RigidbodyConstraints.FreezeRotationZ;
                 Destroy(clone); 
@@ -204,6 +206,7 @@ public class Boss1 : Boss
             }
             yield return null;
         }
+        animator.SetBool("Standly", false);
         yield return new WaitForSeconds(2);
         find.enabled = true;
         attackCool = false;

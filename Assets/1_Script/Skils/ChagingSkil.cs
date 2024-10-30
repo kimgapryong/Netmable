@@ -64,7 +64,7 @@ public class ChagingSkil : Skil
         {
          
             collision.gameObject.GetComponent<Monster>().normalAttack = false;
-            collision.gameObject.GetComponent<Monster>().TakeDamage(status.damage / 2 + damage + chaDam);
+            collision.gameObject.GetComponent<Monster>().TakeDamage(5 + chaDam);
             target = collision.transform;
             clone = Instantiate(ChagingPaticle, target.position, Quaternion.identity);
            
@@ -72,7 +72,7 @@ public class ChagingSkil : Skil
         }else if (collision.CompareTag("Boss"))
         {
            
-            collision.gameObject.GetComponent<Boss>().TakeDamage(status.damage / 2 + damage);
+            collision.gameObject.GetComponent<Boss>().TakeDamage(5 + chaDam);
             target = collision.transform;
             clone = Instantiate(ChagingPaticle, target.position, Quaternion.identity);
 

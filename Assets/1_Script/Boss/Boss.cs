@@ -96,6 +96,23 @@ public abstract class Boss : MonoBehaviour
     public void TakeDamage(int dam)
     {
         currentHp -= dam;
+        if(currentHp <= 0)
+        {
+            animator.SetTrigger("isDie");
+            StartCoroutine(CheckDieAnimation());
+        }
+    }
+    private IEnumerator CheckDieAnimation()
+    {
+        yield return new WaitForSeconds(0.3f); // 한 프레임 기다림
+
+        AnimatorStateInfo stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        if (stateInfo.IsName("Did"))
+        {
+            Debug.Log("애니메이션이 실행됨");
+            float animationLength = stateInfo.length;
+            Destroy(gameObject, animationLength);
+        }
     }
     public void PlayerDamageTirgger()
     {

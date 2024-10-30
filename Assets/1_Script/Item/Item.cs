@@ -7,6 +7,7 @@ public abstract class Item : MonoBehaviour
 {
     private InventoryManager inventoryManager;
 
+    public PlayerStatus status;
     public string itemName;
     public Sprite itemIcon;
     public int count;
@@ -17,7 +18,7 @@ public abstract class Item : MonoBehaviour
     {
         itemCollider = GetComponent<Collider2D>();
         itemCollider.enabled = false;
-        StartCoroutine(EnableColliderAfterDelay(0.5f));
+        StartCoroutine(EnableColliderAfterDelay(0.1f));
         inventoryManager = InventoryManager.Instance;
     }
 

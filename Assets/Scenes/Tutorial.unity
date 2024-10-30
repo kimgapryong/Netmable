@@ -626,7 +626,6 @@ MonoBehaviour:
   skilName: 
   damage: 0
   speed: 0
-  mana: 0
   SkilLevel: 0
   key: 0
   skilData: {fileID: 11400000, guid: 644bdfd61d7fb3e469cb789d4740aafb, type: 2}

@@ -20,6 +20,8 @@ public abstract class Item : MonoBehaviour
         itemCollider.enabled = false;
         StartCoroutine(EnableColliderAfterDelay(0.1f));
         inventoryManager = InventoryManager.Instance;
+
+
     }
 
     private IEnumerator EnableColliderAfterDelay(float delay)

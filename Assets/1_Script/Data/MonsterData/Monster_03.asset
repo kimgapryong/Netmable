@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSprite: {fileID: 0}
   monsterName: ciruleuj
-  Exp: 20
+  Exp: 300
   health: 40
   damage: 10
   speed: 10

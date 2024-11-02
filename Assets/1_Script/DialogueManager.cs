@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
-using System;
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance;
     private DialogueLine currentLine;
+
 
     public GameObject dialogueChat;
     public Image characterIcon;
@@ -27,6 +27,9 @@ public class DialogueManager : MonoBehaviour
     public float typingSpeed = 0.2f;
 
     public Animator animator;
+
+    public GameObject moveBtn;
+    public GameObject diffBtn;
 
     private void Awake()
     {
@@ -54,11 +57,14 @@ public class DialogueManager : MonoBehaviour
     }
     public void StartDialogue(Dialogue dialogue, Collider2D collison)
     {
+        movePlayer.horizontal = 0;
         currentColl = collison;
         isDialogueActive = true;
         //player.SetActive(false);
         movePlayer.enabled = false;
         attackPlayer.enabled = false;
+        moveBtn.SetActive(false);
+        diffBtn.SetActive(false);
         AnimatorControal(animator);
         animator.SetBool("isIdle", true);
         animator.SetBool("isGround", true);
@@ -209,7 +215,8 @@ public class DialogueManager : MonoBehaviour
         dialogueChat.SetActive(false);
         movePlayer.enabled = true;
         attackPlayer.enabled = true;
-        
+        moveBtn.SetActive(true);
+        diffBtn.SetActive(true);
         player.SetActive(true);
     }
 }

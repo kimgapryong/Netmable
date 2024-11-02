@@ -74,8 +74,8 @@ public class Monster03 : Monster
                 if (attackJump)
                 {
                     attackJump = false;
-                    rb.AddForceY(jumpForce);
-                    rb.velocityY = jumpForce;
+                    rb.AddForce(new Vector2(0, jumpForce));
+                    rb.velocity =new Vector2(0, jumpForce);
                     groundOne = true;
                     transMove = new Vector3(transform.localScale.x, 0);
                 }

@@ -12,8 +12,6 @@ public class PlayerAttack : MonoBehaviour
 
     private bool checkAttack;
     private bool canAttack = true;
-    private float timer = 0.2f;
-    private float times = 0.0f;
     public Transform trans;
 
     public Vector2 vec2;
@@ -27,16 +25,16 @@ public class PlayerAttack : MonoBehaviour
         cam = Camera.main.GetComponent<CameraMove>();
     }
 
-    private void Update()
-    {
-        AttackPlayer();
-    }
+    //private void Update()
+    //{
+    //    //AttackPlayer();
+    //}
 
-    private void AttackPlayer()
+    public void AttackPlayer()
     {
-        if (times >= timer && canAttack)
+        if (canAttack)
         {
-            if (Input.GetMouseButton(0) && mover.isGround)
+            if (mover.isGround)
             {
                 canAttack = false; // 다른 애니메이션 실행을 막음
 
@@ -63,11 +61,12 @@ public class PlayerAttack : MonoBehaviour
                 {
                     if (colider2d != null)
                     {
-                        StartCoroutine(cam.Shake(0.3f, 0.3f, 0.5f));
+                        
                         Monster monster = colider2d.GetComponent<Monster>();
                         Boss boss = colider2d.GetComponent<Boss>();
                         if (monster != null)
                         {
+                            StartCoroutine(cam.Shake(0.5f, 0.2f, 0.4f));
                             monster.TakeDamage(status.damage);
                             monAnime = monster.GetComponent<Animator>();
                             if (monster != null && monAnime != null)
@@ -91,12 +90,8 @@ public class PlayerAttack : MonoBehaviour
                         }
                     }
                 }
-                times = 0.0f;
+            
             }
-        }
-        else
-        {
-            times += Time.deltaTime;
         }
     }
 

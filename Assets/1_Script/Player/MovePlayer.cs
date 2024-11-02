@@ -11,7 +11,7 @@ public class MovePlayer : MonoBehaviour
     public CameraMove cam;
 
     private float downPower = 2f;
-    private float horizontal;
+    private float horizontal = 0;
 
     private float wallJumpCooldown = 0.6f; // 벽 점프 쿨다운 시간
     private float lastWallJumpTime;
@@ -43,7 +43,6 @@ public class MovePlayer : MonoBehaviour
         checkGround = transform.Find("CheckGround");
         checkWall = transform.Find("CheckWall");
         cam = Camera.main.GetComponent<CameraMove>();
-
         rigid = GetComponent<Rigidbody2D>();
         gravityVec = new Vector2(0, -Physics2D.gravity.y);
         originalGravityScale = rigid.gravityScale; // 시작할 때 중력 값을 저장
@@ -54,19 +53,33 @@ public class MovePlayer : MonoBehaviour
         CheckBoolType();
         StopSliding();
         PlayerMove();
-        PlayerJump();
+        //PlayerJump();
         SlidingWall();
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
     }
-    
+    public void MoveLeftButtonDown()
+    {
+        horizontal = -1;
+    }
 
+    public void MoveRightButtonDown()
+    {
+        Debug.Log("right");
+        horizontal = 1;
+    }
+
+    public void StopMoving()
+    {
+        horizontal = 0;
+    }
     private void PlayerMove()
     {
-        horizontal = Input.GetAxis("Horizontal");
+        //horizontal = Input.GetAxis("Horizontal");
         
 
         if (!wallSliding)
         {
+            Debug.Log(horizontal);
             float targetSpeed = horizontal * PlayerManager.Instance.playerStatus.speed;
             rigid.velocity = new Vector2(Mathf.Lerp(rigid.velocity.x, targetSpeed, 0.1f), rigid.velocity.y);
             Flip(horizontal);
@@ -93,59 +106,102 @@ public class MovePlayer : MonoBehaviour
         }
     }
 
-    private void PlayerJump()
+    //private void PlayerJump()
+    //{
+    //    if (Input.GetButtonDown("Jump"))
+    //    {
+    //        if (isGround || isEnemy)
+    //        {
+    //            isEnemy = false;
+    //            rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
+    //            animator.SetBool("isJump", true) ;
+    //            animator.SetBool("isGround", false);
+
+
+
+    //        }
+    //        else if (doubleJump)
+    //        {
+    //            doubleJump = false;
+    //            rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
+    //            animator.SetBool("isJump", false);
+    //            animator.SetBool("isDouble", true ) ;
+
+    //        }
+    //    }
+
+    //    if (rigid.velocity.y > 0)
+    //    {
+    //        rigid.gravityScale = originalGravityScale * 1.5f; // 상승 속도를 더 빠르게
+    //    }
+    //    else if (rigid.velocity.y < 0)
+    //    {
+
+    //        rigid.gravityScale = originalGravityScale * 2f; // 하강 속도를 더 빠르게
+    //        rigid.velocity -= gravityVec * downPower * Time.deltaTime;
+    //    }
+    //    else
+    //    {
+    //        rigid.gravityScale = originalGravityScale; // 원래 중력으로 복구
+    //    }
+
+    //    if (Input.GetButtonDown("Jump") && isWall && wallSliding && !isGround && Time.time > lastWallJumpTime + wallJumpCooldown)
+    //    {
+    //        wallJump = true;
+    //        lastWallJumpTime = Time.time;
+
+    //        wallJumped = facingRight;
+
+    //        rigid.velocity = new Vector2(PlayerManager.Instance.playerStatus.speed * -horizontal, PlayerManager.Instance.playerStatus.jumpPower);
+    //        Invoke("WallJumpCheck", wallJumpCooldown);
+
+    //        StartCoroutine(cam.CamMover(facingRight));
+    //    }
+    //}
+    public void PlayerJump()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (isGround || isEnemy)
         {
-            if (isGround || isEnemy)
-            {
-                isEnemy = false;
-                rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
-                animator.SetBool("isJump", true) ;
-                animator.SetBool("isGround", false);
-
-                
-            
-            }
-            else if (doubleJump)
-            {
-                doubleJump = false;
-                rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
-                animator.SetBool("isJump", false);
-                animator.SetBool("isDouble", true ) ;
-
-            }
+            // 일반 점프
+            RegularJump();
         }
-
-        if (rigid.velocity.y > 0 && !Input.GetButton("Jump"))
+        else if (doubleJump)
         {
-            rigid.gravityScale = originalGravityScale * 1.5f; // 상승 속도를 더 빠르게
+            // 더블 점프
+            DoubleJump();
         }
-        else if (rigid.velocity.y < 0)
+        else if (isWall && wallSliding && !isGround && Time.time > lastWallJumpTime + wallJumpCooldown)
         {
-            
-            rigid.gravityScale = originalGravityScale * 2f; // 하강 속도를 더 빠르게
-            rigid.velocity -= gravityVec * downPower * Time.deltaTime;
-        }
-        else
-        {
-            rigid.gravityScale = originalGravityScale; // 원래 중력으로 복구
-        }
-
-        if (Input.GetButtonDown("Jump") && isWall && wallSliding && !isGround && Time.time > lastWallJumpTime + wallJumpCooldown)
-        {
-            wallJump = true;
-            lastWallJumpTime = Time.time;
-
-            wallJumped = facingRight;
-            
-            rigid.velocity = new Vector2(PlayerManager.Instance.playerStatus.speed * -horizontal, PlayerManager.Instance.playerStatus.jumpPower);
-            Invoke("WallJumpCheck", wallJumpCooldown);
-
-            StartCoroutine(cam.CamMover(facingRight));
+            // 벽 점프
+            WallJump();
         }
     }
+    private void RegularJump()
+    {
+        isEnemy = false;
+        rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
+        animator.SetBool("isJump", true);
+        animator.SetBool("isGround", false);
+    }
 
+    private void DoubleJump()
+    {
+        doubleJump = false;
+        rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
+        animator.SetBool("isJump", false);
+        animator.SetBool("isDouble", true);
+    }
+
+    private void WallJump()
+    {
+        wallJump = true;
+        lastWallJumpTime = Time.time;
+
+        wallJumped = facingRight;
+        rigid.velocity = new Vector2(PlayerManager.Instance.playerStatus.speed * -horizontal, PlayerManager.Instance.playerStatus.jumpPower);
+        Invoke("WallJumpCheck", wallJumpCooldown);
+        StartCoroutine(cam.CamMover(facingRight));
+    }
     private void SlidingWall()
     {
         if (wallSliding && !wallJump)

@@ -37,7 +37,6 @@ public class Monster03 : Monster
         RaycastHit2D hit = Physics2D.Raycast(rayCheck.position, rightCheck, 4f, ground);
         isRay = hit.collider != null;
         Debug.DrawRay(transform.position, rightCheck * 4f, Color.red);
-        Debug.Log(isRay);
         if (Vector2.Distance(player.transform.position, transform.position) <= plaDistance)
         {
             canJump = true;
@@ -83,7 +82,7 @@ public class Monster03 : Monster
                 if (canMove)
                 {
                     transform.Translate(transMove * speed * Time.deltaTime);
-                    Debug.Log("xPosition" + transMove.x + " " + "yPosition" + transMove.y);
+                   
                     //rb.velocity = transMove * speed;
                 }
             }

@@ -37,9 +37,9 @@ public class PlayerSkils : MonoBehaviour
 
     private void Update()
     {
-        FireBoolSkil();
-        UseChaSkil();
-        ShieldSkil();
+        //FireBoolSkil();
+        //UseChaSkil();
+        //ShieldSkil();
     }
     private void Start()
     {
@@ -60,7 +60,7 @@ public class PlayerSkils : MonoBehaviour
     {
         if(FireSkil)
         {
-            if (Input.GetKeyDown(fireKey) && FireCoolTimes && status.ManaOk(fireMana))
+            if (FireCoolTimes && status.ManaOk(fireMana))
             {
                 FireCoolTimes = false;
                 status.currentMp -= fireMana;
@@ -90,35 +90,40 @@ public class PlayerSkils : MonoBehaviour
         chaObj = cha;
  
     }
-
+    private bool chaTrue = false;
     public void UseChaSkil()
     {
         if (isChaging && ChaCoolTimes)
         {
  
-            if (Input.GetKeyDown(chagingkey))
-            {
+            //if (Input.GetKeyDown(chagingkey))
+            
                 ChaCoolTimes = false;
                 GameObject currentSkillObject = Instantiate(chaObj, SkilsFire.position, Quaternion.identity);
                 ChagingSkil chagingSkilComponent = currentSkillObject.GetComponent<ChagingSkil>();
-
+                chaTrue = true;
                 StartCoroutine(ChargeSkill(currentSkillObject, chagingSkilComponent));
-            }
+            
         }
+    }
+    public void DelChaSkil()
+    {
+        chaTrue = false;
     }
 
     public int chaDamage = 0;
+
     public int GetChaDamage()
     {
         return chaDamage;
     }
-    private IEnumerator ChargeSkill(GameObject currentSkillObject, ChagingSkil chaSkil)
+    public IEnumerator ChargeSkill(GameObject currentSkillObject, ChagingSkil chaSkil)
     {
         float chargingTime = 0f;
         int maxDamage = 100;
         if (currentSkillObject != null)
         {
-            while (Input.GetKey(chagingkey) && status.ManaOk((int)chaMana))
+            while (chaTrue && status.ManaOk((int)chaMana))
             {
                 chargingTime += Time.deltaTime;
 
@@ -130,7 +135,7 @@ public class PlayerSkils : MonoBehaviour
                     currentSkillObject.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
                     chaDamage = Mathf.RoundToInt(Mathf.Lerp(0, maxDamage, chargingTime / 4));
                 }
-                else if (chargingTime >= 8f)
+                else if (chaTrue && chargingTime >= 8f)
                 {
                     status.currentMp -= (int)chaMana;
                     chaMana = 0;
@@ -187,7 +192,7 @@ public class PlayerSkils : MonoBehaviour
     }
     public void ShieldSkil()
     {
-        if(Input.GetKeyDown(shieldKey) && shieldTimes && status.ManaOk(shieldMana))
+        if(shieldTimes && status.ManaOk(shieldMana))
         {
             Debug.Log("½¯µå½ºÅ³");
             shieldTimes = false;

@@ -14,7 +14,6 @@ public class PlayerCheckMonster : MonoBehaviour
 
     private void Start()
     {
-        enabled = false;
         move = GetComponent<MovePlayer>();  
         status = GetComponent<PlayerStatus>();
         cam = Camera.main.GetComponent<CameraMove>();   

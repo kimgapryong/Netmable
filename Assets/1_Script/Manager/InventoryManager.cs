@@ -36,6 +36,7 @@ public class InventoryManager : MonoBehaviour
             itemSlots[itemData.itemName] = itemData;
 
             GameObject newSlot = Instantiate(slotPrefab, invenPanel);
+           
             Image itemImage = newSlot.transform.Find("ItemButton/Item").GetComponent<Image>();
             itemImage.sprite = itemData.itemIcon;
 

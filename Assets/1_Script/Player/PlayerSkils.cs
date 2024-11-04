@@ -112,6 +112,8 @@ public class PlayerSkils : MonoBehaviour
     public void DelChaSkil()
     {
         chaTrue = false;
+        status.currentMp -= (int)chaMana;
+        chaMana = 0;
     }
 
     public int chaDamage = 0;
@@ -132,7 +134,7 @@ public class PlayerSkils : MonoBehaviour
 
                 if (chargingTime <= 4f)
                 {
-                    chaMana += 0.02f;
+                    chaMana += 0.03f;
                  
                     float scaleFactor = Mathf.Lerp(1f, 3.5f, chargingTime / 4f);
                     currentSkillObject.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
@@ -157,8 +159,7 @@ public class PlayerSkils : MonoBehaviour
           
             if (currentSkillObject != null)
             {
-                status.currentMp -= (int)chaMana;
-                chaMana = 0;
+              
                 chaSkil.collider2D.enabled = true;
                 if (movePlayer.facingRight)
                 {

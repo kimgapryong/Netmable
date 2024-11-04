@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -53,7 +52,26 @@ public class MovePlayer : MonoBehaviour
         CheckBoolType();
         StopSliding();
         PlayerMove();
-        //PlayerJump();
+        if(Input.GetKeyDown(KeyCode.A))
+        {
+            MoveLeftButtonDown();
+        }else if (Input.GetKeyUp(KeyCode.A))
+        {
+            StopMoving();
+        }
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            MoveRightButtonDown();
+        }
+        else if (Input.GetKeyUp(KeyCode.D))
+        {
+            StopMoving();
+        }
+        if (Input.GetButtonDown("Jump"))
+        {
+            PlayerJump();
+        }
+
         SlidingWall();
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
     }

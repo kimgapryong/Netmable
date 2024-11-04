@@ -24,6 +24,7 @@ public class Boss1 : Boss
     public GameObject fire;
     public GameObject normal1;
     public GameObject normal2;
+    private bool goAtk = false;
 
     protected override void Start()
     {
@@ -40,6 +41,9 @@ public class Boss1 : Boss
         //질문 코루틴을 반복문으로 리스트에 넣는 법 물어보기
         bossSkils.Add(Attack1);
         bossSkils.Add(Attack3);
+
+        find.enabled = false;
+        animator.enabled = false;
        
     }
     protected override void LateUpdate()
@@ -58,22 +62,33 @@ public class Boss1 : Boss
             Debug.Log(damage);
             StartCoroutine(Attack3());
         }
-
-        if (isIdle && !attackCool)
+        if(goAtk)
         {
-            find.isWalk = false;
-            animator.SetBool("Side", false);
-            fsm.ChangeState(State.Idle);
-            StartCoroutine(StateIdle());
-            
-        }else if(isAttack)
-        {
+            if (isIdle && !attackCool)
+            {
+                find.isWalk = false;
+                animator.SetBool("Side", false);
+                fsm.ChangeState(State.Idle);
+                StartCoroutine(StateIdle());
 
-            fsm.ChangeState(State.Attack);
-            StartCoroutine(StateAttack());
+            }
+            else if (isAttack)
+            {
 
+                fsm.ChangeState(State.Attack);
+                StartCoroutine(StateAttack());
+
+            }
+            base.LateUpdate();
         }
-        base.LateUpdate();
+    }
+
+    public void StartBoss()
+    {
+        find.enabled = true;
+        goAtk = true;
+        animator.enabled = true;
+        transform.position = new Vector2(2, -3.6f);
     }
     public override IEnumerator Attack1()
     {

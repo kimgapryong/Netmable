@@ -218,6 +218,10 @@ public class DialogueManager : MonoBehaviour
         moveBtn.SetActive(true);
         diffBtn.SetActive(true);
         player.SetActive(true);
-        Destroy(currentColl.gameObject);
+        if(currentColl != null)
+        {
+            Destroy(currentColl.gameObject);
+        }
+ 
     }
 }

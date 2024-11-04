@@ -38,6 +38,11 @@ public class UiManager : MonoBehaviour
     public Text mNameTxt;
 
     private Coroutine updateMonsterUi;
+
+    public GameObject skil1;
+    public GameObject skil2;
+    public GameObject skil3;
+    public GameObject skil4;
     private void Awake()
     {
         if (Instance == null)

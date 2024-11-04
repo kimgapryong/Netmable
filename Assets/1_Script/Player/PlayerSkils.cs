@@ -16,6 +16,8 @@ public class PlayerSkils : MonoBehaviour
     public PlayerStatus status;
     public Transform SkilsFire;
 
+    private UiManager uiManager;
+
     //스킬 오브젝트
     private GameObject fireObj;
     //차징
@@ -45,6 +47,7 @@ public class PlayerSkils : MonoBehaviour
     {
         movePlayer = GetComponent<MovePlayer>();
         status = GetComponent<PlayerStatus>();
+        uiManager = UiManager.Instance; 
         StartCoroutine(fireBool.waitSkil()); //파이버블 Action
     }
 
@@ -54,7 +57,7 @@ public class PlayerSkils : MonoBehaviour
     {
         fireKey = key;
         fireObj = fire;
-        
+        uiManager.skil1.SetActive(true);
     }
     public void FireBoolSkil()
     {
@@ -88,7 +91,7 @@ public class PlayerSkils : MonoBehaviour
     {
         chagingkey = key;
         chaObj = cha;
- 
+        uiManager.skil2.SetActive(true);
     }
     private bool chaTrue = false;
     public void UseChaSkil()
@@ -189,6 +192,7 @@ public class PlayerSkils : MonoBehaviour
     {
         Debug.Log("쉴드 등록");
         shieldKey = key;
+        uiManager.skil3.SetActive(true);
     }
     public void ShieldSkil()
     {

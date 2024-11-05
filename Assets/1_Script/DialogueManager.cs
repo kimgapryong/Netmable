@@ -222,8 +222,8 @@ public class DialogueManager : MonoBehaviour
         {
             if (currentLine.onEvent != null && currentLine.onEvent.GetPersistentEventCount() > 0)
             {
-                currentLine.onEvent?.Invoke(dialogueLine);
                 currentLine.isEvent = true;
+                currentLine.onEvent?.Invoke(dialogueLine);
                 aginScrren = true;
                 dialogueChat.SetActive(false);
             }

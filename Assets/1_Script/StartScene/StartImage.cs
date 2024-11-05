@@ -10,7 +10,6 @@ public class StartImage : MonoBehaviour
     public Dialogue dialogue;
     public DialogueManager manager;
     private Animator animator;
-    private DialogueLine cur;
     private void Start()
     {
         animator = image.GetComponent<Animator>();
@@ -41,12 +40,7 @@ public class StartImage : MonoBehaviour
 
     public void DestroyThis(DialogueLine line)
     {
-        cur = line;
         Destroy(blackImage);
-        Destroy(gameObject);
-    }
-    private void OnDestroy()
-    {
-        cur.isEvent = false;
+        line.isEvent = false;
     }
 }

@@ -144,8 +144,9 @@ public class DialogueManager : MonoBehaviour
             {
                 if (currentLine.onEvent != null && currentLine.onEvent.GetPersistentEventCount() > 0)
                 {
-                    currentLine.onEvent?.Invoke(currentLine);
                     currentLine.isEvent = true;
+                    currentLine.onEvent?.Invoke(currentLine);
+
                     aginScrren = true;
                     dialogueChat.SetActive(false);
 

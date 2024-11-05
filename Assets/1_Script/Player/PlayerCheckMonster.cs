@@ -90,7 +90,7 @@ public class PlayerCheckMonster : MonoBehaviour
   
             isAttack = false;
             cam.Shake(0.35f, 1.2f, 0.4f);
-            GameManager.Instance.playerManager.PlayerTakeDamage(50);
+            GameManager.Instance.playerManager.PlayerTakeDamage(25);
             StartCoroutine(WaitSecond());
         }
     }

@@ -31,6 +31,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject moveBtn;
     public GameObject diffBtn;
 
+    public CameraMove cam;
+
     private void Awake()
     {
         if (Instance == null)
@@ -40,6 +42,7 @@ public class DialogueManager : MonoBehaviour
         movePlayer = player.GetComponent<MovePlayer>();
         attackPlayer = player.GetComponent<PlayerAttack>();
         animator = player.GetComponent<Animator>();
+        cam = Camera.main.GetComponent<CameraMove>();
     }
     private void Update()
     {
@@ -55,10 +58,19 @@ public class DialogueManager : MonoBehaviour
             DisplayNextDialogueLine();
         }
     }
-    public void StartDialogue(Dialogue dialogue, Collider2D collison)
+    public void StartDialogue(Dialogue dialogue, Collider2D collison = null)
     {
+
+        if (collison != null)
+        {
+            currentColl = collison;
+            collison.gameObject.SetActive(false);
+        }
+           
+
+
         movePlayer.horizontal = 0;
-        currentColl = collison;
+
         isDialogueActive = true;
         //player.SetActive(false);
         movePlayer.enabled = false;
@@ -69,6 +81,7 @@ public class DialogueManager : MonoBehaviour
         animator.SetBool("isIdle", true);
         animator.SetBool("isGround", true);
         
+        
         dialogueChat.SetActive(true);
 
         foreach (DialogueLine dialogueLine in dialogue.dialogueLines)
@@ -77,6 +90,10 @@ public class DialogueManager : MonoBehaviour
             Debug.Log(dialogueLine);
         }
         currentLine = lines.Dequeue();
+        if (currentLine.trans != null)
+        {
+            cam.player = currentLine.trans;
+        }
         chatSys(currentLine);
         //DisplayNextDialogueLine();
     }
@@ -105,8 +122,6 @@ public class DialogueManager : MonoBehaviour
 
         // 대사가 남아있는지 먼저 체크
 
-        Debug.Log("start");
-        Debug.Log(lines.Count);
         if (lines.Count == 0 )
         {
             EndDialogue();
@@ -115,7 +130,6 @@ public class DialogueManager : MonoBehaviour
             {
                 Destroy(currentColl.gameObject);
             }
-            Debug.Log(lines.Count);
             return;
         }
 
@@ -134,6 +148,7 @@ public class DialogueManager : MonoBehaviour
                     currentLine.isEvent = true;
                     aginScrren = true;
                     dialogueChat.SetActive(false);
+
                 }
 
             }
@@ -148,7 +163,10 @@ public class DialogueManager : MonoBehaviour
                
                 // 대사 큐에서 다음 대사 가져오기
                 currentLine = lines.Dequeue();
-               
+                if(currentLine.trans != null)
+                {
+                    cam.player = currentLine.trans;
+                }
                 chatSys(currentLine);  // 대사 출력
             }
         }
@@ -162,11 +180,22 @@ public class DialogueManager : MonoBehaviour
         if (characterName.text == "주인공")
         {
             playerIcon.sprite = dialogueLine.character.icon;
+            if(player != null)
+            {
+                cam.player = player.transform;
+            }
             playerIcon.gameObject.SetActive(true);
             characterIcon.gameObject.SetActive(false);
         }
+        else if(characterName.text == "비었다")
+        {
+            Debug.Log("1");
+            characterIcon.gameObject.SetActive(false);
+            playerIcon.gameObject.SetActive(false);
+        }
         else
         {
+            Debug.Log("2");
             characterIcon.sprite = dialogueLine.character.icon;
             characterIcon.gameObject.SetActive(true);
             playerIcon.gameObject.SetActive(false);
@@ -210,14 +239,18 @@ public class DialogueManager : MonoBehaviour
         //{
         //    dialogueLine.onEvent?.Invoke();
         //}
-        
+        Debug.Log("dkssud");
         isDialogueActive = false;
         dialogueChat.SetActive(false);
         movePlayer.enabled = true;
         attackPlayer.enabled = true;
         moveBtn.SetActive(true);
         diffBtn.SetActive(true);
-        player.SetActive(true);
+        if(player != null)
+        {
+            cam.player = player.transform;
+        }
+
         if(currentColl != null)
         {
             Destroy(currentColl.gameObject);

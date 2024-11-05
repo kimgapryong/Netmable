@@ -30,6 +30,7 @@ public class DialogueLine
     [TextArea(3, 10)]
     public string line;
     public bool isEvent = false;
+    public Transform trans;
     public UnityEvent<DialogueLine> onEvent;
 }
 

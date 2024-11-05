@@ -59761,6 +59761,7 @@ MonoBehaviour:
         icon: {fileID: 0}
       line: "\uC5B4..\uC5B4\uC5B4\uC5B4\uC5B4\uC5B4.\uC5B4\uC5B4\uC5C9"
       isEvent: 0
+      trans: {fileID: 0}
       onEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -59769,6 +59770,7 @@ MonoBehaviour:
         icon: {fileID: 0}
       line: "\uC774 \uC694\uC815\uC744 \uAC00\uC838\uAC00\uB3C4\uB85D \uD558\uACA0\uC2B5\uB2C8\uB2E4"
       isEvent: 0
+      trans: {fileID: 1508613218}
       onEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -59777,6 +59779,7 @@ MonoBehaviour:
         icon: {fileID: 0}
       line: "\uADF8 \uC694\uC815\uC744 \uB0B4\uB194"
       isEvent: 0
+      trans: {fileID: 0}
       onEvent:
         m_PersistentCalls:
           m_Calls: []
@@ -59785,6 +59788,7 @@ MonoBehaviour:
         icon: {fileID: 0}
       line: "\uC2F8\uC6CC\uC11C \uC774\uAE30\uC138\uC694\n"
       isEvent: 0
+      trans: {fileID: 1508613218}
       onEvent:
         m_PersistentCalls:
           m_Calls:

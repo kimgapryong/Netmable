@@ -33,12 +33,16 @@ public class NextStage : MonoBehaviour
     
         foreach (TriggerPoint trigger in triggerPoints)
         {
-            if (trigger.CheckTrigger(player))
+            if(trigger != null)
             {
-                trigger.onTrigger.Invoke();  
-                triggerPoints.Remove(trigger); 
-                break; 
+                if (trigger.CheckTrigger(player))
+                {
+                    trigger.onTrigger.Invoke();
+                    triggerPoints.Remove(trigger);
+                    break;
+                }
             }
+           
         }
     }
     

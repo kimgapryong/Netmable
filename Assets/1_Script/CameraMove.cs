@@ -4,7 +4,7 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     public static CameraMove Instance {  get; private set; }
-    private Transform player;
+    public Transform player;
     Transform originalTarget;
     private Coroutine followCoroutine;
     public float smoothSpeed = 0.125f;

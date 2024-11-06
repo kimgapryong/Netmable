@@ -30,7 +30,7 @@ public class MovePlayer : MonoBehaviour
     public LayerMask ground;
     public LayerMask wall;
 
-    private Rigidbody2D rigid;
+    public Rigidbody2D rigid;
 
     private Vector2 gravityVec;
 

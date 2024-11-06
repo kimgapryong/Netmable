@@ -24,6 +24,6 @@ public class IdleState : BossState
     public override void OnstateUpdate()
     {
       
-        //animation
+        boss.transform.position = boss.fixedPos;
     }
 }

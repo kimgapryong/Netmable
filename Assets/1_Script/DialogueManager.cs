@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject diffBtn;
 
     public CameraMove cam;
+    private float camOrigin;
 
     private void Awake()
     {
@@ -43,6 +44,7 @@ public class DialogueManager : MonoBehaviour
         attackPlayer = player.GetComponent<PlayerAttack>();
         animator = player.GetComponent<Animator>();
         cam = Camera.main.GetComponent<CameraMove>();
+        camOrigin = cam.smoothSpeed;
     }
     private void Update()
     {
@@ -66,13 +68,14 @@ public class DialogueManager : MonoBehaviour
             currentColl = collison;
             collison.gameObject.SetActive(false);
         }
-           
 
 
+        cam.smoothSpeed = 1f;
         movePlayer.horizontal = 0;
 
         isDialogueActive = true;
         //player.SetActive(false);
+        movePlayer.rigid.velocity = new Vector2(0, movePlayer.rigid.velocity.y); 
         movePlayer.enabled = false;
         attackPlayer.enabled = false;
         moveBtn.SetActive(false);
@@ -176,7 +179,10 @@ public class DialogueManager : MonoBehaviour
     }
     private void chatSys(DialogueLine dialogueLine)
     {
-        characterName.text = dialogueLine.character.name;
+        if(dialogueLine.character.name != null)
+        {
+            characterName.text = dialogueLine.character.name;
+        }
 
         if (characterName.text == "주인공")
         {
@@ -188,7 +194,7 @@ public class DialogueManager : MonoBehaviour
             playerIcon.gameObject.SetActive(true);
             characterIcon.gameObject.SetActive(false);
         }
-        else if(characterName.text == "비었다")
+        else if(string.IsNullOrEmpty(characterName.text))
         {
             Debug.Log("1");
             characterIcon.gameObject.SetActive(false);
@@ -247,6 +253,7 @@ public class DialogueManager : MonoBehaviour
         attackPlayer.enabled = true;
         moveBtn.SetActive(true);
         diffBtn.SetActive(true);
+        cam.smoothSpeed = camOrigin;
         if(player != null)
         {
             cam.player = player.transform;

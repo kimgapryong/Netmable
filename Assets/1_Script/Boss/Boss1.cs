@@ -31,6 +31,7 @@ public class Boss1 : Boss
         GetBossData(data.bossName, data.maxHp, data.damage, data.speed);
         base.Start();
         find = GetComponent<Finding>();
+        fixedPos = new Vector2(2, -2.6f);
         StartCoroutine(GetCam());
         skilCount = 3;
 
@@ -88,7 +89,8 @@ public class Boss1 : Boss
         find.enabled = true;
         goAtk = true;
         animator.enabled = true;
-        transform.position = new Vector2(2, -3.6f);
+        transform.position = fixedPos;
+        cam.player = player.transform;
     }
     public override IEnumerator Attack1()
     {

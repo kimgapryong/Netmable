@@ -42,6 +42,7 @@ public abstract class Boss : MonoBehaviour
     public float speed;
 
     public Animator animators;
+    public Vector2 fixedPos;
 
     public enum State
     {

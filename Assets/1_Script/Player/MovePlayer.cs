@@ -41,6 +41,7 @@ public class MovePlayer : MonoBehaviour
         animator = GetComponent<Animator>();
         checkGround = transform.Find("CheckGround");
         checkWall = transform.Find("CheckWall");
+        check = GetComponent<PlayerCheckMonster>();
         cam = Camera.main.GetComponent<CameraMove>();
         rigid = GetComponent<Rigidbody2D>();
         gravityVec = new Vector2(0, -Physics2D.gravity.y);
@@ -71,7 +72,7 @@ public class MovePlayer : MonoBehaviour
         {
             PlayerJump();
         }
-
+        GetDeath();
         SlidingWall();
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
     }
@@ -267,6 +268,15 @@ public class MovePlayer : MonoBehaviour
         if (stateInfo.IsName("PlayerDown"))
         {
             StartCoroutine(cam.Shake(0.01f, 0.01f, 0.7f));
+        }
+    }
+
+    private PlayerCheckMonster check;
+    private void GetDeath()
+    {
+        if(rigid.velocity.y <=  -100)
+        {
+            check.deathPlayer += () => true;
         }
     }
 

@@ -5,17 +5,30 @@ using UnityEngine;
 
 public class PlayerCheckMonster : MonoBehaviour
 {
+    public delegate bool PlayerDeath();
+    public event PlayerDeath deathPlayer;
+    private bool isDeath;
+
     public bool isAttack = true;
     public bool isEnemy = true;
     private MovePlayer move;
     private PlayerStatus status;
     private CameraMove cam;
 
+
     private void Start()
     {
         move = GetComponent<MovePlayer>();  
         status = GetComponent<PlayerStatus>();
         cam = Camera.main.GetComponent<CameraMove>();   
+    }
+    private void Update()
+    {
+        if (deathPlayer() && !isDeath)
+        {
+            isDeath = true;
+            Debug.Log("플레이어는 죽었습니다");
+        }
     }
 
     //적 관련 체크

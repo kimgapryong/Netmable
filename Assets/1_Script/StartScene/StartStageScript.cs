@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class StartStageScript : MonoBehaviour
 {
@@ -10,23 +11,23 @@ public class StartStageScript : MonoBehaviour
 
     private void Start()
     {
-        sImage1.canvasRenderer.SetAlpha(0.0f); 
-        sImage2.canvasRenderer.SetAlpha(0.0f);
+        SetImageAlpha(sImage1, 0f);
+        SetImageAlpha(sImage2, 0f);
         StartCoroutine(StartNext());
     }
 
-    private IEnumerator FadeInOutEffect()
+    private IEnumerator FadeInOutEffect(Image photo)
     {
         image.gameObject.SetActive(false);
-        float duration = 1.0f; 
+        float duration = 2.0f; 
         float t = 0;
 
         while (t < duration)
         {
             t += Time.deltaTime;
             float alpha = Mathf.Lerp(0f, 1f, t / duration); 
-            SetImageAlpha(sImage1, alpha); 
-            SetImageAlpha(sImage2, alpha);
+            SetImageAlpha(photo, alpha);
+            Debug.Log("1");
             yield return null;
         }
 
@@ -38,8 +39,8 @@ public class StartStageScript : MonoBehaviour
         {
             t += Time.deltaTime;
             float alpha = Mathf.Lerp(1f, 0f, t / duration); // alpha 값이 1에서 0으로 변함
-            SetImageAlpha(sImage1, alpha);
-            SetImageAlpha(sImage2, alpha);
+            SetImageAlpha(photo, alpha);
+            Debug.Log("2");
             yield return null;
         }
 
@@ -57,7 +58,12 @@ public class StartStageScript : MonoBehaviour
     {
         yield return StartCoroutine(WaitForAnimationCoroutine());
         yield return new WaitForSeconds(0.5f);
-        StartCoroutine(FadeInOutEffect());
+        StartCoroutine(FadeInOutEffect(sImage1));
+        yield return StartCoroutine(FadeInOutEffect(sImage1));
+        StartCoroutine(FadeInOutEffect(sImage2));
+        yield return StartCoroutine(FadeInOutEffect(sImage2));
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Start-1");
     }
 
     private IEnumerator WaitForAnimationCoroutine()

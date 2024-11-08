@@ -15,6 +15,9 @@ public class MovePlayer : MonoBehaviour
     private float wallJumpCooldown = 0.6f; // 벽 점프 쿨다운 시간
     private float lastWallJumpTime;
 
+
+    public bool isMove;
+    public bool isJump;
     private bool isEnemy = false;
     public bool isGround;
     public bool isWall;
@@ -78,17 +81,19 @@ public class MovePlayer : MonoBehaviour
     }
     public void MoveLeftButtonDown()
     {
+        isMove= true;
         horizontal = -1;
     }
 
     public void MoveRightButtonDown()
     {
-        Debug.Log("right");
+        isMove = true;
         horizontal = 1;
     }
 
     public void StopMoving()
     {
+        isMove = false;
         horizontal = 0;
     }
     private void PlayerMove()
@@ -182,11 +187,13 @@ public class MovePlayer : MonoBehaviour
         if (isGround || isEnemy)
         {
             // 일반 점프
+            isJump = true;
             RegularJump();
         }
         else if (doubleJump)
         {
             // 더블 점프
+
             DoubleJump();
         }
         else if (isWall && wallSliding && !isGround && Time.time > lastWallJumpTime + wallJumpCooldown)
@@ -250,7 +257,7 @@ public class MovePlayer : MonoBehaviour
         if(isGround && rigid.velocity.y == 0){
             animator.SetBool("isJump", false);
             animator.SetBool("isDouble", false);
-            
+            isJump = false;
 
         }
 

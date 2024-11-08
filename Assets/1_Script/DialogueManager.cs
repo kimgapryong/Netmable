@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour
     public GameObject moveBtn;
     public GameObject diffBtn;
 
+    public bool isChat;
     public CameraMove cam;
     private float camOrigin;
 
@@ -45,6 +46,7 @@ public class DialogueManager : MonoBehaviour
         animator = player.GetComponent<Animator>();
         cam = Camera.main.GetComponent<CameraMove>();
         camOrigin = cam.smoothSpeed;
+
     }
     private void Update()
     {
@@ -69,7 +71,7 @@ public class DialogueManager : MonoBehaviour
             collison.gameObject.SetActive(false);
         }
 
-
+        isChat = true;
         cam.smoothSpeed = 1f;
         movePlayer.horizontal = 0;
 
@@ -254,7 +256,8 @@ public class DialogueManager : MonoBehaviour
         moveBtn.SetActive(true);
         diffBtn.SetActive(true);
         cam.smoothSpeed = camOrigin;
-        if(player != null)
+        isChat = false;
+        if (player != null)
         {
             cam.player = player.transform;
         }

@@ -318,6 +318,7 @@ MonoBehaviour:
   image: {fileID: 1287792154}
   sImage1: {fileID: 42244707}
   sImage2: {fileID: 1865840295}
+  isStartStage: 1
 --- !u!1 &1023136655
 GameObject:
   m_ObjectHideFlags: 0

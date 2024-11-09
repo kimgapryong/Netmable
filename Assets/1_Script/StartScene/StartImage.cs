@@ -52,7 +52,7 @@ public class StartImage : MonoBehaviour
     private IEnumerator DeleteBlackScreen(DialogueLine line)
     {
         yield return new WaitForSeconds(0.5f);
-        Destroy(blackImage);
+        blackImage.gameObject.SetActive(false);
         line.isEvent = false;
         yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);

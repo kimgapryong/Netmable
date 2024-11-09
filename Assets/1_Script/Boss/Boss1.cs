@@ -31,7 +31,7 @@ public class Boss1 : Boss
         GetBossData(data.bossName, data.maxHp, data.damage, data.speed);
         base.Start();
         find = GetComponent<Finding>();
-        fixedPos = new Vector2(2, -2.6f);
+        fixedPos = new Vector2(2, -1.8f);
         StartCoroutine(GetCam());
         skilCount = 3;
 
@@ -353,8 +353,9 @@ public class Boss1 : Boss
             }
             time += Time.deltaTime;
         }
-    }
 
+
+    }
     public void NormalAttack2()
     {
         if (Vector2.Distance(player.transform.position, transform.position) > 30 && isAttack)

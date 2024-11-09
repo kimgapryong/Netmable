@@ -8,6 +8,7 @@ public class Finding : MonoBehaviour
     public delegate void NormalAttack();
     public event NormalAttack normal;
 
+    public bool isCanFind = true;
     public bool isRight;
     private bool attackTrue = false;
 
@@ -42,15 +43,17 @@ public class Finding : MonoBehaviour
 
     private void Update()
     {
-        if(boss.isMove)
+        if(isCanFind)
         {
-            
-            Check();
-        }
-        if(attackTrue)
-        {
-            normal?.Invoke();
-            StartCoroutine(AttackTrueCool());
+            if (boss.isMove)
+            {
+                Check();
+            }
+            if (attackTrue)
+            {
+                normal?.Invoke();
+                StartCoroutine(AttackTrueCool());
+            }
         }
     }
 
@@ -79,6 +82,7 @@ public class Finding : MonoBehaviour
         {
             if(isWalk)
             {
+ 
                 animator.SetBool("Side", true);
             }
             Vector2 target = (player.position - transform.position).normalized;
@@ -90,15 +94,17 @@ public class Finding : MonoBehaviour
 
         if (player.position.y > disy && isGround && canTeleport && Vector2.Distance(player.position, transform.position) > 31 && canTeleport && isGround)
         {
-            Debug.Log(player.position);
+       
             TeleportBehindPlayer();
+
         }
 
     }
 
     private void TeleportBehindPlayer()
     {
-        canTeleport = false; 
+        canTeleport = false;
+        StartCoroutine(GetAnimator());
 
         if (mover.facingRight)
         {
@@ -125,4 +131,22 @@ public class Finding : MonoBehaviour
         yield return new WaitForSeconds(1.3f);
         attackTrue = true;
     }
+
+    private IEnumerator GetAnimator()
+    {
+        isCanFind = false;
+        isWalk = false;
+        animator.SetBool("Side", false);
+        animator.SetBool("isTel", true);
+        AnimatorStateInfo state = animator.GetCurrentAnimatorStateInfo(0);
+        while (state.normalizedTime < 1.0f)
+        {
+            state = animator.GetCurrentAnimatorStateInfo(0);
+            yield return null; // 매 프레임마다 대기
+        }
+        isWalk = true;
+        animator.SetBool("isTel", false);
+        isCanFind = true;
+    }
+
 }

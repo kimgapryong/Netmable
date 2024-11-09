@@ -8,17 +8,36 @@ public class StartStageScript : MonoBehaviour
     public Image image;
     public Image sImage1;
     public Image sImage2;
+    public bool isStartStage;
 
     private void Start()
     {
-        SetImageAlpha(sImage1, 0f);
-        SetImageAlpha(sImage2, 0f);
-        StartCoroutine(StartNext());
+        if(sImage1 != null)
+        {
+            SetImageAlpha(sImage1, 0f);
+        }
+        if(sImage2 != null)
+        {
+            SetImageAlpha(sImage2, 0f);
+        }
+        if(isStartStage)
+        {
+            StartCoroutine(StartNext());
+        }
+
     }
 
-    private IEnumerator FadeInOutEffect(Image photo)
+    public IEnumerator FadeInOutEffect(Image photo, DialogueLine line = null)
     {
-        image.gameObject.SetActive(false);
+        if (!photo.gameObject.activeSelf)
+        {
+            photo.gameObject.SetActive(true);
+        }
+        if(line != null)
+        {
+            SetImageAlpha(photo, 0f);
+        }
+
         float duration = 2.0f; 
         float t = 0;
 
@@ -34,16 +53,23 @@ public class StartStageScript : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
-        t = 0;
-        while (t < duration)
+        if(line == null)
         {
-            t += Time.deltaTime;
-            float alpha = Mathf.Lerp(1f, 0f, t / duration); // alpha 값이 1에서 0으로 변함
-            SetImageAlpha(photo, alpha);
-            Debug.Log("2");
-            yield return null;
+            t = 0;
+            while (t < duration)
+            {
+                t += Time.deltaTime;
+                float alpha = Mathf.Lerp(1f, 0f, t / duration); // alpha 값이 1에서 0으로 변함
+                SetImageAlpha(photo, alpha);
+                Debug.Log("2");
+                yield return null;
+            }
         }
-
+       
+        if(line != null)
+        {
+            line.isEvent = false;
+        }
         Debug.Log("이미지 사라짐");
     }
 
@@ -77,6 +103,7 @@ public class StartStageScript : MonoBehaviour
         }
 
         yield return new WaitForSeconds(1.5f);
+        image.gameObject.SetActive(false);
         Debug.Log("애니메이션이 끝났습니다.");
     }
 }

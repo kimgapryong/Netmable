@@ -9,6 +9,7 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; }
 
+    public bool realDie = true;
     public CameraMove cam;
     public PlayerStatus playerStatus;
     public GameObject player;
@@ -125,6 +126,7 @@ public class PlayerManager : MonoBehaviour
     }
 
     //죽음
+
     private void PlayerDie()
     {
         if(playerStatus.currentHp <= 0)
@@ -134,10 +136,18 @@ public class PlayerManager : MonoBehaviour
             UiManager.Instance.hp.text = $"{playerStatus.currentHp}  / {playerStatus.maxHp}";
             UiManager.Instance.hpSlider.value = 0;
             //에니메이션
-            Destroy(Instance);
-            Destroy(GameManager.Instance);
-            Destroy(UiManager.Instance);
-            Destroy(player, 0.3f);
+
+            if (realDie)
+            {
+                Destroy(Instance);
+                Destroy(GameManager.Instance);
+                Destroy(UiManager.Instance);
+                Destroy(player, 0.3f);
+            }
+            else
+            {
+                playerStatus.currentHp = 0;
+            }
         }
     }
 }

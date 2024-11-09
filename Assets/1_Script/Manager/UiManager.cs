@@ -43,6 +43,8 @@ public class UiManager : MonoBehaviour
     public GameObject skil2;
     public GameObject skil3;
     public GameObject skil4;
+
+    public Image blackSrc;
     private void Awake()
     {
         if (Instance == null)

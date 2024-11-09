@@ -24,7 +24,7 @@ public class PlayerCheckMonster : MonoBehaviour
     }
     private void Update()
     {
-        if (deathPlayer() && !isDeath )
+        if ((deathPlayer?.Invoke() ?? false) && !isDeath )
         {
             isDeath = true;
             Debug.Log("플레이어는 죽었습니다");

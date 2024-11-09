@@ -2774,7 +2774,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554314038}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1557.013}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 17.300144, y: 17.300144, z: 17.300144}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5388,7 +5388,7 @@ Transform:
   m_GameObject: {fileID: 1399404090}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 306.2, y: -9.8, z: 19.597086}
+  m_LocalPosition: {x: 2.3, y: -18.6, z: 19.597086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5562,6 +5562,7 @@ MonoBehaviour:
   skil2: {fileID: 440836161}
   skil3: {fileID: 1720985507}
   skil4: {fileID: 0}
+  blackSrc: {fileID: 554314039}
 --- !u!114 &1406452877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5623,7 +5624,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 6
   m_TargetDisplay: 0
 --- !u!4 &1428784031 stripped
 Transform:
@@ -5839,13 +5840,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8fce80cab6a3e4ea81f04317e5a725, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  realDie: 1
   cam: {fileID: 0}
   playerStatus: {fileID: 1396151443}
   player: {fileID: 1396151438}
   bulletMagic: {fileID: 1899908862967208834, guid: be4a52daa116f1446844bea0b3e86936, type: 3}
   bulletVec: {x: 0, y: 0}
   boss: {fileID: 0}
-  okAtk: 1
+  okAtk: 0
 --- !u!4 &1534084340
 Transform:
   m_ObjectHideFlags: 0

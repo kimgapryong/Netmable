@@ -59108,8 +59108,8 @@ MonoBehaviour:
   isMove: 1
   layerSpeed: 60
   skill1obj: {fileID: 4731905995744452897, guid: bd7b9977ef72bd646800caa066bf467c, type: 3}
-  skill2obj: {fileID: 8075458582043564331, guid: bb911a1a47a415b4a910d646b3c59295, type: 3}
-  magicHole: {fileID: 2040445023071301945, guid: bce895b960dfd7a4d816b9ae11b897fe, type: 3}
+  skill2obj: {fileID: 6390288994545940677, guid: 71046da3b90fb7c449dd46f48712f4b7, type: 3}
+  magicHole: {fileID: 784047219162830784, guid: 53bb5ba938233804a82956d4fceddf8a, type: 3}
   grounds: {fileID: 822040590}
   center: {fileID: 533568594}
   attackTrans:
@@ -59200,9 +59200,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.017088361}
+  m_Offset: {x: 0, y: -0.09075599}
   serializedVersion: 2
-  m_Radius: 0.44735062
+  m_Radius: 0.52101827
 --- !u!1 &1626425665
 GameObject:
   m_ObjectHideFlags: 0

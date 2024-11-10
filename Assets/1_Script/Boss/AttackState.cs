@@ -15,7 +15,7 @@ public class AttackState : BossState
         
         rigidbody2 = boss.GetComponent<Rigidbody2D>();
         rigidbody2.velocity = new Vector2(0, rigidbody2.velocity.y);
-        boss.isAttack = false;
+        boss.transform.position = boss.fixedPos;
     }
 
     public override void OnstateExit()

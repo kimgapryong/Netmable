@@ -18,7 +18,7 @@ public class IdleState : BossState
 
     public override void OnstateExit()
     {
-        
+         
     }
 
     public override void OnstateUpdate()

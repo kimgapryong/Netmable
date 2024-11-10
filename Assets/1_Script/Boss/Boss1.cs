@@ -47,6 +47,9 @@ public class Boss1 : Boss
         animator.enabled = false;
        
     }
+
+    public bool oneAtk = true;
+    public bool oneIdle = true;
     protected override void LateUpdate()
     {
         if (Input.GetKeyDown(KeyCode.H))
@@ -70,16 +73,27 @@ public class Boss1 : Boss
                 find.isWalk = false;
                 animator.SetBool("Side", false);
                 fsm.ChangeState(State.Idle);
-                StartCoroutine(StateIdle());
+                if(oneIdle)
+                {
+                    oneIdle = false;
+                    StartCoroutine(StateIdle());
+                }
+
 
             }
             else if (isAttack)
             {
 
                 fsm.ChangeState(State.Attack);
-                StartCoroutine(StateAttack());
+                if(oneAtk)
+                {
+                    oneAtk = false;
+                    StartCoroutine(StateAttack());
+                }
+
 
             }
+
             base.LateUpdate();
         }
     }
@@ -250,7 +264,7 @@ public class Boss1 : Boss
         }
         for (int i = electryTrans.Count - 1; i >= 0; i--)
         {
-            GameObject clone = Instantiate(magicHole, electryTrans[i], Quaternion.identity);
+            GameObject clone = Instantiate(magicHole, new Vector2(electryTrans[i].x, electryTrans[i].y + 2), Quaternion.identity);
             hole.Add(clone);
         }
 
@@ -393,13 +407,13 @@ public class Boss1 : Boss
     }
 
     //boss Idle
-    private float idleCool = 5f;
-    private float attackState = 20f;
+    private float idleCool = 3f;
+    private float attackState = 30f;
     public override void BossIdle()
     {
 
         //기달리는 애니메이션
-        transform.position = new Vector2(2, -3.6f);
+        transform.position = new Vector2(2, -0.9f);
         StartCoroutine(StateIdle());
      
     }
@@ -407,17 +421,21 @@ public class Boss1 : Boss
     {
         find.enabled = false;
         yield return new WaitForSeconds(idleCool);
+        Debug.Log("기달리기");
         find.isWalk = true;
+        isAttack = true;
         isIdle = false;
         find.enabled = true;
-        isAttack = true;
+        oneAtk = true;
         
     }
     public override IEnumerator StateAttack()
     {
         yield return new WaitForSeconds(attackState);
+        Debug.Log("공격하기");
         isAttack = false;
         isIdle = true;
+        oneIdle = true;
     }
 
 

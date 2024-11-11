@@ -137,7 +137,7 @@ public class PlayerCheckMonster : MonoBehaviour
     public delegate bool PlayerDeath();
     public event PlayerDeath deathPlayer;
     private bool isDeath;
-
+    
     public bool isAttack = true;
     public bool isEnemy = true;
     private MovePlayer move;

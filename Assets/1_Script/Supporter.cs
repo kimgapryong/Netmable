@@ -12,7 +12,7 @@ public class Supporter : MonoBehaviour
     public GameObject attackBool;
 
     public float follwDistance = 3;
-    
+    public Animator animator;
     public float attackCool = 1f;
     private Vector3 offset = new Vector3(-2f, 1.5f, 0f);
     private Vector3 offsets = new Vector3(2f, 1.5f, 0f);
@@ -38,6 +38,7 @@ public class Supporter : MonoBehaviour
         player = GameObject.Find("Player").GetComponent<Transform>();
         movePlayer = player.GetComponent<MovePlayer>();
         cam = Camera.main.GetComponent<CameraMove>();
+        animator = GetComponent<Animator>();
     }
 
     private void Update()
@@ -48,11 +49,22 @@ public class Supporter : MonoBehaviour
             Debug.Log(monsters);
             onDestroy?.Invoke(monsters);
         }
+
+        if(player.GetComponent<Rigidbody2D>().velocity.x <= 0f && movePlayer.facingRight || player.GetComponent<Rigidbody2D>().velocity.x >= 0f && !movePlayer.facingRight)
+        {
+            animator.SetBool("isAtk", false);
+            fallow = false;
+        }
+        else
+        {
+            fallow = true;
+        }
     }
     private void FollowPlayer()
     {
         if (fallow)
         {
+            animator.SetBool("isAtk", true);
             if (movePlayer.facingRight)
             {
                 isRight = true;

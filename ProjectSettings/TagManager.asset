@@ -12,6 +12,7 @@ TagManager:
   - Stage1
   - Boss
   - BossSkil
+  - EnemySkil
   layers:
   - Default
   - TransparentFX

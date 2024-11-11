@@ -9,7 +9,7 @@ public class Monster03 : Monster
     public Transform rayCheck;
     public LayerMask ground;
 
-
+    private Animator animator;
     private Rigidbody2D rb;
     private Vector2 transMove;
     private Vector2 weightGravity;
@@ -62,7 +62,7 @@ public class Monster03 : Monster
         ResetData(data);
         rb = GetComponent<Rigidbody2D>();
         weightGravity =new Vector2(0, -Physics2D.gravity.y);
-
+        animator = GetComponent<Animator>();
     }
    
     protected override void MonsterMove()
@@ -71,9 +71,11 @@ public class Monster03 : Monster
         {
             if(!isRay)
             {
+                
                 if (attackJump)
                 {
                     attackJump = false;
+                    animator.SetBool("isAtk", true);
                     rb.AddForce(new Vector2(0, jumpForce));
                     rb.velocity =new Vector2(0, jumpForce);
                     groundOne = true;
@@ -91,10 +93,12 @@ public class Monster03 : Monster
 
     protected override void MonsterSkils()
     {
-        if(rb.velocity.y < 0)
+ 
+        if (rb.velocity.y < 0)
         {
             canMove = false;
             rb.velocity -= weightGravity * downPower * Time.deltaTime;
+            animator.SetBool("isAtk", false);
         }
         
         if(health <= MaxHp / 2)

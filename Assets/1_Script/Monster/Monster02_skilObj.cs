@@ -83,12 +83,12 @@ public class Monster02_skilObj : MonoBehaviour
         if(isAttack)
         {
             isAttack = false;
-            while (transform.localScale.x < 10f)
+            while (transform.localScale.x < 2f)
             {
                 transform.localScale = new Vector2(transform.localScale.x + (speed * Time.deltaTime), transform.localScale.y);
-                transform.position = new Vector2(transform.position.x - (speed * Time.deltaTime) * 2, transform.position.y);
+                transform.position = new Vector2(transform.position.x - (speed * Time.deltaTime) * 0.5f, transform.position.y);
 
-                yield return null;
+                yield return new WaitForSeconds(0.05f);
             }
         }
         
@@ -99,12 +99,12 @@ public class Monster02_skilObj : MonoBehaviour
         if (isAttack)
         {
             isAttack = false;
-            while (transform.localScale.x < 10f)
+            while (transform.localScale.x < 2f)
             {
                 transform.localScale = new Vector2(transform.localScale.x + (speed * Time.deltaTime), transform.localScale.y);
-                transform.position = new Vector2(transform.position.x + (speed * Time.deltaTime) * 2, transform.position.y);
+                transform.position = new Vector2(transform.position.x + (speed * Time.deltaTime) * 0.5f, transform.position.y);
 
-                yield return null;
+                yield return new WaitForSeconds(0.05f);
             }
         }
         
@@ -116,10 +116,10 @@ public class Monster02_skilObj : MonoBehaviour
         {
             if (isCheck)
             {
-                while (transform.localScale.x > 0)
+                while (transform.localScale.x > 0.2f)
                 {
                     transform.localScale = new Vector2(transform.localScale.x - (speed * Time.deltaTime), transform.localScale.y);
-                    transform.position = new Vector2(transform.position.x + (speed * Time.deltaTime) * 2, transform.position.y);
+                    transform.position = new Vector2(transform.position.x + (speed * Time.deltaTime) * 0.5f, transform.position.y);
 
                     yield return null;
                 }
@@ -130,10 +130,10 @@ public class Monster02_skilObj : MonoBehaviour
         {
             if (!isCheck)
             {
-                while (transform.localScale.x > 0)
+                while (transform.localScale.x > 0.2f)
                 {
                     transform.localScale = new Vector2(transform.localScale.x - (speed * Time.deltaTime), transform.localScale.y);
-                    transform.position = new Vector2(transform.position.x - (speed * Time.deltaTime) * 2, transform.position.y);
+                    transform.position = new Vector2(transform.position.x - (speed * Time.deltaTime) * 0.5f, transform.position.y);
 
                     yield return null;
                 }
@@ -145,7 +145,7 @@ public class Monster02_skilObj : MonoBehaviour
 
     private IEnumerator TougueCool()
     {
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(5);
         isCool = true;
     }
 }

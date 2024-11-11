@@ -97,7 +97,7 @@ public abstract class Monster : MonoBehaviour
             Debug.Log("¿Ö ¶Ç ¾ÈµÅ");
         }
     }
-    public void TakeDamage(int attack)
+    public virtual void TakeDamage(int attack)
     {
 
         if (paticle != null && normalAttack)

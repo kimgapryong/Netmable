@@ -7,6 +7,7 @@ public class Monster04 : Monster
 
     
     public MonsterData data;
+    public Animator animator;
     public float monDis = 40f;
     public float monAtt = 20f;
     public float bulletSpeed = 60;
@@ -23,6 +24,7 @@ public class Monster04 : Monster
     {
         ResetData(data);
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     protected override void Update()
     {
@@ -36,7 +38,7 @@ public class Monster04 : Monster
     {
         if (player != null)
         {
-            transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y);
+            transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y);
             if (player.transform.position.x <= transform.position.x)
             {
                 transform.localScale = new Vector3(transform.localScale.x, -Mathf.Abs(transform.localScale.y));
@@ -52,11 +54,13 @@ public class Monster04 : Monster
         length = (player.transform.position - transform.position).normalized;
         if (Vector2.Distance(player.transform.position, transform.position) <= monAtt)
         {
+            animator.SetBool("isAtk", true);
             arg = true; 
             transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(length.y, length.x) * Mathf.Rad2Deg);
         }
         else if (Vector2.Distance(player.transform.position, transform.position) <= monDis)
         {
+            animator.SetBool("isAtk", false);
             arg = false;
             rb.velocity = new Vector2(length.x, 0) * speed;
         }
@@ -88,5 +92,22 @@ public class Monster04 : Monster
         yield return new WaitForSeconds(2f);
         isAtk = true;
     }
-   
+
+    public override void TakeDamage(int attack)
+    {
+        if (paticle != null && normalAttack)
+        {
+            GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
+            Destroy(clone, 0.3f);
+        }
+
+        health -= attack;
+
+        if (health <= 0)
+        {
+            animator.SetTrigger("isDie");
+            Die();
+        }
+    }
+
 }

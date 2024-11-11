@@ -7,6 +7,8 @@ public class Monster02 : Monster
     [SerializeField]
     private MonsterData data;
 
+
+    public Animator animator;
     public GameObject obj;
     private GameObject objW;
     public Transform groundCheck;
@@ -22,6 +24,7 @@ public class Monster02 : Monster
     private void Start()
     {
         ResetData(data);
+        animator = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
     }
     protected override void Update()
@@ -36,7 +39,6 @@ public class Monster02 : Monster
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
     }
-
     protected override void MonsterSkils()
     {
         if(player != null)

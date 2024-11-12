@@ -111,12 +111,14 @@ public class Monster04 : Monster
             Die();
         }
     }
+    private bool isItem = true;
     protected override void Die()
     {
         if (!isOk) return;
         PlayerManager.Instance.playerStatus.AddLevel(Exp);
-        if (ItemManager.Instance != null)
+        if (ItemManager.Instance != null && isItem)
         {
+            isItem = false;
             ItemManager.Instance.RandomItem(gameObject.transform.position);
         }
 

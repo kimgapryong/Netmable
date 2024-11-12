@@ -18,6 +18,7 @@ public class PlayerSkils : MonoBehaviour
     public MovePlayer movePlayer;
     public PlayerStatus status;
     public Transform SkilsFire;
+    private CameraMove cam;
 
     private UiManager uiManager;
 
@@ -57,6 +58,7 @@ public class PlayerSkils : MonoBehaviour
         movePlayer = GetComponent<MovePlayer>();
         status = GetComponent<PlayerStatus>();
         uiManager = UiManager.Instance; 
+        cam = Camera.main.GetComponent<CameraMove>();
         StartCoroutine(fireBool.waitSkil()); //파이버블 Action
     }
 
@@ -240,7 +242,8 @@ public class PlayerSkils : MonoBehaviour
             StartCoroutine(Skil4Legend());
         }
     }
-    private List<GameObject> LenList = new List<GameObject>();
+    public List<GameObject> LenList = new List<GameObject>();
+    private List<GameObject> objectsToRemove = new List<GameObject>();
     private IEnumerator Skil4Legend()
     {
         float xVec = 8f;
@@ -252,6 +255,7 @@ public class PlayerSkils : MonoBehaviour
             for (int i = 1; i <= 6; i++)
             {
                 GameObject clone = Instantiate(legendObj, new Vector2(transform.position.x + xVec * i, transform.position.y + yVex), Quaternion.identity);
+                cam.player = clone.transform;
                 clone.GetComponent<Animator>().SetTrigger("FireCur");
                 LenList.Add(clone);
                 yield return new WaitForSeconds(0.2f);
@@ -262,20 +266,27 @@ public class PlayerSkils : MonoBehaviour
             for (int i = 1; i <= 6; i++)
             {
                 GameObject clone = Instantiate(legendObj, new Vector2(transform.position.x - xVec * i, transform.position.y + yVex), Quaternion.identity);
+                cam.player = clone.transform;
                 clone.GetComponent<Animator>().SetTrigger("FireCur");
                 LenList.Add(clone);
                 yield return new WaitForSeconds(0.2f);
             }
         }
+        yield return new WaitForSeconds(0.5f);
+        cam.player = transform;
         yield return new WaitForSeconds(5f);
-        for(int i =0; i < LenList.Count; i++)
+        foreach (var go in LenList)
         {
-            LenList[i].GetComponent<Animator>().SetTrigger("FireLow");
+            go.GetComponent<Animator>().SetTrigger("FireLow");
             yield return new WaitForSeconds(0.3f);
-            GameObject go = LenList[i];
-            LenList.Remove(go);
+            objectsToRemove.Add(go);  
             Destroy(go);
-            
+        }
+
+        // 삭제할 요소들을 한 번에 삭제
+        foreach (var go in objectsToRemove)
+        {
+            LenList.Remove(go);
         }
         StartCoroutine(LenCool());
     }
@@ -289,11 +300,13 @@ public class PlayerSkils : MonoBehaviour
     private IEnumerator GetSkil4Anima()
     {
         AnimatorStateInfo animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        movePlayer.canMove = false;
         while (animatorStateInfo.normalizedTime < 1.0f)
         {
             animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
             yield return null; // 매 프레임마다 대기
         }
+        movePlayer.canMove = true;
     }
 }
 

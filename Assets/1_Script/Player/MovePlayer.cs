@@ -36,6 +36,7 @@ public class MovePlayer : MonoBehaviour
     public Rigidbody2D rigid;
 
     private Vector2 gravityVec;
+    public bool canMove = true;
 
     private float originalGravityScale; // 원래 중력 값 저장
 
@@ -90,14 +91,22 @@ public class MovePlayer : MonoBehaviour
     }
     public void MoveLeftButtonDown()
     {
-        isMove= true;
-        horizontal = -1;
+        if (canMove)
+        {
+            isMove = true;
+            horizontal = -1;
+        }
+       
     }
 
     public void MoveRightButtonDown()
     {
-        isMove = true;
-        horizontal = 1;
+        if (canMove)
+        {
+            isMove = true;
+            horizontal = 1;
+        }
+
     }
 
     public void StopMoving()

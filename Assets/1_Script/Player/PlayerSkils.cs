@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEditor.Animations;
 
 public class PlayerSkils : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class PlayerSkils : MonoBehaviour
     public bool FireSkil = false;
     public bool isChaging = false;
     //불 스킬 쿨타임
+    public Animator animator;
     private bool FireCoolTimes = true;
     private bool ChaCoolTimes = true;
     private bool shieldTimes = true;
+    private bool legendTimes = true;
     public MovePlayer movePlayer;
     public PlayerStatus status;
     public Transform SkilsFire;
@@ -22,15 +25,19 @@ public class PlayerSkils : MonoBehaviour
     private GameObject fireObj;
     //차징
     private GameObject chaObj;
+    //필살기
+    private GameObject legendObj;
 
     private int fireMana = 30;
     private float chaMana;
     private int shieldMana = 15;
+    private int legendMana = 20;
 
     //스킬 키코드
     private KeyCode fireKey;
     private KeyCode chagingkey;
     private KeyCode shieldKey;
+    private KeyCode legendKey;
 
     //스킬 넣어주는 액션
     public FireBoolSkil fireBool;
@@ -42,9 +49,11 @@ public class PlayerSkils : MonoBehaviour
         //FireBoolSkil();
         //UseChaSkil();
         //ShieldSkil();
+        
     }
     private void Start()
     {
+        animator = GetComponent<Animator>();
         movePlayer = GetComponent<MovePlayer>();
         status = GetComponent<PlayerStatus>();
         uiManager = UiManager.Instance; 
@@ -58,6 +67,13 @@ public class PlayerSkils : MonoBehaviour
         fireKey = key;
         fireObj = fire;
         uiManager.skil1.SetActive(true);
+    }
+
+    public void LengendCheck(KeyCode key,GameObject fire)
+    {
+        legendKey = key;
+        legendObj = fire;
+        uiManager.skil4.SetActive(true);
     }
     public void FireBoolSkil()
     {
@@ -212,6 +228,72 @@ public class PlayerSkils : MonoBehaviour
         PlayerManager.Instance.okAtk = true;
         yield return new WaitForSeconds(1f);
         shieldTimes = true;
+    }
+
+    public void LegendSKil()
+    {
+        if(legendTimes && status.ManaOk(legendMana))
+        {
+            legendTimes = false;
+            animator.SetBool("Skil4", true);
+            status.currentMp -= legendMana;
+            StartCoroutine(Skil4Legend());
+        }
+    }
+    private List<GameObject> LenList = new List<GameObject>();
+    private IEnumerator Skil4Legend()
+    {
+        float xVec = 8f;
+        float yVex = 3f;
+        yield return StartCoroutine(GetSkil4Anima());
+        animator.SetBool("Skil4", false);
+        if (movePlayer.facingRight)
+        {
+            for (int i = 1; i <= 6; i++)
+            {
+                GameObject clone = Instantiate(legendObj, new Vector2(transform.position.x + xVec * i, transform.position.y + yVex), Quaternion.identity);
+                clone.GetComponent<Animator>().SetTrigger("FireCur");
+                LenList.Add(clone);
+                yield return new WaitForSeconds(0.2f);
+            }
+        }
+        else if (!movePlayer.facingRight)
+        {
+            for (int i = 1; i <= 6; i++)
+            {
+                GameObject clone = Instantiate(legendObj, new Vector2(transform.position.x - xVec * i, transform.position.y + yVex), Quaternion.identity);
+                clone.GetComponent<Animator>().SetTrigger("FireCur");
+                LenList.Add(clone);
+                yield return new WaitForSeconds(0.2f);
+            }
+        }
+        yield return new WaitForSeconds(5f);
+        for(int i =0; i < LenList.Count; i++)
+        {
+            LenList[i].GetComponent<Animator>().SetTrigger("FireLow");
+            yield return new WaitForSeconds(0.3f);
+            GameObject go = LenList[i];
+            LenList.Remove(go);
+            Destroy(go);
+            
+        }
+        StartCoroutine(LenCool());
+    }
+
+    private IEnumerator LenCool()
+    {
+        yield return new WaitForSeconds(1f);
+        legendTimes = true;
+    }
+
+    private IEnumerator GetSkil4Anima()
+    {
+        AnimatorStateInfo animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+        while (animatorStateInfo.normalizedTime < 1.0f)
+        {
+            animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
+            yield return null; // 매 프레임마다 대기
+        }
     }
 }
 

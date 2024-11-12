@@ -2007,7 +2007,7 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: "\uC8FC\uC778\uACF5"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 0786436fcc655304b84b882602748b19, type: 3}
       line: "\uC800\uAE30 \uC55E\uC5D0 \uBB54\uAC00\uAC00 \uB9CE\uC740\uB370?"
       isEvent: 0
       trans: {fileID: 0}
@@ -2016,7 +2016,7 @@ MonoBehaviour:
           m_Calls: []
     - character:
         name: "\uAD34\uBB3C"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 15ad735239c6653458188be07481e585, type: 3}
       line: "\uCFE0\uD019\uD019 \uC6B0\uCF15\u3147\uD018\uCFE0\uCF00"
       isEvent: 0
       trans: {fileID: 1121527291}
@@ -2025,7 +2025,7 @@ MonoBehaviour:
           m_Calls: []
     - character:
         name: "\uC8FC\uC778\uACF5"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 079ea463d60a9624ab89464f5adfa7b3, type: 3}
       line: "\uC800\uB7F0 \uB3D9\uBB3C\uC740 \uCC98\uC74C \uBD10(\uC77C\uB2E8 \uAC00\uBCF4\uC790)"
       isEvent: 0
       trans: {fileID: 0}
@@ -5284,7 +5284,7 @@ Transform:
   m_GameObject: {fileID: 1399404090}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 282.9, y: -14.6, z: 19.597086}
+  m_LocalPosition: {x: 0.5, y: -13.8, z: 19.597086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5743,7 +5743,7 @@ MonoBehaviour:
   bulletMagic: {fileID: 1899908862967208834, guid: be4a52daa116f1446844bea0b3e86936, type: 3}
   bulletVec: {x: 0, y: 0}
   boss: {fileID: 0}
-  okAtk: 0
+  okAtk: 1
 --- !u!4 &1534084340
 Transform:
   m_ObjectHideFlags: 0
@@ -6189,7 +6189,7 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: "\uC8FC\uC778\uACF5"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 0786436fcc655304b84b882602748b19, type: 3}
       line: "\uC73C\uC545 \uC81C\uAC8C \uBB50\uC57C!!!!!"
       isEvent: 0
       trans: {fileID: 0}
@@ -6198,7 +6198,7 @@ MonoBehaviour:
           m_Calls: []
     - character:
         name: "\uAD34\uBB3C"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 15ad735239c6653458188be07481e585, type: 3}
       line: "\uD06C\uB920\uB920\uB920\uB920"
       isEvent: 0
       trans: {fileID: 179092775}
@@ -6207,14 +6207,14 @@ MonoBehaviour:
           m_Calls: []
     - character:
         name: "\uC694\uC815"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 806b7ab570f672647a042e160f843ef0, type: 3}
       line: "\uD56B"
       isEvent: 0
       trans: {fileID: 0}
       onEvent:
         m_PersistentCalls:
           m_Calls:
-          - m_Target: {fileID: 0}
+          - m_Target: {fileID: 1968196952}
             m_TargetAssemblyTypeName: Supporter, Assembly-CSharp
             m_MethodName: MonsterCheck
             m_Mode: 0
@@ -6228,7 +6228,7 @@ MonoBehaviour:
             m_CallState: 2
     - character:
         name: "\uC694\uC815"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: e701d615712449f43b331eea3120fd32, type: 3}
       line: "(\uC800 \uAD34\uBB3C\uB4E4\uC774 \uC65C \uC800\uAE30\uC5D0) \uC77C\uB2E8
         \uBE68\uB9AC \uD53C\uB09C\uC18C\uB85C \uAC00\uC790"
       isEvent: 0
@@ -7134,6 +7134,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+--- !u!114 &1968196952 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6157119243923094333, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+  m_PrefabInstance: {fileID: 1968196951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0348b13a1707350428e63b66a0f09d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1969886695
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monsterSprite: {fileID: 0}
   monsterName: 
-  Exp: 500
-  health: 20
-  damage: 30
+  Exp: 400
+  health: 60
+  damage: 25
   speed: 10
   isAttack: 0

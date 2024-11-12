@@ -95,6 +95,7 @@ public class Monster04 : Monster
 
     public override void TakeDamage(int attack)
     {
+        base.TakeDamage(attack);
         if (paticle != null && normalAttack)
         {
             GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
@@ -105,9 +106,27 @@ public class Monster04 : Monster
 
         if (health <= 0)
         {
+            isAtk = false ;
             animator.SetTrigger("isDie");
             Die();
         }
     }
+    protected override void Die()
+    {
+        if (!isOk) return;
+        PlayerManager.Instance.playerStatus.AddLevel(Exp);
+        if (ItemManager.Instance != null)
+        {
+            ItemManager.Instance.RandomItem(gameObject.transform.position);
+        }
 
+
+        if (UiManager.Instance != null && UiManager.Instance.mSlider != null)
+        {
+            UiManager.Instance.mSlider.transform.parent.gameObject.SetActive(false);
+        }
+
+
+        Destroy(gameObject, 1.6f);
+    }
 }

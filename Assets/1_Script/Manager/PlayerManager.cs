@@ -121,7 +121,7 @@ public class PlayerManager : MonoBehaviour
         Renderer ren = player.GetComponent<Renderer>();
 
         ren.enabled = false;
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         ren.enabled = true;
     }
 

@@ -59123,6 +59123,8 @@ MonoBehaviour:
   fire: {fileID: 1290952381}
   normal1: {fileID: 45391667510173158, guid: 04e94cdd7dbdb024ca51da22730f717a, type: 3}
   normal2: {fileID: 7711700859016362601, guid: 5e9c7a1d03da332449791dc3b9dfbec1, type: 3}
+  oneAtk: 1
+  oneIdle: 1
 --- !u!114 &1508613223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59731,7 +59733,7 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: "\uC8FC\uC778\uACF5"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 0786436fcc655304b84b882602748b19, type: 3}
       line: "\uC694\uC815\uC744 \uB3CC\uB824\uC918"
       isEvent: 0
       trans: {fileID: 0}
@@ -59740,7 +59742,7 @@ MonoBehaviour:
           m_Calls: []
     - character:
         name: "\uBCF4\uC2A4"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: d6f10d3d6fc15d6468001070e5a9af35, type: 3}
       line: .........
       isEvent: 0
       trans: {fileID: 1508613218}
@@ -59749,7 +59751,7 @@ MonoBehaviour:
           m_Calls: []
     - character:
         name: "\uC8FC\uC778\uACF5"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 0786436fcc655304b84b882602748b19, type: 3}
       line: "\uC548\uB3FC..."
       isEvent: 0
       trans: {fileID: 0}
@@ -59888,7 +59890,7 @@ MonoBehaviour:
     dialogueLines:
     - character:
         name: "\uC694\uC815"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: e701d615712449f43b331eea3120fd32, type: 3}
       line: "\uC5B4..\uC5B4\uC5B4\uC5B4\uC5B4\uC5B4.\uC5B4\uC5B4\uC5C9"
       isEvent: 0
       trans: {fileID: 0}
@@ -59897,7 +59899,7 @@ MonoBehaviour:
           m_Calls: []
     - character:
         name: "\uC545\uB2F9"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: da3dca8191905df4d840a0c8f8355d4d, type: 3}
       line: "\uC774 \uC694\uC815\uC744 \uAC00\uC838\uAC00\uB3C4\uB85D \uD558\uACA0\uC2B5\uB2C8\uB2E4"
       isEvent: 0
       trans: {fileID: 1508613218}
@@ -59906,7 +59908,7 @@ MonoBehaviour:
           m_Calls: []
     - character:
         name: "\uC8FC\uC778\uACF5"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: 0786436fcc655304b84b882602748b19, type: 3}
       line: "\uADF8 \uC694\uC815\uC744 \uB0B4\uB194"
       isEvent: 0
       trans: {fileID: 0}
@@ -59915,7 +59917,7 @@ MonoBehaviour:
           m_Calls: []
     - character:
         name: "\uC545\uB2F9"
-        icon: {fileID: 0}
+        icon: {fileID: 21300000, guid: da3dca8191905df4d840a0c8f8355d4d, type: 3}
       line: "\uC2F8\uC6CC\uC11C \uC774\uAE30\uC138\uC694\n"
       isEvent: 0
       trans: {fileID: 1508613218}

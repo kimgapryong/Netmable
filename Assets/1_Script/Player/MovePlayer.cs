@@ -78,6 +78,15 @@ public class MovePlayer : MonoBehaviour
         GetDeath();
         SlidingWall();
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
+
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            animator.SetBool("Skil4", true);
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            animator.SetBool("Skil4", false);
+        }
     }
     public void MoveLeftButtonDown()
     {
@@ -103,7 +112,6 @@ public class MovePlayer : MonoBehaviour
 
         if (!wallSliding)
         {
-            Debug.Log(horizontal);
             float targetSpeed = horizontal * PlayerManager.Instance.playerStatus.speed;
             rigid.velocity = new Vector2(Mathf.Lerp(rigid.velocity.x, targetSpeed, 0.1f), rigid.velocity.y);
             Flip(horizontal);

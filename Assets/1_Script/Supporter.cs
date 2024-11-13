@@ -8,7 +8,7 @@ public class Supporter : MonoBehaviour
 {
     public int damage;
     public int speed = 6;
-
+    private float camSize;
     public GameObject attackBool;
 
     public float follwDistance = 3;
@@ -39,6 +39,7 @@ public class Supporter : MonoBehaviour
         movePlayer = player.GetComponent<MovePlayer>();
         cam = Camera.main.GetComponent<CameraMove>();
         animator = GetComponent<Animator>();
+        camSize = Camera.main.orthographicSize;
     }
 
     private void Update()
@@ -164,4 +165,25 @@ public class Supporter : MonoBehaviour
 
     }
 
+
+    public void SupDone(DialogueLine line)
+    {
+        Camera.main.orthographicSize = 6f;
+        animator.SetTrigger("isDone");
+        StartCoroutine(GetAnimator(line));
+    }
+    private IEnumerator GetAnimator(DialogueLine line)
+    {
+        AnimatorStateInfo animationState = animator.GetCurrentAnimatorStateInfo(0);
+
+        while (animationState.normalizedTime < 1.0f)
+        {
+            animationState = animator.GetCurrentAnimatorStateInfo(0);
+            yield return null; // 매 프레임마다 대기
+        }
+        yield return new WaitForSeconds(2f);
+        Camera.main.orthographicSize = camSize;
+        line.isEvent = false;
+        Destroy(gameObject);
+    }
 }

@@ -23,7 +23,7 @@ public abstract class Monster : MonoBehaviour
 
     public bool normalAttack = true;
     private bool attackTime;
-
+    public AudioClip monClip;
     public void ResetData(MonsterData monsterData)
     {
         
@@ -37,6 +37,7 @@ public abstract class Monster : MonoBehaviour
         speed = monsterData.speed;
         damage = monsterData.damage;
         isAttack = monsterData.isAttack;
+        monClip = monsterData.monsterClip;
     }
     protected virtual void Update()
     {

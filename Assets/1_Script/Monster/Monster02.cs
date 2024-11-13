@@ -36,6 +36,7 @@ public class Monster02 : Monster
         isGround = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(4f, 1f), CapsuleDirection2D.Horizontal, 0, ground);
         if (isAttack && isGround && player != null && isStop)
         {
+            
             transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
         }
     }
@@ -45,7 +46,7 @@ public class Monster02 : Monster
         {
             if (Vector2.Distance(transform.position, player.transform.position) <= 21 && coolTime)
             {
-                
+           
                 if (objW == null)
                 {
                     objW = Instantiate(obj, attackPos);

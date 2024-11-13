@@ -161,7 +161,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -7644006703328283726, guid: 93963d8fcd6a2824587587cff54ae3db, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -228,6 +228,10 @@ MonoBehaviour:
     m_Bits: 64
   rigid: {fileID: 0}
   canMove: 1
+  moveClip: {fileID: 8300000, guid: 0a75cae42989e0c469da1b3334c2a6d1, type: 3}
+  jumoClip: {fileID: 8300000, guid: 0870758fb792e9746b14574934b6ee24, type: 3}
+  doubleClip: {fileID: 8300000, guid: b39bec7d33e07c34190f990eea77e6fc, type: 3}
+  Clip: {fileID: 0}
 --- !u!114 &1317152607264307482
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -266,6 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAttack: 1
   isEnemy: 1
+  itemClip: {fileID: 8300000, guid: 3fab4a83b30d5d746bab1b8031c51c67, type: 3}
 --- !u!114 &1110381206030961164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,6 +286,7 @@ MonoBehaviour:
   cam: {fileID: 0}
   trans: {fileID: 7957324859510781435}
   vec2: {x: 5, y: 5}
+  atkClip: {fileID: 8300000, guid: 831dce78f10bf9244b3a5b2921f0bc41, type: 3}
 --- !u!114 &7821236904630416063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +306,8 @@ MonoBehaviour:
   status: {fileID: 0}
   SkilsFire: {fileID: 7957324859510781435}
   fireBool: {fileID: -143145628645418483, guid: 548ee21938c9ddc45bb68ef51e7b2993, type: 3}
+  skil2Clip: {fileID: 8300000, guid: e35075e659393d74aabe45f9755fd168, type: 3}
+  skil4Clip: {fileID: 8300000, guid: a8529edd0da6fc94583b40fce0b311c6, type: 3}
   chaDamage: 0
   LenList: []
 --- !u!70 &7306013655523030207

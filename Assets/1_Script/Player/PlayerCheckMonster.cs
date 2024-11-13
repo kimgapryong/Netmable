@@ -145,6 +145,7 @@ public class PlayerCheckMonster : MonoBehaviour
     private CameraMove cam;
 
     private Coroutine currentCor;
+    public AudioClip itemClip;
 
     private void Start()
     {
@@ -202,6 +203,7 @@ public class PlayerCheckMonster : MonoBehaviour
             Item item = collision.gameObject.GetComponent<Item>();
             if (item != null)
             {
+                SoundManager.Instance.SFXSound("GetItem", itemClip);
                 ItemData itemData = item.GetItemData();
                 InventoryManager.Instance.AddItem(itemData);
                 Destroy(collision.gameObject); // 아이템 오브젝트 삭제
@@ -229,7 +231,7 @@ public class PlayerCheckMonster : MonoBehaviour
         {
             isAttack = false;
             cam.Shake(0.35f, 1.2f, 0.4f);
-            GameManager.Instance.playerManager.PlayerTakeDamage(25);
+            GameManager.Instance.playerManager.PlayerTakeDamage(15);
             StartCoroutineWithCheck();
         }
 

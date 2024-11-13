@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using TMPro;
+using NUnit.Framework;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -35,6 +36,8 @@ public class DialogueManager : MonoBehaviour
     public CameraMove cam;
     private float camOrigin;
 
+    public AudioClip chatClip;
+    public List<GameObject> sourceList = new List<GameObject>();
     private void Awake()
     {
         if (Instance == null)
@@ -70,7 +73,15 @@ public class DialogueManager : MonoBehaviour
             currentColl = collison;
             collison.gameObject.SetActive(false);
         }
-
+        for (int i = sourceList.Count - 1; i >= 0; i--)
+        {
+            if (sourceList[i] != null)
+            {
+                sourceList.RemoveAt(i);
+            }
+        }
+        sourceList.Clear();
+        SoundManager.Instance.canChat = true;
         isChat = true;
         cam.smoothSpeed = 1f;
         movePlayer.horizontal = 0;
@@ -127,8 +138,10 @@ public class DialogueManager : MonoBehaviour
 
         // 대사가 남아있는지 먼저 체크
 
+      
         if (lines.Count == 0 )
         {
+            SoundManager.Instance.canChat = false;
             EndDialogue();
            
             if(currentColl != null)
@@ -141,6 +154,7 @@ public class DialogueManager : MonoBehaviour
         if (typing)
         {
             StopAllCoroutines();
+            sourceList.Clear();
             dialogueArea.text = currentLine.line;
             typing = false;
 
@@ -202,6 +216,10 @@ public class DialogueManager : MonoBehaviour
             characterIcon.gameObject.SetActive(false);
             playerIcon.gameObject.SetActive(false);
         }
+        else if(characterName.text == "없음")
+        {
+            dialogueChat.SetActive(false);
+        }
         else
         {
             Debug.Log("2");
@@ -221,6 +239,8 @@ public class DialogueManager : MonoBehaviour
         dialogueArea.text = "";
         foreach (char letter in dialogueLine.line.ToCharArray())
         {
+            SoundManager.Instance.ChatSound("Chat", chatClip);
+            sourceList.Add(SoundManager.Instance.currentSFXSound);
             dialogueArea.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
@@ -261,11 +281,10 @@ public class DialogueManager : MonoBehaviour
         {
             cam.player = player.transform;
         }
-
-        if(currentColl != null)
+  
+        if (currentColl != null)
         {
             Destroy(currentColl.gameObject);
         }
- 
     }
 }

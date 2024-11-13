@@ -5,11 +5,24 @@ using UnityEngine.SceneManagement;
 
 public class StartStageScript : MonoBehaviour
 {
+    public static StartStageScript instance{get; private set;}
     public Image image;
     public Image sImage1;
     public Image sImage2;
     public bool isStartStage;
 
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
     private void Start()
     {
         if(sImage1 != null)

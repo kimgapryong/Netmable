@@ -13,4 +13,5 @@ public class MonsterData : ScriptableObject
     public int damage;
     public float speed;
     public bool isAttack = false;
+    public AudioClip monsterClip;
 }

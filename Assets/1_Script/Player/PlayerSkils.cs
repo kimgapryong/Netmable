@@ -43,6 +43,8 @@ public class PlayerSkils : MonoBehaviour
     //스킬 넣어주는 액션
     public FireBoolSkil fireBool;
 
+    public AudioClip skil2Clip;
+    public AudioClip skil4Clip;
 
 
     private void Update()
@@ -149,7 +151,7 @@ public class PlayerSkils : MonoBehaviour
             while (chaTrue && status.ManaOk((int)chaMana))
             {
                 chargingTime += Time.deltaTime;
-
+                SoundManager.Instance.SFXSound("Chaging", skil2Clip);
                 if (chargingTime <= 4f)
                 {
                     chaMana += 0.03f;
@@ -217,16 +219,21 @@ public class PlayerSkils : MonoBehaviour
     {
         if(shieldTimes && status.ManaOk(shieldMana))
         {
-            Debug.Log("쉴드스킬");
+            animator.SetBool("isShiled", true);
+            uiManager.defence.SetActive(true);
             shieldTimes = false;
             status.currentMp -= shieldMana;
             PlayerManager.Instance.okAtk = false;
+
             StartCoroutine(ShieldCool());
         }
     }
     private IEnumerator ShieldCool()
     {
+        yield return StartCoroutine(GetSkil3Anima());
+        animator.SetBool("isShiled", false);
         yield return new WaitForSeconds(3f);
+        uiManager.defence.SetActive(false);
         PlayerManager.Instance.okAtk = true;
         yield return new WaitForSeconds(1f);
         shieldTimes = true;
@@ -237,6 +244,7 @@ public class PlayerSkils : MonoBehaviour
         if(legendTimes && status.ManaOk(legendMana))
         {
             legendTimes = false;
+            SoundManager.Instance.SFXSound("Legned", skil4Clip);
             animator.SetBool("Skil4", true);
             status.currentMp -= legendMana;
             StartCoroutine(Skil4Legend());
@@ -246,9 +254,10 @@ public class PlayerSkils : MonoBehaviour
     private List<GameObject> objectsToRemove = new List<GameObject>();
     private IEnumerator Skil4Legend()
     {
+
         float xVec = 8f;
         float yVex = 3f;
-        yield return StartCoroutine(GetSkil4Anima());
+        yield return new WaitForSeconds(skil4Clip.length - 1.5f);
         animator.SetBool("Skil4", false);
         if (movePlayer.facingRight)
         {
@@ -297,7 +306,7 @@ public class PlayerSkils : MonoBehaviour
         legendTimes = true;
     }
 
-    private IEnumerator GetSkil4Anima()
+    private IEnumerator GetSkil3Anima()
     {
         AnimatorStateInfo animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
         movePlayer.canMove = false;

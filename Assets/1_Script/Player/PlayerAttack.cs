@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     public Transform trans;
 
     public Vector2 vec2;
-
+    public AudioClip atkClip;
 
     private void Start()
     {
@@ -40,7 +40,7 @@ public class PlayerAttack : MonoBehaviour
 
                 mover.enabled = false;
                 checkMonster.isEnemy = false;
-
+                SoundManager.Instance.SFXSound("ATK", atkClip);
                 if (checkAttack)
                 {
                     checkAttack = false;

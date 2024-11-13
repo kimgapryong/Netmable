@@ -535,6 +535,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BossScript: {fileID: 11400000, guid: 9ba92bb8e7e2c74478c568ea84226c4b, type: 2}
+  bgClip: {fileID: 8300000, guid: dd5f87bb1be363448b6803b773466641, type: 3}
 --- !u!4 &489521503
 Transform:
   m_ObjectHideFlags: 0
@@ -691,6 +692,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 764651666}
   m_CullTransparentMesh: 1
+--- !u!1001 &785969552
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -21.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483092516894802263, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+      propertyPath: m_Name
+      value: Suppnter
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+--- !u!114 &785969553 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6157119243923094333, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+  m_PrefabInstance: {fileID: 785969552}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0348b13a1707350428e63b66a0f09d39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &785969554 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3668858441259172150, guid: 27b7cb699eb14f14e8c91ae6980797da, type: 3}
+  m_PrefabInstance: {fileID: 785969552}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &787348073
 GameObject:
   m_ObjectHideFlags: 0
@@ -59123,6 +59197,12 @@ MonoBehaviour:
   fire: {fileID: 1290952381}
   normal1: {fileID: 45391667510173158, guid: 04e94cdd7dbdb024ca51da22730f717a, type: 3}
   normal2: {fileID: 7711700859016362601, guid: 5e9c7a1d03da332449791dc3b9dfbec1, type: 3}
+  ballClip: {fileID: 8300000, guid: 03db58e6b13676341a889efbce200b72, type: 3}
+  getClip: {fileID: 8300000, guid: a9d15a91d20f0d4488e1c8bfb47c88e9, type: 3}
+  explowClip: {fileID: 8300000, guid: 657ea85165198ba4f9789c91e8735025, type: 3}
+  electyClip: {fileID: 8300000, guid: 753ff29480b61064bb86f8218ae5e0e8, type: 3}
+  layerClip: {fileID: 8300000, guid: b1b1138e039d0074991464c5a7be219d, type: 3}
+  norEleClip: {fileID: 8300000, guid: 0f1cb8af06ced0a4990d697f21320e55, type: 3}
   oneAtk: 1
   oneIdle: 1
 --- !u!114 &1508613223
@@ -59146,6 +59226,8 @@ MonoBehaviour:
   mover: {fileID: 0}
   boss: {fileID: 0}
   isWalk: 0
+  teleClip: {fileID: 8300000, guid: 22d6e57812314bb4ab9918e6153fb88e, type: 3}
+  trigClip: {fileID: 8300000, guid: 49cbf52698b6d934da1636e084b68947, type: 3}
   mask:
     serializedVersion: 2
     m_Bits: 64
@@ -59893,14 +59975,26 @@ MonoBehaviour:
         icon: {fileID: 21300000, guid: e701d615712449f43b331eea3120fd32, type: 3}
       line: "\uC5B4..\uC5B4\uC5B4\uC5B4\uC5B4\uC5B4.\uC5B4\uC5B4\uC5C9"
       isEvent: 0
-      trans: {fileID: 0}
+      trans: {fileID: 785969554}
       onEvent:
         m_PersistentCalls:
-          m_Calls: []
+          m_Calls:
+          - m_Target: {fileID: 785969553}
+            m_TargetAssemblyTypeName: Supporter, Assembly-CSharp
+            m_MethodName: SupDone
+            m_Mode: 0
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 0
+            m_CallState: 2
     - character:
         name: "\uC545\uB2F9"
         icon: {fileID: 21300000, guid: da3dca8191905df4d840a0c8f8355d4d, type: 3}
-      line: "\uC774 \uC694\uC815\uC744 \uAC00\uC838\uAC00\uB3C4\uB85D \uD558\uACA0\uC2B5\uB2C8\uB2E4"
+      line: .......
       isEvent: 0
       trans: {fileID: 1508613218}
       onEvent:
@@ -59909,7 +60003,8 @@ MonoBehaviour:
     - character:
         name: "\uC8FC\uC778\uACF5"
         icon: {fileID: 21300000, guid: 0786436fcc655304b84b882602748b19, type: 3}
-      line: "\uADF8 \uC694\uC815\uC744 \uB0B4\uB194"
+      line: "\uBB50\uC57C \uC694\uC815\uC744 \uC5B4\uB514\uB85C \uB370\uB824\uAC04
+        \uAC70\uC57C"
       isEvent: 0
       trans: {fileID: 0}
       onEvent:
@@ -59918,7 +60013,9 @@ MonoBehaviour:
     - character:
         name: "\uC545\uB2F9"
         icon: {fileID: 21300000, guid: da3dca8191905df4d840a0c8f8355d4d, type: 3}
-      line: "\uC2F8\uC6CC\uC11C \uC774\uAE30\uC138\uC694\n"
+      line: '...........
+
+'
       isEvent: 0
       trans: {fileID: 1508613218}
       onEvent:
@@ -60253,3 +60350,4 @@ SceneRoots:
   - {fileID: 324903059}
   - {fileID: 1839810707}
   - {fileID: 2089705805}
+  - {fileID: 785969552}

@@ -40,6 +40,11 @@ public class MovePlayer : MonoBehaviour
 
     private float originalGravityScale; // 원래 중력 값 저장
 
+    public AudioClip moveClip;
+    public AudioClip jumoClip;
+    public AudioClip doubleClip;
+    public AudioClip Clip;
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -94,6 +99,7 @@ public class MovePlayer : MonoBehaviour
         if (canMove)
         {
             isMove = true;
+            //SoundManager.Instance.CURSound(isMove, moveClip);
             horizontal = -1;
         }
        
@@ -104,6 +110,7 @@ public class MovePlayer : MonoBehaviour
         if (canMove)
         {
             isMove = true;
+            //SoundManager.Instance.CURSound(isMove, moveClip);
             horizontal = 1;
         }
 
@@ -112,6 +119,7 @@ public class MovePlayer : MonoBehaviour
     public void StopMoving()
     {
         isMove = false;
+        //SoundManager.Instance.CURSound(isMove);
         horizontal = 0;
     }
     private void PlayerMove()
@@ -222,6 +230,8 @@ public class MovePlayer : MonoBehaviour
     private void RegularJump()
     {
         isEnemy = false;
+        //SoundManager.Instance.CURSound(false);
+        SoundManager.Instance.SFXSound("Reaular",jumoClip );
         rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
         animator.SetBool("isJump", true);
         animator.SetBool("isGround", false);
@@ -230,6 +240,7 @@ public class MovePlayer : MonoBehaviour
     private void DoubleJump()
     {
         doubleJump = false;
+        SoundManager.Instance.SFXSound("Double", doubleClip);
         rigid.velocity = new Vector2(rigid.velocity.x, PlayerManager.Instance.playerStatus.jumpPower);
         animator.SetBool("isJump", false);
         animator.SetBool("isDouble", true);
@@ -241,6 +252,7 @@ public class MovePlayer : MonoBehaviour
         lastWallJumpTime = Time.time;
 
         wallJumped = facingRight;
+        SoundManager.Instance.SFXSound("Reaular", jumoClip);
         rigid.velocity = new Vector2(PlayerManager.Instance.playerStatus.speed * -horizontal, PlayerManager.Instance.playerStatus.jumpPower);
         Invoke("WallJumpCheck", wallJumpCooldown);
         StartCoroutine(cam.CamMover(facingRight));

@@ -10,6 +10,7 @@ public class InventoryManager : MonoBehaviour
     public Transform invenPanel;
     public GameObject selectedItem;
     private Dictionary<string, ItemData> itemSlots = new Dictionary<string, ItemData>();
+    public AudioClip useClip;
 
     private void Awake()
     {
@@ -72,6 +73,7 @@ public class InventoryManager : MonoBehaviour
     {
         if (itemData != null)
         {
+            SoundManager.Instance.SFXSound("USE", useClip);
             itemData.UseItem();
             UpdateInventoryUI(itemData);
             useButton.SetActive(false);

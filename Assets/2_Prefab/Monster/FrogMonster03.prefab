@@ -240,6 +240,7 @@ MonoBehaviour:
   isAttack: 0
   isOk: 1
   normalAttack: 1
+  monClip: {fileID: 0}
   data: {fileID: 11400000, guid: fece2acda171a0940a75bda513dd33fe, type: 2}
   groundCheck: {fileID: 8904685871868711500}
   rayCheck: {fileID: 5403906691516452192}

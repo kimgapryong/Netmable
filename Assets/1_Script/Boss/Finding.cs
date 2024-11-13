@@ -29,6 +29,8 @@ public class Finding : MonoBehaviour
     private bool isGround;
     public bool isWalk;
 
+    public AudioClip teleClip;
+    public AudioClip trigClip;
 
     public LayerMask mask;
     private void Start()
@@ -94,7 +96,7 @@ public class Finding : MonoBehaviour
 
         if (player.position.y > disy && isGround && canTeleport && Vector2.Distance(player.position, transform.position) > 31 && canTeleport && isGround)
         {
-       
+            SoundManager.Instance.BossSound("Tel", teleClip);
             TeleportBehindPlayer();
 
         }
@@ -105,7 +107,7 @@ public class Finding : MonoBehaviour
     {
         canTeleport = false;
         StartCoroutine(GetAnimator());
-
+        SoundManager.Instance.BossSound("Trig", trigClip);
         if (mover.facingRight)
         {
 

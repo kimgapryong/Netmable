@@ -12,11 +12,15 @@ public class StartImage : MonoBehaviour
     public DialogueManager manager;
     private Animator animator;
     private CameraMove cam;
+
+    public AudioClip bgClip;
+    public AudioClip fgClip;
     private void Start()
     {
         animator = image.GetComponent<Animator>();
         cam = Camera.main.GetComponent<CameraMove>();
-        blackImage.enabled = false;
+        manager = DialogueManager.Instance;
+        //blackImage.enabled = false;
         StartCoroutine(StartBalckScreen());
     }
 
@@ -44,21 +48,23 @@ public class StartImage : MonoBehaviour
     private IEnumerator StartBalckScreen()
     {
         yield return StartCoroutine(WaitForAnimationCoroutine());  
-        
-        blackImage.enabled = true;
+        image.gameObject.SetActive(false);
+        blackImage.gameObject.SetActive(true);
         manager.StartDialogue(dialogue);
-        image.enabled = false ;
+        //image.enabled = false ;
     }
     private IEnumerator DeleteBlackScreen(DialogueLine line)
     {
         yield return new WaitForSeconds(0.5f);
         blackImage.gameObject.SetActive(false);
+        SoundManager.Instance.BGSound(bgClip);
         line.isEvent = false;
         yield return new WaitForSeconds(0.2f);
         Destroy(gameObject);
     }
     public void StartShake(DialogueLine line)
     {
+        SoundManager.Instance.SFXSound("fuking", fgClip);
         StartCoroutine(CamShake(line));
     }
     public void DestroyThis(DialogueLine line)

@@ -45,6 +45,7 @@ public class UiManager : MonoBehaviour
     public GameObject skil4;
 
     public Image blackSrc;
+    public GameObject defence;
     private void Awake()
     {
         if (Instance == null)

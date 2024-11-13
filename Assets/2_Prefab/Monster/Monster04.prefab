@@ -142,6 +142,7 @@ MonoBehaviour:
   isAttack: 0
   isOk: 1
   normalAttack: 1
+  monClip: {fileID: 0}
   data: {fileID: 11400000, guid: 832e895e2b325e748991a630625c5701, type: 2}
   animator: {fileID: 0}
   monDis: 40
@@ -149,6 +150,7 @@ MonoBehaviour:
   bulletSpeed: 60
   fireHole: {fileID: 6932262228784691437}
   bullet: {fileID: 83916646020134454, guid: dac2a1e0a6efa7a4eaaaf10620141907, type: 3}
+  dieClip: {fileID: 8300000, guid: ee3a6bfb81755c744802c8b5a809b838, type: 3}
 --- !u!58 &1609200102112915783
 CircleCollider2D:
   m_ObjectHideFlags: 0

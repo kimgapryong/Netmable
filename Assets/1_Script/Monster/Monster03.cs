@@ -74,6 +74,7 @@ public class Monster03 : Monster
                 
                 if (attackJump)
                 {
+                    SoundManager.Instance.BossSound("monster3", monClip);
                     attackJump = false;
                     animator.SetBool("isAtk", true);
                     rb.AddForce(new Vector2(0, jumpForce));

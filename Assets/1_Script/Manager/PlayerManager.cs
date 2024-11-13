@@ -19,7 +19,7 @@ public class PlayerManager : MonoBehaviour
     public Boss boss;
 
     public bool okAtk = true;
-
+    public AudioClip takeClip;
     private void Awake()
     {
         if (Instance == null)
@@ -105,6 +105,7 @@ public class PlayerManager : MonoBehaviour
     {
         if(playerStatus.currentHp > 0 && okAtk)
         {
+            SoundManager.Instance.SFXSound("PlayerTake", takeClip);
             playerStatus.currentHp -= damage;
             StartCoroutine(palyerDamage());
 

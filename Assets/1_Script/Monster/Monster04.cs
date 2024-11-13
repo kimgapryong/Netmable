@@ -20,6 +20,8 @@ public class Monster04 : Monster
     private GameObject clone;
     private bool isAtk = true;
     private bool arg;
+
+    public AudioClip dieClip;
     private void Start()
     {
         ResetData(data);
@@ -54,6 +56,7 @@ public class Monster04 : Monster
         length = (player.transform.position - transform.position).normalized;
         if (Vector2.Distance(player.transform.position, transform.position) <= monAtt)
         {
+
             animator.SetBool("isAtk", true);
             arg = true; 
             transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(length.y, length.x) * Mathf.Rad2Deg);
@@ -74,6 +77,7 @@ public class Monster04 : Monster
             if(isAtk)
             {
                 isAtk = false;
+                SoundManager.Instance.SFXSound("Mon4", monClip);
                 clone = Instantiate(bullet, fireHole.transform.position, Quaternion.identity);
                 StartCoroutine(waitAtk());
             }
@@ -115,6 +119,7 @@ public class Monster04 : Monster
     protected override void Die()
     {
         if (!isOk) return;
+        SoundManager.Instance.SFXSound("Mon4Die", dieClip);
         PlayerManager.Instance.playerStatus.AddLevel(Exp);
         if (ItemManager.Instance != null && isItem)
         {

@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Boss1Data
   m_EditorClassIdentifier: 
   bossName: "\uBAB0\uB77C"
-  maxHp: 100
-  damage: 20
+  maxHp: 1200
+  damage: 10
   speed: 15

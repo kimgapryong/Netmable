@@ -26,6 +26,14 @@ public class Boss1 : Boss
     public GameObject normal2;
     private bool goAtk = false;
 
+    public AudioClip ballClip;
+    public AudioClip getClip;
+    public AudioClip explowClip;
+    public AudioClip electyClip;
+    public AudioClip layerClip;
+    public AudioClip norEleClip;
+
+
     protected override void Start()
     {
         GetBossData(data.bossName, data.maxHp, data.damage, data.speed);
@@ -115,6 +123,7 @@ public class Boss1 : Boss
         for(int i = 0; i < ui.attack1Image.Length; i++)
         {
             GameObject clone = Instantiate(skill1obj, attackTrans[i].position, Quaternion.identity);
+            SoundManager.Instance.BossSound("ball",ballClip);
             BossSkilBool bossSkil = clone.GetComponent<BossSkilBool>();
             switch (i)
             {
@@ -168,7 +177,7 @@ public class Boss1 : Boss
         
         col.isTrigger = true;
         //rb.constraints = (RigidbodyConstraints2D)(RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY);
-
+        SoundManager.Instance.BossSound("Get", getClip);
         while (shapeModule.radius <= number)
         {
             shapeModule.radius += 20f;
@@ -215,7 +224,7 @@ public class Boss1 : Boss
         emission.rateOverTime = rate;
         life.radial = new ParticleSystem.MinMaxCurve(40);
         life.speedModifier = new ParticleSystem.MinMaxCurve(10);
-
+        SoundManager.Instance.BossSound("Explo", explowClip);
         yield return new WaitForSeconds(0.5f);
         StartCoroutine(cam.Shake(5f, 1.4f, 0.4f));
         PlayerDamageTirgger();
@@ -264,6 +273,7 @@ public class Boss1 : Boss
         }
         for (int i = electryTrans.Count - 1; i >= 0; i--)
         {
+            
             GameObject clone = Instantiate(magicHole, new Vector2(electryTrans[i].x, electryTrans[i].y + 2), Quaternion.identity);
             hole.Add(clone);
         }
@@ -279,8 +289,9 @@ public class Boss1 : Boss
     {
         List<GameObject> clons = new List<GameObject>();
         float targetScaleY = 300f;  
-        float scaleSpeed = 1000f;  
+        float scaleSpeed = 1000f;
 
+        SoundManager.Instance.BossSound("Electy", electyClip);
         for (int i = electryTrans.Count - 1; i >= 0; i--)
         {
             GameObject clone = Instantiate(skill2obj, electryTrans[i], Quaternion.identity);
@@ -334,6 +345,7 @@ public class Boss1 : Boss
     {
         if (Vector2.Distance(player.transform.position, transform.position) < 14 && isAttack)
         {
+            SoundManager.Instance.BossSound("Normal", layerClip);
             GameObject clone = Instantiate(normal1, transform.position, Quaternion.identity);
             if(transform.localScale.x > 0)
             {
@@ -375,6 +387,7 @@ public class Boss1 : Boss
         if (Vector2.Distance(player.transform.position, transform.position) > 30 && isAttack)
         {
             Vector2 newVec = new Vector2(player.transform.position.x, player.transform.position.y + 20);
+            SoundManager.Instance.BossSound("NorEle", norEleClip);
             GameObject clone = Instantiate(normal2, newVec, Quaternion.identity);
 
             StartCoroutine(attackLength(player.transform.position, clone));

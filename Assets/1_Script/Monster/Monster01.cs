@@ -75,7 +75,7 @@ public class Monster01 : Monster
         {
             if (Vector2.Distance(player.transform.position, transform.position) < 14 && dash)
             {
-
+                SoundManager.Instance.BossSound("monster1", monClip);
                 StartCoroutine(Dash());
             }
         }

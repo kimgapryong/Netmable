@@ -19,3 +19,4 @@ MonoBehaviour:
   damage: 25
   speed: 10
   isAttack: 0
+  monsterClip: {fileID: 8300000, guid: 0d6cd3d6eed243545a8fa5ff5a933353, type: 3}

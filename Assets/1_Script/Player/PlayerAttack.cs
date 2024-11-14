@@ -61,7 +61,7 @@ public class PlayerAttack : MonoBehaviour
                 {
                     if (colider2d != null)
                     {
-                        
+                        Debug.Log("공격 가능");
                         Monster monster = colider2d.GetComponent<Monster>();
                         Boss boss = colider2d.GetComponent<Boss>();
                         if (monster != null)

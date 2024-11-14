@@ -101,19 +101,19 @@ public abstract class Monster : MonoBehaviour
     public virtual void TakeDamage(int attack)
     {
         Debug.Log(attack);
-        //if (paticle != null && normalAttack)
-        //{
-        //    GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
-        //    Destroy(clone, 0.3f);
-        //}
-        
-        //health -= attack;
-        
-        //if (health <= 0)
-        //{
-            
-        //    Die();
-        //}
+        if (paticle != null && normalAttack)
+        {
+            GameObject clone = Instantiate(paticle, transform.position, Quaternion.identity);
+            Destroy(clone, 0.3f);
+        }
+
+        health -= attack;
+
+        if (health <= 0)
+        {
+
+            Die();
+        }
     }
     protected virtual void Die()
     {

@@ -46,7 +46,6 @@ public class Monster02 : Monster
         {
             if (Vector2.Distance(transform.position, player.transform.position) <= 21 && coolTime)
             {
-           
                 if (objW == null)
                 {
                     objW = Instantiate(obj, attackPos);

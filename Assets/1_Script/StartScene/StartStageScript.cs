@@ -85,7 +85,25 @@ public class StartStageScript : MonoBehaviour
         }
         Debug.Log("이미지 사라짐");
     }
+    public IEnumerator FadeInEffect(Image photo, DialogueLine line = null)
+    {
 
+        SetImageAlpha(photo, 0f);
+
+        float duration = 2.0f;
+        float t = 0;
+
+        while (t < duration)
+        {
+            t += Time.deltaTime;
+            float alpha = Mathf.Lerp(0f, 1f, t / duration);
+            SetImageAlpha(photo, alpha);
+            yield return null;
+        }
+        yield return new WaitForSeconds(1.5f);
+
+       
+    }
     private void SetImageAlpha(Image img, float alpha)
     {
         Color color = img.color;

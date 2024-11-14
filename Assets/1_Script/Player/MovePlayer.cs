@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MovePlayer : MonoBehaviour
 {
@@ -80,6 +81,16 @@ public class MovePlayer : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             PlayerJump();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            SceneManager.LoadScene("Stage1");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            SceneManager.LoadScene("Stage2");
         }
         GetDeath();
         SlidingWall();

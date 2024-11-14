@@ -46,7 +46,7 @@ public class SoundManager : MonoBehaviour
         currentSFXSound = new GameObject(soundName + "Sound");
         AudioSource scorce = currentSFXSound.AddComponent<AudioSource>();
         scorce.clip = clip;
-        scorce.volume = 0.4f;
+        scorce.volume = 0.7f;
         scorce.Play();
 
             Destroy(currentSFXSound, clip.length);
@@ -66,7 +66,7 @@ public class SoundManager : MonoBehaviour
         currentSFXSound = new GameObject(soundName + "Sound");
         AudioSource scorce = currentSFXSound.AddComponent<AudioSource>();
         scorce.clip = clip;
-        scorce.volume = 0.4f;
+        scorce.volume = 0.7f;
         scorce.Play();
         if (currentSFXSound.name != "ChatSound")
         {
@@ -90,7 +90,7 @@ public class SoundManager : MonoBehaviour
             currentSFXSound = new GameObject(soundName + "Sound");
             AudioSource scorce = currentSFXSound.AddComponent<AudioSource>();
             scorce.clip = clip;
-            scorce.volume = 0.4f;
+            scorce.volume = 0.7f;
             scorce.Play();
             if (currentSFXSound.name != "ChatSound")
             {
@@ -126,7 +126,7 @@ public class SoundManager : MonoBehaviour
     {
         sound.clip = clip;
         sound.loop = true;
-        sound.volume = 0.1f;
+        sound.volume = 0.3f;
         sound.Play();
     }
     public void StopBG(DialogueLine line)

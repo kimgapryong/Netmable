@@ -30,19 +30,15 @@ public class NextStage : MonoBehaviour
 
     private void Update()
     {
-    
-        foreach (TriggerPoint trigger in triggerPoints)
+
+        for (int i = triggerPoints.Count - 1; i >= 0; i--)
         {
-            if(trigger != null)
+            TriggerPoint trigger = triggerPoints[i];
+            if (trigger != null && trigger.CheckTrigger(player))
             {
-                if (trigger.CheckTrigger(player))
-                {
-                    trigger.onTrigger.Invoke();
-                    triggerPoints.Remove(trigger);
-                    break;
-                }
+                trigger.onTrigger.Invoke();
+                triggerPoints.RemoveAt(i);  // 현재 인덱스에서 안전하게 삭제
             }
-           
         }
     }
     

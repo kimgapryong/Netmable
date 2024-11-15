@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class BossSkilBool : MonoBehaviour
 {
-    private int damage = 60;
+    private int damage = 20;
     private float time = 0f;
     private float setTime = 1.5f;
     private float speed = 300f;

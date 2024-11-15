@@ -17,7 +17,11 @@ public class Boss2Chat : MonoBehaviour
         UiManager.Instance.mpSlider.gameObject.SetActive(false);
         UiManager.Instance.inventoryButton.gameObject.SetActive(false);
         UiManager.Instance.monsterUi.gameObject.SetActive(false);
+        UiManager.Instance.playerName.gameObject.SetActive(false);
+        UiManager.Instance.ex.gameObject.SetActive(false);
+        GameObject.Find("Player").SetActive(false);
         Camera.main.transform.position = transform.position;
+
     }
 
     public void SupDone(DialogueLine line)

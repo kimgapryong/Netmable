@@ -11,6 +11,7 @@ public class UiManager : MonoBehaviour
 
     public PlayerStatus status;
 
+    public Text playerName;
     public Text hp;
     public Text mp;
     public Text ex;

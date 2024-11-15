@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEditor.Animations;
+using UnityEngine.UI;
 
 public class PlayerSkils : MonoBehaviour
 {
@@ -86,6 +87,7 @@ public class PlayerSkils : MonoBehaviour
             if (FireCoolTimes && status.ManaOk(fireMana))
             {
                 FireCoolTimes = false;
+                animator.SetBool("isFire", true);
                 status.currentMp -= fireMana;
                 if (movePlayer.facingRight)
                 {
@@ -102,13 +104,21 @@ public class PlayerSkils : MonoBehaviour
     }
     private IEnumerator FireCoolTime()
     {
+        StartCoroutine(GetSkil3Anima());
+        yield return StartCoroutine(GetSkil3Anima());
+        animator.SetBool("isFire", false);
         yield return new WaitForSeconds(10f);
         FireCoolTimes = true ;
     }
 
     //Â÷Â¡º¼ 
+    public Sprite cha1;
+    public Sprite cha2;
+    public Sprite cha3;
+    public Sprite cha4;
     public void ChagingCheck(KeyCode key ,GameObject cha)
     {
+
         chagingkey = key;
         chaObj = cha;
         uiManager.skil2.SetActive(true);
@@ -122,7 +132,9 @@ public class PlayerSkils : MonoBehaviour
             //if (Input.GetKeyDown(chagingkey))
             
                 ChaCoolTimes = false;
-                GameObject currentSkillObject = Instantiate(chaObj, SkilsFire.position, Quaternion.identity);
+            SoundManager.Instance.SFXSound("Chaging", skil2Clip);
+            GameObject currentSkillObject = Instantiate(chaObj, SkilsFire.position, Quaternion.identity);
+            currentSkillObject.GetComponent<SpriteRenderer>().sprite = cha1;
                 ChagingSkil chagingSkilComponent = currentSkillObject.GetComponent<ChagingSkil>();
                 chaTrue = true;
                 StartCoroutine(ChargeSkill(currentSkillObject, chagingSkilComponent));
@@ -151,13 +163,26 @@ public class PlayerSkils : MonoBehaviour
             while (chaTrue && status.ManaOk((int)chaMana))
             {
                 chargingTime += Time.deltaTime;
-                SoundManager.Instance.SFXSound("Chaging", skil2Clip);
+
                 if (chargingTime <= 4f)
                 {
                     chaMana += 0.03f;
-                 
                     float scaleFactor = Mathf.Lerp(1f, 3.5f, chargingTime / 4f);
                     currentSkillObject.transform.localScale = new Vector3(scaleFactor, scaleFactor, scaleFactor);
+                    
+                    if(currentSkillObject.transform.localScale.x >= 3.4f)
+                    {
+                        currentSkillObject.GetComponent<SpriteRenderer>().sprite = cha4;
+                    }
+                    else if (currentSkillObject.transform.localScale.x >= 3f)
+                    {
+                        currentSkillObject.GetComponent<SpriteRenderer>().sprite = cha3;
+                    }
+                    else if (currentSkillObject.transform.localScale.x >= 2f)
+                    {
+                        currentSkillObject.GetComponent<SpriteRenderer>().sprite = cha2;
+                    }
+
                     chaDamage = Mathf.RoundToInt(Mathf.Lerp(0, maxDamage, chargingTime / 4));
                 }
                 else if (chaTrue && chargingTime >= 8f)
@@ -203,7 +228,6 @@ public class PlayerSkils : MonoBehaviour
 
     private IEnumerator ChaCoolTime()
     {
-    
         yield return new WaitForSeconds(1f);
         ChaCoolTimes = true;
     }

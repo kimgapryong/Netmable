@@ -30,13 +30,6 @@ public class PlayerStatus : MonoBehaviour
             nextEx[i] = Mathf.RoundToInt(nextEx[i - 1] * 1.1f);
         }
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            AddLevel(10);
-        }
-    }
 
     public void AddLevel(int ex)
     {

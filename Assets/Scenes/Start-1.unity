@@ -169,7 +169,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   items:
   - {fileID: 2040445023071301945, guid: bce895b960dfd7a4d816b9ae11b897fe, type: 3}
-  dropChance: 0.8
+  - {fileID: 1788007614990377348, guid: 4eb2bba5116dfbf4bb8bd68b147b23f5, type: 3}
+  - {fileID: 7371676111599759017, guid: 13d32c3365fcece4dbe6337ef97ac1ab, type: 3}
+  - {fileID: 7371676111599759017, guid: 13d32c3365fcece4dbe6337ef97ac1ab, type: 3}
+  - {fileID: 3869926265311309322, guid: a667a29eecf063445b19e048d816b0e1, type: 3}
+  - {fileID: 3869926265311309322, guid: a667a29eecf063445b19e048d816b0e1, type: 3}
+  dropChance: 0.5
 --- !u!1 &21173661
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,7 +1308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &220624355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2913,10 +2918,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1317152607264307482, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: maxHp
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317152607264307482, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: maxMp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317152607264307482, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: damage
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317152607264307482, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: currentHp
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317152607264307482, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: currentMp
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1317152607264307482, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: currentLevel
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5296671365432740134, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7821236904630416063, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: cha1
+      value: 
+      objectReference: {fileID: 21300000, guid: ceb45daf7f0a4bd4c8f06b86f494a884, type: 3}
+    - target: {fileID: 7821236904630416063, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: cha2
+      value: 
+      objectReference: {fileID: 21300000, guid: 14712d23714482d488fb5448f54210cc, type: 3}
+    - target: {fileID: 7821236904630416063, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: cha3
+      value: 
+      objectReference: {fileID: 21300000, guid: 8282a3db398a59d478965add6611797e, type: 3}
+    - target: {fileID: 7821236904630416063, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
+      propertyPath: cha4
+      value: 
+      objectReference: {fileID: 21300000, guid: c34436a9607fef9408080ce772b9fdf5, type: 3}
     - target: {fileID: 8842345308145255771, guid: 4578e9d774f0b4c44b4711404fec25b3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.7
@@ -6739,7 +6784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1909445363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118259,6 +118304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   status: {fileID: 559295794}
+  playerName: {fileID: 768676220}
   hp: {fileID: 2101662806}
   mp: {fileID: 483407595}
   ex: {fileID: 2060154359}

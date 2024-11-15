@@ -15,7 +15,6 @@ MonoBehaviour:
   SkilName: 
   SkilPrefab: {fileID: 0}
   damage: 0
-  mana: 20
   speed: 0
-  nextSkilLevel: 5
+  nextSkilLevel: 8
   keyCode: 101

@@ -16,5 +16,5 @@ MonoBehaviour:
   SkilPrefab: {fileID: 8829084705193800601, guid: 1a581f7a9d140424b8413a06aae923f4, type: 3}
   damage: 100
   speed: 0
-  nextSkilLevel: 1
+  nextSkilLevel: 12
   keyCode: 103

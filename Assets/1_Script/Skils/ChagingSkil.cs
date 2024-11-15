@@ -50,7 +50,7 @@ public class ChagingSkil : Skil
     }
     private void SkilConditon()
     {
-        if(status.currentLevel >= 10)
+        if(status.currentLevel >= SkilLevel)
         {
             playerSkils.isChaging = true;
             playerSkils.ChagingCheck(key,skilPrefab);

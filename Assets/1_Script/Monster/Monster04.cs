@@ -96,7 +96,7 @@ public class Monster04 : Monster
         yield return new WaitForSeconds(2f);
         isAtk = true;
     }
-
+    private bool oneDie = true;
     public override void TakeDamage(int attack)
     {
         base.TakeDamage(attack);
@@ -118,22 +118,27 @@ public class Monster04 : Monster
     private bool isItem = true;
     protected override void Die()
     {
-        if (!isOk) return;
-        SoundManager.Instance.SFXSound("Mon4Die", dieClip);
-        PlayerManager.Instance.playerStatus.AddLevel(Exp);
-        if (ItemManager.Instance != null && isItem)
+        if(oneDie)
         {
-            isItem = false;
-            ItemManager.Instance.RandomItem(gameObject.transform.position);
+            oneDie = false;
+            if (!isOk) return;
+            SoundManager.Instance.SFXSound("Mon4Die", dieClip);
+            PlayerManager.Instance.playerStatus.AddLevel(Exp);
+            if (ItemManager.Instance != null && isItem)
+            {
+                isItem = false;
+                ItemManager.Instance.RandomItem(gameObject.transform.position);
+            }
+
+
+            if (UiManager.Instance != null && UiManager.Instance.mSlider != null)
+            {
+                UiManager.Instance.mSlider.transform.parent.gameObject.SetActive(false);
+            }
+
+
+            Destroy(gameObject, 1.6f);
         }
-
-
-        if (UiManager.Instance != null && UiManager.Instance.mSlider != null)
-        {
-            UiManager.Instance.mSlider.transform.parent.gameObject.SetActive(false);
-        }
-
-
-        Destroy(gameObject, 1.6f);
+       
     }
 }

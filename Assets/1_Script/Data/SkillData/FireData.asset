@@ -15,7 +15,6 @@ MonoBehaviour:
   SkilName: "\uD30C\uC774\uC5B4\uBCFC"
   SkilPrefab: {fileID: 7492026353304314527, guid: 548ee21938c9ddc45bb68ef51e7b2993, type: 3}
   damage: 40
-  mana: 25
   speed: 25
-  nextSkilLevel: 5
+  nextSkilLevel: 2
   keyCode: 113

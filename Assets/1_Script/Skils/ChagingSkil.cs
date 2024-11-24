@@ -9,15 +9,15 @@ public class ChagingSkil : Skil
     public int chaDam = 0;
 
     private GameObject clone;
-    public Collider2D collider2D;
+    public Collider2D colliderObj;
     private Transform target;
     private void Start()
     {
 
         ResetSkil(data);
         StartCoroutine(waitSkil());
-        collider2D = GetComponent<Collider2D>();
-        collider2D.enabled = false;
+        colliderObj = GetComponent<Collider2D>();
+        colliderObj.enabled = false;
         Destroy(gameObject, 11);
     }
 

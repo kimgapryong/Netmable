@@ -59485,7 +59485,6 @@ GameObject:
   - component: {fileID: 1734008234}
   - component: {fileID: 1734008233}
   - component: {fileID: 1734008232}
-  - component: {fileID: 1734008237}
   m_Layer: 5
   m_Name: BossUi
   m_TagString: Untagged
@@ -59601,22 +59600,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1734008237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1734008231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf090c5436bb9254eaeaf1923748a30d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  image: {fileID: 0}
-  sImage1: {fileID: 0}
-  sImage2: {fileID: 0}
-  isStartStage: 0
 --- !u!1 &1739792534
 GameObject:
   m_ObjectHideFlags: 0

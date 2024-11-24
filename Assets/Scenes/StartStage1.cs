@@ -13,6 +13,7 @@ public class StartStage1 : MonoBehaviour
         player.GetComponent<MovePlayer>().enabled = true;
         player.GetComponent<PlayerAttack>().enabled = true;
         UiManager.Instance.blackSrc.gameObject.SetActive(true);
+        player.transform.position = Vector3.zero;
         SoundManager.Instance.BGSound(bgClip);
         StartCoroutine(StartStageScript.instance.FadeInOutEffect(UiManager.Instance.blackSrc));
         StartCoroutine(startDia());

@@ -1,9 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
-using UnityEditor.Animations;
-using UnityEngine.UI;
 
 public class PlayerSkils : MonoBehaviour
 {
@@ -205,7 +202,7 @@ public class PlayerSkils : MonoBehaviour
             if (currentSkillObject != null)
             {
               
-                chaSkil.collider2D.enabled = true;
+                chaSkil.colliderObj.enabled = true;
                 if (movePlayer.facingRight)
                 {
                  

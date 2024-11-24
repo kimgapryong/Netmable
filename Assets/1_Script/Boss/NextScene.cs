@@ -20,7 +20,7 @@ public class NextScene : MonoBehaviour
     private void Start()
     {
         status = PlayerManager.Instance.playerStatus;
-        stage = GameObject.Find("BossUi").GetComponent<StartStageScript>();
+        stage = GameObject.Find("SceneFade").GetComponent<StartStageScript>();
         player = GameObject.Find("Player");
         blackScreen = UiManager.Instance.blackSrc;
         bossOrigin = boss.transform.localScale;

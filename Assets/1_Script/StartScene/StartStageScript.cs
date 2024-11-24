@@ -23,6 +23,7 @@ public class StartStageScript : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void Start()
     {
         if(sImage1 != null)

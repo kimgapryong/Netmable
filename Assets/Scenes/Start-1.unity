@@ -1308,7 +1308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &220624355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5647,7 +5647,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\uC548\uB155\uD558\uC2DC\uC640\uC778"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3abf2a798274eec47afc9fa1f3af97a9, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f6806735d048fc144aee848dc9736438, type: 2}
   m_sharedMaterial: {fileID: -7397650406664504160, guid: 3abf2a798274eec47afc9fa1f3af97a9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5711,7 +5711,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1369455515
@@ -5819,7 +5819,7 @@ Transform:
   m_GameObject: {fileID: 1399404090}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 310.5, y: -18.2, z: 19.597086}
+  m_LocalPosition: {x: 311, y: -12, z: 19.597086}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6784,7 +6784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1909445363
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -24,7 +24,7 @@ public class LeverMove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
-        MoveDerection(eventData);
+       MoveDerection(eventData);
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -40,10 +40,13 @@ public class LeverMove : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     private void MoveDerection(PointerEventData eventData)
     {
-        Vector2 leverPos = eventData.position - background.anchoredPosition;
-
+        Vector2 _eventData = Camera.main.ScreenToWorldPoint(new Vector3(eventData.position.x, eventData.position.y, 0));
+        Vector2 leverPos = _eventData - (Vector2)background.transform.position;
+        Debug.Log(background.anchoredPosition);
+        Debug.Log(_eventData);
+        Debug.Log(leverPos.x);
         // X 값 제한: leverPosX 범위 안에서 좌우로 움직일 수 있도록 수정
-        float leverX = Mathf.Clamp(leverPos.x, -leverPosX, leverPosX);
+        float leverX = Mathf.Clamp(leverPos.x * 10, -leverPosX, leverPosX);
         float leverY = leverPosY;
         lever.anchoredPosition = new Vector2(leverX, leverY);
         inputDerector = leverX / leverPosX;

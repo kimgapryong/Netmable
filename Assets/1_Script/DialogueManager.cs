@@ -268,7 +268,6 @@ public class DialogueManager : MonoBehaviour
         //{
         //    dialogueLine.onEvent?.Invoke();
         //}
-        Debug.Log("dkssud");
         isDialogueActive = false;
         dialogueChat.SetActive(false);
         movePlayer.enabled = true;

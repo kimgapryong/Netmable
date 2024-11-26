@@ -121,7 +121,7 @@ public class StartStageScript : MonoBehaviour
         StartCoroutine(FadeInOutEffect(sImage2));
         yield return StartCoroutine(FadeInOutEffect(sImage2));
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Start-1");
+        SceneManager.LoadScene("StartScene");
     }
 
     private IEnumerator WaitForAnimationCoroutine()

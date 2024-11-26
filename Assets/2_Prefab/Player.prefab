@@ -245,14 +245,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nextSkil: 5
-  damage: 20
+  damage: 25
   speed: 18
   jumpPower: 25
-  currentHp: 100
-  maxHp: 100
-  currentMp: 50
-  maxMp: 50
-  currentLevel: 9
+  currentHp: 200
+  maxHp: 200
+  currentMp: 100
+  maxMp: 100
+  currentLevel: 1
   maxLevel: 25
   currentEx: 0
   nextEx: 
@@ -308,6 +308,10 @@ MonoBehaviour:
   fireBool: {fileID: -143145628645418483, guid: 548ee21938c9ddc45bb68ef51e7b2993, type: 3}
   skil2Clip: {fileID: 8300000, guid: e35075e659393d74aabe45f9755fd168, type: 3}
   skil4Clip: {fileID: 8300000, guid: a8529edd0da6fc94583b40fce0b311c6, type: 3}
+  cha1: {fileID: 21300000, guid: ceb45daf7f0a4bd4c8f06b86f494a884, type: 3}
+  cha2: {fileID: 21300000, guid: 14712d23714482d488fb5448f54210cc, type: 3}
+  cha3: {fileID: 21300000, guid: 8282a3db398a59d478965add6611797e, type: 3}
+  cha4: {fileID: 21300000, guid: c34436a9607fef9408080ce772b9fdf5, type: 3}
   chaDamage: 0
   LenList: []
 --- !u!70 &7306013655523030207

@@ -1,10 +1,15 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class PlayerStatus : MonoBehaviour
 {
+    private const string SAVECHAR = "#SAVE-VALUE#";
+    string filepath = Application.dataPath + "/1_Script/Data/jsonData/savaFile.json";
+
+    
 
     public event Action OnLevelUp;
     public int nextSkil = 5;
@@ -28,6 +33,19 @@ public class PlayerStatus : MonoBehaviour
         for (int i = 1; i < maxLevel; i++)
         {
             nextEx[i] = Mathf.RoundToInt(nextEx[i - 1] * 1.1f);
+        }
+
+        if (File.Exists(filepath))
+        {
+            string json = File.ReadAllText(filepath);
+            string[] jsonData = json.Split(new[] { SAVECHAR }, StringSplitOptions.None);
+            // json을 통해 가져온 데이터
+            damage = int.Parse(jsonData[0]);
+            speed = float.Parse(jsonData[1]);
+            jumpPower = float.Parse(jsonData[2]);
+            maxHp = int.Parse(jsonData[3]);
+            maxMp = int.Parse(jsonData[4]);
+            currentLevel = int.Parse(jsonData[5]); 
         }
     }
 

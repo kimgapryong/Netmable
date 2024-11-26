@@ -7,6 +7,6 @@ public class StartTuotorial : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("StartStage");
+        SceneManager.LoadScene("Start-1");
     }
 }

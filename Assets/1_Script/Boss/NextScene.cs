@@ -62,6 +62,7 @@ public class NextScene : MonoBehaviour
     }
     public void NextPreparation(DialogueLine line)
     {
+        StageJsonManager.Instance.SaveStageData(1);
         status.currentHp = status.maxHp;
         line.isEvent = false;
         PlayerManager.Instance.realDie = true;

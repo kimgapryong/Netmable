@@ -9,4 +9,12 @@ public class StartTuotorial : MonoBehaviour
     {
         SceneManager.LoadScene("Start-1");
     }
+    public void CurrentGame()
+    {
+        SceneManager.LoadScene("ChooiseScene");
+    }
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }
